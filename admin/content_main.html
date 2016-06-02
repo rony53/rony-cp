@@ -1,0 +1,125 @@
+|LF_STANDARD|
+
+|*if AJAX="1"|
+	<script type="text/javascript" src="JS_CREATION_CHECK"></script>
+|*endif|
+
+<div class="content">	
+    	<div class="left">
+      	<div class="link_list">
+        	<h2><img src="/IMG_ACC_MNG" width="29" height="32" alt="" />|LANG_ACC_MANAGEMENT|</h2>
+          <ul class="no_icons">
+            <li><a href="/HTM_ACCOUNT_ADMIN_CREATE" title="">|LANG_CREATE_ADMIN|</a></li>
+            <li><a href="/CMD_ADMIN_SHOW">|LANG_LIST_ADMINS|</a></li>
+            <li><a href="/HTM_ACCOUNT_RESELLER_CREATE" title="">|LANG_CREATE_RESELLER|</a></li>
+            <li><a href="/CMD_RESELLER_SHOW">|LANG_LIST_RESELLERS|</a></li>
+            <li><a href="/CMD_MANAGE_RESELLER_PACKAGES">|LANG_RESELLER_PACKAGES|</a></li>
+            <li><a href="/CMD_MOVE_USERS">|LANG_MOVE_USERS|</a></li>
+            <li><a href="/HTM_USER_PASSWD">|LANG_CHANGE_PASS|</a></li>
+            <li><a href="/CMD_ALL_USER_SHOW">|LANG_SHOW_ALL_USERS|</a></li>
+            
+          </ul>  
+        </div>
+        </div>
+        
+
+      <div class="right">
+      	<div class="link_list">
+        	<h2><img src="/IMG_SYS_MNG" width="29" height="32" alt="" />|LANG_SYS_MANAGEMENT|</h2>
+          <ul class="no_icons">
+			<li><a href="/CMD_ADMIN_SETTINGS">|LANG_ADMIN_SETTINGS|</a></li>
+			<li><a href="/CMD_SYSTEM_INFO">|LANG_SYSTEM_INFO|</a></li>
+			<li><a href="/CMD_SHOW_SERVICES">|LANG_SERVICE_MONITOR|</a></li>
+			<li><a href="/CMD_PROCESS_MONITOR?sort1=|PMSORT|">|LANG_PROCESS_MONITOR|</a></li>
+			<li><a href="/CMD_IP_MANAGER">|LANG_IP_MANAGEMENT|</a></li>
+			<li><a href="/CMD_DNS_ADMIN">|LANG_DNS_ADMIN|</a></li>
+			<li><a href="/CMD_MULTI_SERVER">|LANG_MULTI_SERVER|</a></li>
+			<li><a href="/CMD_MAIL_QUEUE?sort1=2">|LANG_MAIL_Q_ADMIN|</a></li>
+                        <li><a href="/CMD_ADMIN_CRON_JOBS">|LANG_ADMIN_CRON_JOBS|</a></li>
+                        <li><a href="/CMD_ADMIN_STATS">|LANG_COMPLETE_USAGE_STATS|</a></li>			
+
+          </ul>  
+        </div>
+        </div>
+        
+        <div class="left">
+        <div class="link_list">
+            <h2><img src="/IMG_TOOLS_STTS" width="29" height="32" alt="" />|LANG_TOOLS|</h2>
+          <ul class="no_icons">
+            <li><a href="/CMD_LOG_VIEWER">|LANG_LOG_VIEWER|</a></li>
+            <li><a href="/CMD_FILE_MANAGER">|LANG_FILES|</a></li>
+            <li><a href="/CMD_ADMIN_FILE_EDITOR">|LANG_FILE_EDITOR|</a></li>
+            <li><a href="/CMD_CUSTOM_HTTPD">|LANG_CUSTOM_HTTPD|</a></li>
+            <li><a href="/CMD_PHP_SAFE_MODE">|LANG_PHP_SAFEMODE|</a></li>
+            <li><a href="/CMD_BRUTE_FORCE_MONITOR?sort1=-1&seek_value=-500000">|LANG_BRUTE_FORCE_MONITOR|</a></li>
+          </ul>  
+        </div>
+        </div>
+        
+        <div class="right">
+        <div class="link_list">
+            <h2><img src="/IMG_BCP_MNG" width="29" height="32" alt="" />|LANG_BACKUP_MANAGER|</h2>
+          <ul class="no_icons">
+            <li><a href="/CMD_ADMIN_BACKUP">|LANG_ADMIN_BACKUPS|</a></li>
+            <li><a href="/CMD_SYSTEM_BACKUP">|LANG_SYS_BACKUP|</a></li>
+          </ul>  
+        </div>
+        </div>
+        
+        
+        
+|$/usr/local/bin/php
+<?php
+$data0 = <<<END
+|PLUGIN_0_ADMIN_TXT|
+END;
+$data1 = <<<END
+|PLUGIN_1_ADMIN_TXT|
+END;
+$data2 = <<<END
+|PLUGIN_2_ADMIN_TXT|
+END;
+$data3 = <<<END
+|PLUGIN_3_ADMIN_TXT|
+END;
+$data4 = <<<END
+|PLUGIN_4_ADMIN_TXT|
+END;
+$data5 = <<<END
+|PLUGIN_5_ADMIN_TXT|
+END;
+        
+        echo '
+        <div class="left">
+        <div class="link_list">
+        <h2><img src="/IMG_PLGS" width="29" height="32" alt="|LANG_PLUGINS|" />|LANG_PLUGINS|</h2>
+        <ul class="no_icons">
+        <li><a href="/CMD_PLUGIN_MANAGER">|LANG_PLUGIN_MANAGER|</a><span id=plugin_updates class=count_notice style="visibility: hidden;"></span></li>';
+            if($data0) echo '<li>'.$data0.'</li>';
+            if($data1) echo '<li>'.$data1.'</li>';
+            if($data2) echo '<li>'.$data2.'</li>';
+            if($data3) echo '<li>'.$data3.'</li>';
+            if($data4) echo '<li>'.$data4.'</li>';
+            if($data5) echo '<li>'.$data5.'</li>';    
+        echo '</ul></div></div>';
+
+?>
+DONE|
+        
+        <div class="right">
+        <div class="link_list">
+        	<h2><img src="/IMG_UPDT_DAD" width="29" height="32" alt="" />Update DirectAdmin</h2>
+          <ul class="no_icons">
+			<li><a href="/CMD_LICENSE">|LANG_LICENSE_UPDATES|</a><span id=program_updates class=count_notice style='visibility: hidden;'></span></li>
+          </ul>  
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+    </div>
+
+|*if AJAX="1"|
+	<script type="text/javascript">
+                set_admin_level_updates();
+        </script>
+|*endif|

@@ -1,0 +1,82 @@
+|LF_STANDARD|
+|?TREE=&raquo; <a class="tree" href="/CMD_LOG_VIEWER">`LANG_LOG_VIEWER`</a>|
+|?HELP_SECTION=`ADMIN_HELPER`|
+|HTM_ADMIN_TOP|
+
+<div id="current_model" class="CMD_LOG_VIEWER"></div>
+
+	<div class="info_table forms">
+		<span class="title">|LANG_SELECT_LOG|</span>
+		
+	<form action="/CMD_LOG_VIEWER" method="get">
+		<div class="even">
+				
+				<span class="td_label_small">
+					<span class="i">|LANG_LOG_FILE|</span>
+				</span>
+				
+				<span class="td">
+					<span class="i">|FILES|</span>
+				</span>
+			
+		</div>	
+		
+		<div class="odd">
+				
+				<span class="td_label">
+					<span class="i">|LANG_NUM_LINES|</span>
+				</span>
+				
+				<span class="td">
+					<span class="i"><input type="text" name="lines" value="50" size="4" /> |LANG_ZERO_FOR_ENTIRE|</span>
+				</span>
+			
+		</div>
+		
+		<div class="even">
+				
+				<span class="td_label">
+					<span class="i">|LANG_OUTPUT_TYPE|</span>
+				</span>
+				
+				<span class="td">
+					<span class="i">
+						<input type="radio" name="type" value="textarea" checked="checked" />|LANG_TEXT_AREA| <br>
+						<input type="radio" name="type" value="raw" />|LANG_RAW|
+					</span>
+				</span>
+			
+		</div>
+
+                <div class="odd">
+
+                                <span class="td_label">
+                                        <span class="i">|LANG_GREP|</span>
+                                </span>
+
+                                <span class="td">
+                                        <span class="i"><input type="text" name="grep" value="|GREPVAL|" size="32"> <input type=checkbox name=invert_grep value="yes" |INVERTCHECKED|>|LANG_INVERT| &nbsp;<input type=checkbox name=ignore_case value="yes" |CASECHECKED|>|LANG_IGNORE_CASE|</span>
+                                </span>
+
+                </div>
+		
+		<span class="save_menu">
+				
+				<span>
+					<input type="submit" value="|LANG_SHOW_LOG|" />
+				</span>
+			
+		</span>
+
+</form>
+
+
+
+</div>
+
+		<div class="textarea">
+		<textarea cols="87" rows="25" wrap="off">|LOGDATA|</textarea>
+		</div>
+
+|HTM_ADMIN_BOTTOM|
+

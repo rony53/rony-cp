@@ -1,0 +1,114 @@
+|?TREE=&raquo; `ALL_DOMAINS_SELECT` &raquo; <a class=tree href="/CMD_EMAIL_FILTER?DOMAIN=`DOMAIN`">`LANG_EMAIL_FILTERS`</a>|
+|?HELP_SECTION=`USER_HELPER`/email.html#filters|
+|HTM_USER_TOP|
+
+	<div id="current_model" class="CMD_EMAIL_FILTER"></div>
+
+	<div class="flash_holder">
+    	<div class="rounder_t"></div>
+    	<div class="roundee">
+			<div class="flash" id="notice"><img src="/IMG_NOTICE" alt="" /> 
+
+			|LANG_WORD_WARNING|
+			
+			</div>
+
+		</div>
+		<div class="rounder_b"></div>
+	</div>
+
+	<div class="info_table forms">
+
+	<span class="title"><b>|LANG_EMAIL_FILTERS|</b></span>
+			
+<form action="/CMD_EMAIL_FILTER" method="post">
+	<input type="hidden" name="action" value="add" />
+	<input type="hidden" name="domain" value="|DOMAIN|" />
+	<input type="hidden" name="type" value="email" />
+	
+	<div class="even">
+		<span class="td_label"><span class="i">|LANG_BLOCK_EMAIL|</span></span>
+		<span class="td ie_smaller"><span class="i"><input type="text" name="value" /></span></span>
+		<span class="td_checkbox"><span class="i"><input type="submit" name="add" value="|LANG_BLOCK|" /></span></span>
+	</div>
+	
+</form>
+
+<form action="/CMD_EMAIL_FILTER" method="post">
+	<input type="hidden" name="action" value="add" />
+	<input type="hidden" name="domain" value="|DOMAIN|" />
+	<input type="hidden" name="type" value="domain" />
+	
+	<div class="odd">
+		<span class="td_label"><span class="i">|LANG_BLOCK_DOMAIN|</span></span>
+		<span class="td ie_smaller"><span class="i"><input type="text" name="value" /></span></span>
+		<span class="td_checkbox"><span class="i"><input type=submit name=add value="|LANG_BLOCK|" /></span></span>
+	</div>
+	
+</form>
+
+<form action="/CMD_EMAIL_FILTER" method="post">
+	<input type="hidden" name="action" value="add" />
+	<input type="hidden" name="domain" value="|DOMAIN|" />
+	<input type="hidden" name="type" value="word" />
+	
+	<div class="even">
+		<span class="td_label"><span class="i">|LANG_BLOCK_WORD|</span></span>
+		<span class="td ie_smaller"><span class="i"><input type="text" name="value"></span></span>
+		<span class="td_checkbox"><span class="i"><input type=submit name=add value="|LANG_BLOCK|" ></span></span>
+	</div>
+	
+</form>
+
+<form action="/CMD_EMAIL_FILTER" method="post">
+	<input type="hidden" name="action" value="add" />
+	<input type="hidden" name="domain" value="|DOMAIN|" />
+	<input type="hidden" name="type" value="size" />
+	<div class="odd">
+		<span class="td_label"><span class="i">|LANG_BLOCK_SIZE|</span></span>
+		<span class="td ie_smaller"><span class="i"><input type="text" name="value" />|LANG_KB|</span></span>
+		<span class="td_checkbox"><span class="i"><input type="submit" name="add" value="|LANG_BLOCK|" /></span></span>
+	</div>
+	
+</form>
+
+<form action="/CMD_EMAIL_FILTER" method="post">
+	<input type="hidden" name="action" value="adult" />
+	<input type="hidden" name="domain" value="|DOMAIN|" />
+	
+	<div class="even">
+		
+		<span class="td_label_big" style="width: 645px;"><span class="i">|LANG_BLOCK_ADULT| <b>|STATE|</b> </span></span>
+		<span class="td_checkbox"><span class="i"><input type="submit" name="add" value="|ADULT|" /></span></span>
+	
+    </div>
+
+</form>
+
+
+
+<form action="/CMD_EMAIL_FILTER" method="post">
+	<input type="hidden" name="action" value="action" />
+	<input type="hidden" name="domain" value="|DOMAIN|" />
+	<div class="odd">
+		<span class="td_label"><span class="i">
+		|LANG_ACTION_FILTER|:
+		</span></span>
+		<span class="td"><span class="i">
+		<input type="radio" name="value" value="drop" |DROP_CHECKED| /> |LANG_ACTION_DROP|
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<input type="radio" name="value" value="email" |EMAIL_CHECKED| /> |LANG_ACTION_TO_SPAM|
+	    </span></span>
+	</div>
+	<span class="save_menu">
+		<span><input type="submit" name="add" value="|LANG_SAVE|" /></span>
+	</span>
+</form>
+
+</div>
+
+|FILTERS|
+
+<br/>
+
+|HTM_USER_FOOTER|

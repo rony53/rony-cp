@@ -1,0 +1,113 @@
+|LF_STANDARD|
+|LF_CREATE|
+|?TREE=&raquo; <a class="tree" href="/CMD_USER_SHOW">`LANG_SHOW_USERS`</a> &raquo; <a class="tree" href="/CMD_SHOW_USER?user=`user`">`LANG_USER` `user`</a>|
+|?HELP_SECTION=`RESELLER_HELPER`/modify.html|
+|HTM_RESELLER_TOP|
+
+
+	<div id="current_model" class="CMD_USER_SHOW"></div>
+	
+		<div class="info_table forms">
+			<span class="title"><b>|LANG_DETAILS| |user|</b></span>
+		
+		<span class="save_menu">
+			<center class="bigger">
+			<span>
+				<form action="CMD_LOGIN" method="post">
+				<input type="hidden" name="username" value="|LOGIN_AS_MASTER_NAME|\||user|" />
+				<input type="submit" value="|LANG_LOGIN_AS| |user|" />
+				</form>
+			</span>
+			
+			<span>
+				<form action="CMD_LOGIN" method="post">
+				<input type="button" value="|LANG_MODIFY_USER| |user|" onclick="location.href='CMD_MODIFY_USER?user=|user|'" />
+				</form>
+			</span>
+			
+			<span>
+				<form name="tableform" action='CMD_SELECT_USERS' method='get'>
+					<input type="hidden" name="select0" value="|user|" />
+					<input type="submit" value='|LANG_DELETE_USER| |user|' name="delete" />
+				</form>
+			</span>
+			
+			<span>
+				<form action="CMD_SELECT_USERS" method='get'>
+					<input type="hidden" name="select0" value="|user|" />
+					<input type="hidden" name="location" value="CMD_SHOW_USER?user=|user|" />
+					<input type="submit" value="|LANG_SUSPEND|" name="dosuspend" />
+				</form>
+			</span>
+			
+			<span>
+				<form action="CMD_SELECT_USERS" method='get'>
+					<input type="hidden" name="select0" value="|user|" />
+					<input type="hidden" name="location" value="CMD_SHOW_USER?user=|user|" />
+					<input type="submit" value="|LANG_UNSUSPEND|" name="dounsuspend" />
+				</form>
+			</span>
+			</center>
+		</span>
+
+	</div>
+
+		|DOMAINS|
+		
+		|STATS|
+
+<script type="text/javascript">
+<!--
+function showUserMessage()
+{
+	var message = window.open("CMD_EDIT_USER_MESSAGE","message","width=740,height=480,scrollbars=no,resizable=yes");
+}
+// -->
+</script>
+
+	<div class="info_table forms">
+		<form action="/CMD_RESEND_EMAIL" method="post">
+			<input type="hidden" name="user" value="|user|" />
+			<span class="title">|LANG_RESEND_WELCOME_EMAIL|</span>
+				<div class="even">
+					<span class="td_label"><span class="i">|LANG_SEND_TO|:</span></span>
+					<span class="td"><span class="i">
+						<input type="text" name="email" value="|USER_EMAIL|" />
+					</span></span>
+				</div>
+							
+				
+		<span class="save_menu">
+			
+			<span>
+				<input type="submit" value="|LANG_SEND|" />&nbsp;&nbsp;&nbsp;&nbsp;
+			</span>
+			<span>
+				<input type="checkbox" name="newpass" value="yes" />|LANG_RANDOM_PASS|
+			</span>
+			<span>
+				<a href="javascript:showUserMessage();">|LANG_EDIT_USER_MESS|</a>
+				</span>
+			</span>
+		</form>
+	</div>
+
+				
+	<div class="info_table forms">
+		<span class="title">|LANG_USER_COMMENTS|</span>
+		<form action="CMD_COMMENTS" method="post">
+			<input type=hidden name=user value="|user|" />
+			<input type=hidden name=location value="CMD_SHOW_USER" />
+			
+			<div class="textarea">
+				<textarea rows="15" cols="87" name="comments">|COMMENTS|</textarea>
+			</div>
+			
+			<span class="save_menu">
+				<span><input type=submit value="|LANG_SAVE_COMMENTS|" /></span>
+			</span>
+	
+		</form>
+	</div>
+
+|HTM_RESELLER_FOOTER|

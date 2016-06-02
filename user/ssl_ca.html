@@ -1,0 +1,87 @@
+|LF_STANDARD|
+|LF_SSL|
+|?TREE=&raquo; <a class="tree" href="/CMD_SHOW_DOMAIN?domain=`DOMAIN`">`DOMAIN`</a> &raquo; <a class="tree" href="/CMD_SSL?DOMAIN=`DOMAIN`">`LANG_SSL`</a> &raquo; <a class="tree" href="/CMD_SSL?DOMAIN=`DOMAIN`&view=cacert">`LANG_CA_SSL`</a>|
+|?HELP_SECTION=`USER_HELPER`/ssl.html|
+|HTM_USER_TOP|
+
+	<div id="current_model" class="CMD_SSL"></div>
+
+<script type="text/javascript">
+function copyCertificate(text)
+{
+	text.focus();
+	text.select();
+	if (document.all)
+	{
+		therange = text.createTextRange();
+		therange.execCommand("Copy");
+		alert('|LANG_CERT_COPIED|');
+	}
+}
+
+function pasteCertificate(text)
+{
+	text.focus();
+	text.select();
+
+	if (document.all)
+	{
+		document.execCommand("Paste");
+
+		with (document.info)
+		for (var i=0; i < elements.length; i++)
+			if (elements[i].type == 'radio')
+				if ( (elements[i].name == "type") && (elements[i].value == "paste")  )
+				{
+					elements[i].checked = true;
+				}
+	}
+}
+
+</script>
+
+<div class="flash_holder">
+      <div class="rounder_t"></div>
+      <div class="roundee">
+
+        <div class="flash" id="notice" ><img src="/IMG_NOTICE" alt="" /> 
+        	<b>|RESULT|</b>
+        </div>
+
+      <div class="rounder_b"></div>
+    </div>
+    </div>
+
+	<div class="info_table forms">
+			<span class="title">|LANG_CA_CERT|</span>
+
+			<form name="info" action="CMD_SSL" method="post">
+			<input type="hidden" name="domain" value="|DOMAIN|" />
+			<input type="hidden" name="action" value="save" />
+			<input type="hidden" name="type" value="cacert" />
+	
+			<div class="even">
+				<span class="td_url"><span class="i_center">
+					<input type="checkbox" name="active" value="yes" |CHECKED| /> |LANG_USE_CA|
+				</span></span>
+			</div>
+						
+			<div class="textarea">
+				<textarea style="font-family: courier new;" name="cacert" cols="87" rows="16">|CACERT|</textarea>
+			</div>
+			
+			<span class="save_menu">
+				 <span><input type="submit" name="submit" value="|LANG_SAVE|" /></span>
+				 
+				 <span><input type="button" value="|LANG_PASTE_FROM|" onclick="pasteCertificate(document.info.cacert)" /></span>
+				 
+				 <span><input type="button" value="|LANG_COPY_TO|" onclick="copyCertificate(document.info.cacert)" /> |LANG_IE_ONLY|</span>
+				
+			</span>
+
+	</form>
+
+</div>
+
+
+|HTM_USER_FOOTER|

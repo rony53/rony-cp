@@ -1,0 +1,48 @@
+|LF_STANDARD|
+|?TREE=&raquo; <a class="tree" href="/CMD_NAME_SERVER">`LANG_NAME_SERVERS`</a>|
+|?HELP_SECTION=`RESELLER_HELPER`/nameserver.html|
+|HTM_RESELLER_TOP|
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+    $("br").remove();
+
+});
+
+</script>
+
+	<div id="current_model" class="CMD_NAME_SERVER"></div>
+	
+	<div class="info_table forms">
+		<span class="title"><b>|LANG_NAME_SERVERS|</b></span>
+	</div>
+	
+	|IPS|
+
+	<div class="info_table forms">
+		<form action="/CMD_NAME_SERVER" method="post">
+		<input type="hidden" name="action" value="modify" />
+		
+		<span class="title">|LANG_SET_NS|</span>
+		
+		<div class="even">
+			<span class="td_label"><span class="i">|LANG_NAME_SERVER_1|</span></span>
+			<span class="td"><span class="i"><input type="text" name="ns1" size="32" value="|NS1|" /></span></span>
+		</div>
+					
+		<div class="odd">
+			<span class="td_label"><span class="i">|LANG_NAME_SERVER_2|</span></span>
+			<span class="td"><span class="i"><input type="text" name="ns2" size="32" value="|NS2|" /></span></span>
+		</div>
+	
+		<span class="save_menu">
+			<span><input type="submit" value="|LANG_SAVE|" /></span>
+		</span>
+		
+		</form>
+		
+	</div>
+
+|HTM_RESELLER_BOTTOM|

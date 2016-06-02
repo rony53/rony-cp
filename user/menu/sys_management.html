@@ -1,0 +1,22 @@
+|LF_STANDARD|
+<li>
+<a href="javascript: void(0);" onclick="$().slide_menu('sys_management_menu')"><img src="/IMG_SYS_MNG" width="29" height="32" alt="" />|LANG_SYS_MANAGEMENT|</a>
+<ul id="sys_management_menu">
+<li id="CMD_USER_STATS"><a href="/CMD_USER_STATS?domain=|SESSION_SELECTED_DOMAIN|">|LANG_SITE_SUM_STATS_LOGS|</a></li>
+|*if USERFTPMAX!="0"|
+<li id="CMD_FTP"><a href="/CMD_FTP?domain=|SESSION_SELECTED_DOMAIN|">|LANG_FTP_MANAGEMENT|</a></li>
+|*endif|
+|*if USERDATABASEMAX!="0"|
+<li id="CMD_DB"><a href="/CMD_DB?domain=|SESSION_SELECTED_DOMAIN|">|LANG_MYSQL_MANAGEMENT|</a></li>
+|*endif|
+<li id="CMD_PERL_MODULES"><a href="/CMD_PERL_MODULES?domain=|SESSION_SELECTED_DOMAIN|">|LANG_INSTALLED_PERL_MODULES|</a></li>
+|*if USERSYSINFO="ON"|
+<li id="CMD_SYSTEM_INFO"><a href="/CMD_SYSTEM_INFO?domain=|SESSION_SELECTED_DOMAIN|">|LANG_SERVER_INFO|</a></li>
+|*endif|
+<li id="HTM_ERROR_PAGES"><a href="/HTM_ERROR_PAGES?domain=|SESSION_SELECTED_DOMAIN|">|LANG_CUSTOM_ERROR_PAGES|</a></li>
+|*if USERPOINTERSMAX!="0"|
+<li id="CMD_DOMAIN_POINTER"><a href="/CMD_DOMAIN_POINTER?domain=|SESSION_SELECTED_DOMAIN|">|LANG_DOMAIN_POINTERS|</a></li>
+|*endif|
+<li id="CMD_REDIRECT"><a href="/CMD_REDIRECT?domain=|SESSION_SELECTED_DOMAIN|">|LANG_SITE_REDIRECTION|</a></li>
+</ul>
+</li>

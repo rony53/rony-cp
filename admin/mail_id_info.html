@@ -1,0 +1,42 @@
+|LF_STANDARD|
+|LF_MAIL_QUEUE|
+|?TREE=&raquo; <a class="tree" href="/CMD_MAIL_QUEUE">`LANG_MAIL_QUEUE_ADMIN`</a> &raquo; <a class="tree" href="/CMD_MAIL_QUEUE?id=`id`">`LANG_VIEW` `id`</a>|
+|?HELP_SECTION=`ADMIN_HELPER`|
+|HTM_ADMIN_TOP|
+
+	<div id="current_model" class="CMD_MAIL_QUEUE"></div>
+
+	<div class="info_table forms">
+	<form action="/CMD_MAIL_QUEUE" method="post">
+		<input type="hidden" name="action" value="select" />
+		<input type="hidden" name="select0" value="|id|" />
+		<span class="save_menu">
+			<span><input type="submit" value='|LANG_THAW|' name="thaw" /></span>
+			<span><input type="submit" value='|LANG_FREEZE|' name="freeze" /></span>
+			<span><input type="submit" value='|LANG_RETRY|' name="retry" /></span>
+			<span><input type="submit" value='|LANG_BOUNCE|' name="bounce" /></span>
+			<span><input type="submit" value='|LANG_DELETE|' name="delete" /></span>
+		</span>
+	</form>
+	</div>
+	
+	<div class="info_table forms">
+		<span class="title">|LANG_EMAIL_HEADERS|</span>
+			<div class="textarea">
+				<textarea style="FONT-FAMILY: courier, courier-new" wrap="off" readonly="readonly" cols="87" rows="10">|HEADERS|
+				</textarea>
+			</div>
+		<span class="title">|LANG_EMAIL_BODY|</span>
+			<div class="textarea">
+				<textarea style="FONT-FAMILY: courier, courier-new" wrap="off" readonly="readonly" cols="87" rows="20">|EMAIL_BODY|
+				</textarea>
+			</div>
+		<span class="title">|LANG_LOG|</span>
+			<div class="textarea">
+				<textarea style="FONT-FAMILY: courier, courier-new" wrap="off" readonly="readonly" cols="87" rows="10">|LOGS|
+				</textarea>
+			</div>
+			
+	</div>
+
+|HTM_ADMIN_BOTTOM|

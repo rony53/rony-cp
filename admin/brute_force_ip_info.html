@@ -1,0 +1,41 @@
+|LF_STANDARD|
+|?TREE=&raquo; <a class="tree" href="/CMD_BRUTE_FORCE_MONITOR">Brute Force Monitor</a>|
+|?HELP_SECTION=`ADMIN_HELPER`|
+|HTM_ADMIN_TOP|
+
+<div id="current_model" class="CMD_BRUTE_FORCE_MONITOR"></div>
+
+<div class="info_table forms">
+<span class="title">
+    <b>|LANG_IP_INFO|</b> |LANG_ON| |BLOCK_IP|<br>
+</span>
+
+<div class="textarea">
+    <textarea cols="87" rows="25" readonly>|IPINFO|</textarea>
+</div>
+</div>
+<br><br>
+
+|*if HAVE_BLOCK_SH="1"|
+<div class="info_table forms">
+<form name=blockform action='?' method='POST'>
+	<input type='hidden' name='ip' value='|BLOCK_IP|'>
+	<input type='hidden' name='action' value='block'>
+
+<span class="title">
+    |LANG_SCRIPT_FOUND|
+</span>
+
+<div class="even">
+        <span class="td"><span class="i">
+	<input type='button' value='|LANG_BLOCK_THIS_IP|' onclick="if (confirm('|LANG_ARE_YOU_SURE_IP| |BLOCK_IP|')){document.blockform.submit();}">
+	</span></span>
+</div>
+</form>
+</div>
+|*else|
+|LANG_NO_SCRIPT_FOUND|
+<a target=_blank href="http://www.directadmin.com/features.php?id=1229">http://www.directadmin.com/features.php?id=1229</a>
+|*endif|
+
+|HTM_ADMIN_BOTTOM|

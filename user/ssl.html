@@ -1,0 +1,231 @@
+|LF_STANDARD|
+|?TREE=&raquo; <a class=tree href="/CMD_SHOW_DOMAIN?domain=`DOMAIN`">`DOMAIN`</a> &raquo; <a class=tree href="/CMD_SSL?DOMAIN=`DOMAIN`">`LANG_SSL`</a>|
+|?HELP_SECTION=`USER_HELPER`/ssl.html|
+|HTM_USER_TOP|
+
+	<div id="current_model" class="CMD_SSL"></div>
+
+<script type="text/javascript">
+function copyCertificate(text)
+{
+	text.focus();
+	text.select();
+	if (document.all)
+	{
+		therange = text.createTextRange();
+		therange.execCommand("Copy");
+		alert('|LANG_CERT_COPIED|');
+	}
+}
+
+function pasteCertificate(text)
+{
+	text.focus();
+	text.select();
+
+	if (document.all)
+	{
+		document.execCommand("Paste");
+
+		with (document.info)
+		for (var i=0; i < elements.length; i++)
+			if (elements[i].type == 'radio')
+				if ( (elements[i].name == "type") && (elements[i].value == "paste")  )
+				{
+					elements[i].checked = true;
+				}
+	}
+}
+
+function setRequest(onoff)
+{
+	if (document.info)
+	{
+		with (document.info)
+		{
+			for (var i=0; i < elements.length; i++)
+				if (elements[i].type == 'radio')
+					if ( elements[i].name == "request" )
+					{
+						if (onoff == 'on')
+							elements[i].disabled = false;
+						else
+							elements[i].disabled = true;
+					}
+		}
+	}
+}
+
+</script>
+
+    <div class="flash_holder">
+      <div class="rounder_t"></div>
+      <div class="roundee">
+
+        <div class="flash" id="notice" ><img src="/IMG_NOTICE" alt="" /> 
+            
+            |*if SSL_ON="yes"|
+            |LANG_SSL_ENABLED|
+            |*else|
+            |LANG_SSL_DISABLED|
+            |*endif|
+            <a href="/CMD_ADDITIONAL_DOMAINS?action=view&domain=|domain|">|LANG_SSL_HERE|</a>.
+
+        </div>
+
+      <div class="rounder_b"></div>
+    </div>
+    </div>
+
+	
+
+
+	<div class="info_table forms">
+		<span class="title">|LANG_SSL_CERTS|</span>
+
+		<form name="info" action="CMD_SSL" method="post">
+		<input type="hidden" name="domain" value="|DOMAIN|" />
+		<input type="hidden" name="action" value="save" />
+			
+		<div class="even">
+			<span class="td_checkbox"><span class="i">
+				<input type="radio" name="type" value="server" |SERVERCHECKED| onclick="setRequest('off');" />
+			</span></span>
+                        <span class="td"><span class="i">
+                                |LANG_USE_SERVERS| (|LANG_USE_SHARED|)
+                        </span></span>
+		</div>
+					
+		<div class="odd">
+                        <span class="td_checkbox"><span class="i">
+                                <input type=radio name=type value="create" onclick="setRequest('on');" />
+                        </span></span>
+			<span class="td"><span class="i">
+				<input type="radio" name="request" value="no" checked="checked" disabled="disabled" /> |LANG_CREATE_SELF_SIGNED|<br />
+				<input type="radio" name="request" value="yes" disabled="disabled" /> |LANG_CREATE_CSR|
+				|*if LETSENCRYPT="1"|
+				<br><input type="radio" name="request" value="letsencrypt" disabled="disabled"> |LANG_FREE_LETS_ENCRYPT| <a class="listtitle" target="_blank" href="https://letsencrypt.org/">Let's Encrypt</a></td>
+				|*endif|
+			</span></span>
+		</div>
+					
+		<div class="even">
+			<span class="td_label"><span class="i">|LANG_COUNTRY|</span></span>
+			<span class="td"><span class="i">
+				<input type="text" name="country" size="2" maxlength="2" />
+			</span></span>
+		</div>
+		
+		<div class="odd">
+			<span class="td_label"><span class="i">|LANG_STATE|</span></span>
+			<span class="td"><span class="i">
+				<input type="text" name="province" />
+			</span></span>
+		</div>
+		
+		<div class="even">
+			<span class="td_label"><span class="i">|LANG_CITY|</span></span>
+			<span class="td"><span class="i">
+				<input type="text" name="city" />
+			</span></span>
+		</div>
+		
+		<div class="odd">
+			<span class="td_label"><span class="i">|LANG_COMPANY|</span></span>
+			<span class="td"><span class="i">
+				<input type="text" name="company">
+			</span></span>
+		</div>
+		
+		<div class="even">
+			<span class="td_label"><span class="i">|LANG_COMPANY_DIV|</span></span>
+			<span class="td"><span class="i">
+				<input type="text" name="division">
+			</span></span>
+		</div>
+		
+		<div class="odd">
+			<span class="td_label"><span class="i">|LANG_COMMON_NAME|</span></span>
+			<span class="td"><span class="i">
+				<input type="text" name="name" value="www.|DOMAIN|">
+			</span></span>
+		</div>
+		
+		<div class="even">
+			<span class="td_label"><span class="i">|LANG_EMAIL|</span></span>
+			<span class="td"><span class="i">
+				<input type="text" name="email">
+			</span></span>
+		</div>
+		
+		<div class="odd">
+			<span class="td_label"><span class="i">|LANG_KEYSIZE|</span></span>
+			<span class="td"><span class="i">
+				<select class="selectclass" name="keysize">
+					<option value="2048">2048</option>
+					<option selected="selected" value="4096">4096</option>
+				</select>
+			</span></span>
+		</div>
+
+		<div class="even">
+	        	<span class="td_label"><span class="i">|LANG_CERT_TYPE|</span></span>
+                        <span class="td"><span class="i">
+				<select class=selectclass name=encryption>
+					<option value="rsa">SHA1</option>
+					<option value="sha256" selected>SHA256</option>
+				</select>
+                        </span></span>
+		</div>
+	
+		<div class="odd">
+			<span class="td_label"><span class="i">|LANG_PASTE|</span></span>
+			<span class="td"><span class="i">
+				<input type="radio" name="type" value="paste" |PASTECHECKED| onclick="setRequest('off');" />
+			</span></span>
+		</div>
+		
+		<div class="textarea">
+			<textarea style="font-family: courier new; " name="certificate" rows="16" cols="80">|KEY||CERTIFICATE|</textarea>
+		</div>
+		
+		<span class="save_menu">
+			<span><input type="submit" name="submit" value="|LANG_SAVE|" /></span>
+			 <span><input type="button" value="|LANG_PASTE_FROM|" onclick="pasteCertificate(document.info.certificate)" /></span>
+			 
+			 <span><input type="button" value="|LANG_COPY_TO|" onclick="copyCertificate(document.info.certificate)" /> |LANG_IE_ONLY|</span>
+	 		|*if LETSENCRYPT_RENEWAL_DAYS!=""|
+				<div style='padding: 20px; font-weight: bold;'>|LANG_LETSENCRYPT_IN_USE_AUTO_RENEWAL| |LETSENCRYPT_RENEWAL_DAYS| |LANG_LETSENCRYPT_DAYS|.</div>
+			|*endif|
+
+		</span>
+			
+	</form>
+
+</div>
+
+<div class="flash_holder">
+      <div class="rounder_t"></div>
+      <div class="roundee">
+
+        <div class="flash" id="notice" ><img src="/IMG_NOTICE" alt="" /> 
+            
+            |LANG_NOTE|<br/>
+            <b>|RESULT|</b><br/>
+
+        </div>
+
+      <div class="rounder_b"></div>
+    </div>
+    </div>
+
+		<div class="info_table forms">
+		<div class="even">
+			<span class="td_url"><span class="i_center">
+				<a href="/CMD_SSL?DOMAIN=|DOMAIN|&view=cacert">|LANG_CLICK_HERE|</a>
+			</span></span>
+		</div>
+	</div>
+
+
+|HTM_USER_FOOTER|

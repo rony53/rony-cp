@@ -1,0 +1,132 @@
+|LF_STANDARD|
+|LF_CREATE|
+|?TREE=&raquo; <a class=tree href="/CMD_USER_SHOW">`LANG_SHOW_USERS`</a> &raquo; <a class=tree href="/HTM_ACCOUNT_USER_CREATE">`LANG_CREATE_USER`</a>|
+|?HELP_SECTION=`RESELLER_HELPER`/create.html|
+|HTM_RESELLER_TOP|
+
+|?CHECK_PASS=|
+|?RANDOM_PASS=randomPass()|
+|*if AJAX="1"|
+	|?CHECK_PASS=onChange="ajax_checkPass()"|
+	|?RANDOM_PASS=ajax_randomPass('')|
+	<script type="text/javascript" src="JS_CREATION_CHECK"></script>
+|*endif|
+
+        <div id="current_model" class="HTM_ACCOUNT_USER_CREATE"></div>
+
+<script type="text/javascript">
+<!--
+
+|HTM_JAVASCRIPT|
+
+function setText( textfld, checkbx)
+{
+    if (checkbx.checked)
+        textfld.disabled = true;
+    if (!checkbx.checked)
+        textfld.disabled = false;
+}
+
+function setTexts()
+{
+    with (document.reseller)
+    {
+        if (sharedip.checked) ip.disabled = true;
+        if (uquota.checked) quota.disabled = true;
+        if (ubandwidth.checked) bandwidth.disabled = true;
+        if (undomains.checked) ndomains.disabled = true;
+        if (unsqldbs.checked) nsqldbs.disabled = true;
+    }
+}
+
+function formOK()
+{
+    with (document.reseller)
+    {
+        if (checkName() && checkPass() && checkDomain() && checkEmail())
+            return true;
+    }
+    return false;
+}
+
+function showUserMessage()
+{
+    var message = window.open("CMD_EDIT_USER_MESSAGE","message","width=740,height=480,scrollbars=no,resizable=yes");
+}
+
+// -->
+</script>
+
+	<div class="content">
+	<div class="info_table forms">
+		<form name="reseller" action="CMD_ACCOUNT_USER" method="post" target="_parent" onsubmit="return formOK()">
+|HTM_PREVENT_AUTOFILL|
+
+			<input type="hidden" name="action" value="create" />
+			
+			<span class="title">|LANG_CREATE_USER|</span>
+			
+			<div class="even">
+				<span class="td_label"><span class="i">|LANG_USERNAME|:</span></span>
+				<span class="td"><span class="i"><input type="text" name="username" size="20" maxlength="|MAX_USERNAME_LENGTH|" onchange="checkName()" /></span></span>
+			</div>
+						
+			<div class="odd">
+				<span class="td_label"><span class="i">|LANG_EMAIL|:</span></span>
+				<span class="td"><span class="i"><input type="text" name="email" size="20" onchange="checkEmail()" /></span></span>
+			</div>
+			
+			<div class="even">
+				<span class="td_label"><span class="i">|LANG_ENTER_PASS|:</span></span>
+				<span class="td"><span class="i">
+					<input type="password" name="passwd" size="20" style="float: left" />
+					<div class="input_submit grey">
+					<input type="button" value="|LANG_RANDOM|" onclick="randomPass()" />
+					</div>
+				</span></span>
+			</div>
+						
+			<div class="odd">
+				<span class="td_label"><span class="i">|LANG_RE-ENTER_PASS|:</span></span>
+				<span class="td"><span class="i">
+					<input type="password" name="passwd2" size="20" onchange="checkPass()" />
+				</span></span>
+			</div>
+			
+			<div class="even">
+				<span class="td_label"><span class="i">|LANG_DOMAIN|:</span></span>
+				<span class="td"><span class="i"><input type="text" name="domain" size="20" onchange="checkDomain()" /></span></span>
+			</div>
+						
+			<div class="odd">
+				<span class="td_label"><span class="i">|LANG_USE_USER_PACK|:</span></span>
+				<span class="td"><span class="i">|PACKAGES|</span></span>
+			</div>
+			
+			<div class="even">
+				<span class="td_label"><span class="i">|LANG_IP|:</span></span>
+				<span class="td"><span class="i">|IPSELECT|</span></span>
+			</div>
+						
+			<div class="odd">
+				<span class="td_label"><span class="i">|LANG_EMAIL_NOTIFY|:</span></span>
+				<span class="td"><span class="i">
+					<input type="checkbox" value="yes" name="notify" class="input_checkbox" checked="checked" />
+					
+						<div class="input_submit grey">
+						<input type="button" value="|LANG_EDIT_USER_MESS|" onclick="javascript:showUserMessage();" />
+						</div>
+						
+				</span></span>
+			</div>
+			
+			<span class="save_menu">
+				<span><input type="submit" class="input_submit" name="customize" value="|LANG_CUSTOMIZE|" /></span>
+				<span><input type="submit" class="input_submit" name="add" value="|LANG_SUBMIT|" /></span>
+			</span>
+				
+		</form>
+		
+	</div>
+	</div>
+|HTM_RESELLER_BOTTOM|

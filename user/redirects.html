@@ -1,0 +1,48 @@
+|LF_STANDARD|
+|?TREE=&raquo; `ALL_DOMAINS_SELECT` &raquo; <a class=tree href="/CMD_REDIRECT?DOMAIN=`DOMAIN`">`LANG_SITE_REDIRECTS`</a>|
+|?HELP_SECTION=`USER_HELPER`/misc.html#redirect|
+|HTM_USER_TOP|
+
+	<div id="current_model" class="CMD_REDIRECT"></div>
+	
+	<div class="info_table forms">
+	<form name="info" action="/CMD_REDIRECT" method="post">
+	<input type="hidden" name="domain" value="|DOMAIN|" />
+	<input type="hidden" name="action" value="add" />
+	<span class="title">|LANG_ADD_NEW_REDIRECT|</span>
+		
+		<div class="even">
+			<span class="td_label"><span class="i">|LANG_LOCAL_URL|</span></span>
+			<span class="td"><span class="i">
+				|DOMAIN|<input type="text" name="from" value="/" /> |LANG_EG_REDIRECT|
+			</span></span>
+		</div>
+				
+		<div class="odd">
+			<span class="td_label"><span class="i">|LANG_REDIRECT_TYPE|</span></span>
+			<span class="td"><span class="i">
+				<select name="type">
+					<option value="301">301 - |LANG_PERMANENT|</option>
+					<option value="302" selected>302 - |LANG_TEMPORARY|</option>
+					<option value="303">303 - |LANG_REPLACED|</option>
+				</select>
+			</span></span>
+		</div>
+		
+		<div class="even">
+			<span class="td_label"><span class="i">|LANG_DESTINATION_URL|</span></span>
+			<span class="td"><span class="i">
+				<input type="text" name="to" value="http://" /> |LANG_EG_DOMAIN|
+			</span></span>
+		</div>
+		
+		<span class="save_menu">
+			<span><input type="submit" value="|LANG_SAVE|" /></span>
+		</span>
+		
+	</form>
+	</div>
+
+	|REDIRECTS|
+
+|HTM_USER_FOOTER|

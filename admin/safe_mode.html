@@ -1,0 +1,78 @@
+|LF_STANDARD|
+|?TREE=&raquo; <a class="tree" href="/CMD_PHP_SAFE_MODE">`LANG_SAFE_MODE_SETTINGS`</a>|
+|?HELP_SECTION=`ADMIN_HELPER`|
+|HTM_ADMIN_TOP|
+<div id="current_model" class="CMD_PHP_SAFE_MODE"></div>
+<style type="text/css">
+.safe_mode_on { COLOR: green; FONT-WEIGHT: bold; }
+.safe_mode_off{ COLOR: red; }
+</style>
+
+
+<div class="info_table forms">
+	<form action="/CMD_PHP_SAFE_MODE" method="post">
+		<input type="hidden" name="action" value="enabled" />
+		
+		<span class="title">|LANG_SAFE_MODE_SETTINGS|</span>
+		
+		<div class="even">
+			<span class="td_label"><span class="i">|LANG_DEFAULT|:</span></span>
+			<span class="td"><span class="i">
+				<input type="radio" name="enabled" value="ON" |ONCHECKED| />|LANG_ON|
+				<input type="radio" name="enabled" value="OFF" |OFFCHECKED| />|LANG_OFF|
+			</span>
+			</span>
+		</div>
+					
+		<div class="odd">
+			<span class="td_label"><span class="i">|LANG_OBD|:</span></span>
+			<span class="td">
+				<span class="i">
+					<input type="radio" name="obdenabled" value="ON" |OBDONCHECKED| />|LANG_ON|
+					<input type="radio" name="obdenabled" value="OFF" |OBDOFFCHECKED| />|LANG_OFF|
+				</span>
+			</span>
+				</div>
+		
+		<span class="save_menu">
+			<span><input type="submit" value="|LANG_SAVE|" /></span>
+		</span>
+			
+	</form>
+
+</div>
+
+<div class="info_table forms">
+	<form action="" method="get">
+		<span class="title">|LANG_DOMAIN_FILTER|</span>
+		
+		<div class="even">
+			<span class="td_label"><span class="i">|LANG_SHOW_DOMAINS_THAT|</span></span>
+			<span class="td">
+				<span class="i">
+					<select name="comparison1">
+						<option value="none">--</option>
+						<option value="equals">|LANG_EQUAL|</option>
+						<option value="contains">|LANG_CONTAIN|</option>
+						<option selected="selected" value="startswith">|LANG_START_WITH|</option>
+					</select>
+					<input type="text" size="12" class="inputclass" name="value1" />
+				</span>
+			</span>
+		</div>
+	
+	<input type="hidden" name="sort1" value="1" />
+	<input type="hidden" name="sort1dir" value="1" />
+	<input type="hidden" name="ipp" value="50" />
+	
+	<span class="save_menu">
+		<span><input type="submit" value="|LANG_SEARCH|" /></span>
+	</span>
+	</form>
+	
+</div>
+
+|DOMAINS|
+
+|HTM_ADMIN_BOTTOM|
+

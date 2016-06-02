@@ -1,0 +1,43 @@
+|LF_SHOW_DOMAIN|
+
+<div id="level" class="user"></div>
+
+<script type="text/javascript">
+    
+    
+    var dmn = "|SESSION_SELECTED_DOMAIN|";
+    
+    function checkIfDomain() {
+    
+        if(dmn == '') {
+             alert('|LANG_SELECT_DOMAIN_FIRST|');
+             return 0;
+        } else {
+            return 1;
+        }
+    }
+    
+
+</script>
+<div class="menu">
+
+	<ul class="menu_list">
+		<li id="expand">
+    			<a href="javascript: void(0)">|LANG_EXPAND|
+    			<img src="/IMG_CONTRACT" width="16" height="16" alt="" id="con" style="visibility: hidden" />
+                        <img src="/IMG_EXPAND" width="16" height="16" alt="" id="expand2" /></a>
+		</li>
+		|HTM_USER_ACC_MAN_MENU|
+		|HTM_USER_EMAIL_MAN_MENU|
+		|HTM_USER_SYS_MAN_MENU|
+		|HTM_USER_TOOLS_SETTINGS_MENU|
+		|HTM_USER_BACKUP_MANAGER_MENU|
+		|HTM_USER_PLUGINS_MENU|
+	</ul>
+      
+</div>
+
+|HTM_USER_YOUR_ACC|
+
+</div>
+

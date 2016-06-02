@@ -1,0 +1,39 @@
+|LF_STANDARD|
+|?TREE=&raquo; <a class=tree href="/CMD_TICKET">`LANG_MESS_SYS`</a>|
+|?HELP_SECTION=`USER_HELPER`/gettingstarted.html#ticket|
+|HTM_USER_TOP|
+        <div id="current_model" class="CMD_TICKET"></div>
+
+	<div class="content">
+			
+        <div class="info_table forms">
+
+	<div class="link_list">
+            <ul class="inner">
+		<li><a href="CMD_TICKET_CREATE?TYPE=Ticket">|LANG_CREATE_TICKET|</a></li>
+		<li><a href="CMD_TICKET?action=closed">|LANG_VIEW_CLOSED_TICKETS||NEWCLOSED|</a></li>
+            </ul>
+	</div>
+
+|TICKETS|
+|MESSAGES|
+
+	<div class="info_table forms">
+		<form action="CMD_TICKET" method="post">
+			<input type="hidden" name="action" value="email" />
+			<span class="save_menu">
+				<span><input type="checkbox" name="ON" value="yes" |EMAILCHECKED| /> |LANG_EMAIL_TO| <input type="text" name="email" value="|EMAIL|" /><br />
+			        |LANG_DELETE_TICKETS| <input type="text" size="1" name="delete_tickets_days" maxlength="5" value="|DELETE_TICKETS_DAYS|"> |LANG_DAY_ZERO_NEVER|<br />
+			        |LANG_DELETE_MESSAGES| <input type="text" size="1" name="delete_messages_days" maxlength="5" value="|DELETE_MESSAGES_DAYS|"> |LANG_DAY_ZERO_NEVER|<br />
+				<input type="submit" name="save" value="|LANG_SAVE|" /></span>
+			</span>
+		</form>
+	</div>
+
+        </div>
+	</div>
+
+<br /><br />
+|CLEAR_MESSAGES_TABLE|
+
+|HTM_USER_FOOTER|

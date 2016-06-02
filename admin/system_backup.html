@@ -1,0 +1,202 @@
+|LF_STANDARD|
+|LF_BACKUPS|
+|?TREE=&raquo; <a class="tree" href="/CMD_SYSTEM_BACKUP">`LANG_SYSTEM_BACKUP`</a>|
+|?HELP_SECTION=`ADMIN_HELPER`|
+|HTM_ADMIN_TOP|
+<div id="current_model" class="CMD_SYSTEM_BACKUP"></div>
+
+<div class="info_table forms">
+	<form action="/CMD_SYSTEM_BACKUP" method="post">
+	<input type="hidden" name="action" value="now" />
+		
+		<span class="title"><b>|LANG_RUN_SYS_BK|</b> - |LANG_ON_PER_DAY|</span>
+		
+		<span class="save_menu">
+			<span><input type="submit" value="|LANG_RUN_NOW|" /></span>
+			<span><a href="/CMD_SYSTEM_BACKUP/status.log.txt"><button type="button" class="input_submit">|LANG_VIEW_LOG| |LOG_TIME|</button></a></span>
+		</span>
+					
+		<div class="odd">
+			<span class="td_label"><span class="i"></span></span>
+			<span class="td"><span class="i"></span></span>
+		</div>
+	
+	</form>
+	
+</div>
+
+<div class="info_table forms">
+	<form action="/CMD_SYSTEM_BACKUP" method="post">
+	<input type="hidden" name="action" value="when" />
+	<span class="title"><b>|LANG_CRON_SCHEDULE|</b></span>
+
+	<div class="even">
+		<span class="td_label"><span class="i">|LANG_MINUTE|</span></span>
+		<span class="td"><span class="i"><input type="text" name="minute" value="|MINUTE|" size="2" /></span></span>
+	</div>
+				
+	<div class="odd">
+		<span class="td_label"><span class="i">|LANG_HOUR|</span></span>
+		<span class="td"><span class="i"><input type="text" name="hour" value="|HOUR|" size="2" /></span></span>
+	</div>
+	
+	<div class="even">
+		<span class="td_label"><span class="i">|LANG_DAY_OF_MONTH|</span></span>
+		<span class="td"><span class="i"><input type="text" name="dayofmonth" value="|DAY|" size="2" /></span></span>
+	</div>
+				
+	<div class="odd">
+		<span class="td_label"><span class="i">|LANG_MONTH|</span></span>
+		<span class="td"><span class="i"><input type="text" name="month" value="|MONTH|" size="2" /></span></span>
+	</div>
+	
+	<div class="even">
+		<span class="td_label"><span class="i">|LANG_DAY_OF_WEEK|</span></span>
+		<span class="td"><span class="i"><input type="text" name="dayofweek" value="|DAYOFWEEK|" size="2" /></span></span>
+	</div>
+	
+	<div class="odd">
+		<span class="td_label"><span class="i">|LANG_USE_CRON|</span></span>
+		<span class="td"><span class="i"><input type="checkbox" name="use_cron" value="yes" |CRON| /></span></span>
+	</div>
+				
+	<span class="save_menu">
+		<span><input type="submit" value="|LANG_SAVE|" /></span>
+	</span>
+
+	</form>
+</div>
+<div class="info_table forms">
+	<form action="/CMD_SYSTEM_BACKUP" method="post">
+	<input type="hidden" name="action" value="setting" />
+	
+	<span class="title"><b>|LANG_CONFIGURE_FULL_SYSTEM_BACKUP|</b></span>
+	
+	<div class="even">
+		<span class="td_label"><span class="i">|LANG_BACKUP_PATH|</span></span>
+		<span class="td"><span class="i"><input type="text" name="BACKUP_PATH" value="|BACKUP_PATH|" size="32" /></span></span>
+	</div>
+				
+	<div class="odd">
+		<span class="td_label"><span class="i">|LANG_MIN_DISK_SPACE|</span></span>
+		<span class="td"><span class="i"><input type=text name="MIN_DISK" value="|MIN_DISK|" size="4" /></span></span>
+	</div>
+	
+	<div class="even">
+		<span class="td_label"><span class="i">On partition</span></span>
+		<span class="td"><span class="i">|MOUNT_POINT|</span></span>
+	</div>
+	
+	<div class="odd">
+		<span class="td_label"><span class="i">|LANG_BACKUP_PATH|</span></span>
+		<span class="td"><span class="i"><input type="text" name="BACKUP_PATH" value="|BACKUP_PATH|" size="32" /></span></span>
+	</div>
+				
+	<div class="even">
+		<span class="td_checkbox"><span class="i"><input type=checkbox name="ADD_USERS_TO_LIST" value="yes" |ADD_USERS_TO_LIST| /></span></span>
+		<span class="td"><span class="i">|LANG_ADD_USERS|</span></span>
+	</div>
+				
+	<div class="odd">
+		<span class="td_checkbox"><span class="i"><input type="checkbox" name="HTTP_BK" value="yes" |HTTP_BK| /></span></span>
+		<span class="td"><span class="i">|LANG_BACKUP_HTTP_CONFIG|</span></span>
+	</div>
+	
+	<div class="even">
+		<span class="td_checkbox"><span class="i"><input type="checkbox" name="BIND_BK" value="yes" |BIND_BK| /></span></span>
+		<span class="td"><span class="i">|LANG_BACKUP_BIND_CONFIG|</span></span>
+	</div>
+				
+	<div class="odd">
+		<span class="td_checkbox"><span class="i"><input type="checkbox" name="MYSQL_BK" value="yes" |MYSQL_BK| /></span></span>
+		<span class="td"><span class="i">|LANG_BACKUP_MYSQL_CONFIG|</span></span>
+	</div>
+
+	<div class="even">
+		<span class="td_checkbox"><span class="i"><input type="checkbox" name="CUSTOM_BK" value="yes" |CUSTOM_BK| /></span></span>
+		<span class="td"><span class="i">|LANG_BACKUP_DIRS_FILES|</span></span>
+	</div>
+	
+	<div class="odd">
+		<span class="td_checkbox"><span class="i"><input type=checkbox name="USE_RTRANS" value="yes" |USE_RTRANS| /></span></span>
+		<span class="td"><span class="i">|LANG_USE_REMOTE_TRANSFER|</span></span>
+	</div>
+
+	<div class="even">
+		<span class="td_label"><span class="i">|LANG_REMOTE_TRANSFER_METHOD|</span></span>
+		<span class="td"><span class="i">|RTRANS_SELECT|</span></span>
+	</div>
+	
+	<div class="odd">
+		<span class="td_url"><span class="i"><a href="/CMD_SYSTEM_BACKUP/id_dsa.pub">|LANG_DOWNLOAD_ID_DSA|</a></span></span>
+	</div>
+
+	<div class="even">
+		<span class="td_label"><span class="i">|LANG_DEL_AFTER_RTRANS|</span></span>
+		<span class="td"><span class="i"><input type=checkbox name="DEL_AFTERTRANS" value="yes" |DEL_AFTERTRANS| /></span></span>
+	</div>
+	
+	<div class="odd">
+		<span class="td_label"><span class="i">|LANG_FILE_BY_FILE|</span></span>
+		<span class="td"><span class="i"><input type="checkbox" name="FBF_RTRANS" value="yes" |FBF_RTRANS| /> |LANG_FILE_BY_FILE_COMMENT|</span></span>
+	</div>
+	
+	<div class="even">
+		<span class="td_label"><span class="i">|LANG_REMOTE_HOST|</span></span>
+		<span class="td"><span class="i"><input type="text" name="FTP_HOST" value="|FTP_HOST|" /></span></span>
+	</div>
+	
+	<div class="odd">
+		<span class="td_label"><span class="i">|LANG_FILE_BY_FILE|</span></span>
+		<span class="td"><span class="i"><input type="checkbox" name="FBF_RTRANS" value="yes" |FBF_RTRANS| /> |LANG_FILE_BY_FILE_COMMENT|</span></span>
+	</div>
+	
+	<div class="even">
+		<span class="td_label"><span class="i">|LANG_REMOTE_USER|</span></span>
+		<span class="td"><span class="i"><input type="text" name="FTP_USER" value="|FTP_USER|" /></span></span>
+	</div>
+	
+	<div class="odd">
+		<span class="td_label"><span class="i">|LANG_REMOTE_PASS|</span></span>
+		<span class="td"><span class="i"><input type="password" name="FTP_PASS" value="|FTP_PASS|" /></span></span>
+	</div>
+	
+	<div class="even">
+		<span class="td_label"><span class="i">|LANG_REMOTE_PATH|</span></span>
+		<span class="td"><span class="i"><input type="text" name="FTP_RPATH" value="|FTP_RPATH|" /></span></span>
+	</div>
+	
+	<span class="save_menu">
+		<span><input type=submit value="|LANG_SAVE|" /></span>
+	</span>
+	
+</form>
+
+	</div>
+
+<div class="info_table forms">
+		<div style="overflow: auto; height: 160px; width: 100%;">|BACKUP_DIRECTORIES|</div>
+		<form action="/CMD_SYSTEM_BACKUP" method="post">
+		<input type="hidden" name="action" value="adddirectory" />
+		<span class="save_menu">
+			<span><input type="submit" value="|LANG_ADD_DIRECTORY|" /></span>
+			<span><input type="text" name="directory" style="float:left;" /></span>
+		</span>
+        </form>
+</div>
+
+<div class="info_table forms">
+
+		<div style="overflow: auto; height: 160px; width: 100%;">|BACKUP_FILES|</div>
+		<form action="/CMD_SYSTEM_BACKUP" method="post">
+			<input type="hidden" name="action" value="addfile" />
+			<span class="save_menu">
+					<span><input type="submit" value="|LANG_ADD_FILE|" /></span>
+					<span><input type="text" name="file" /></span>
+			</span>
+		</form>
+
+</div>
+
+|HTM_ADMIN_BOTTOM|
+

@@ -1,0 +1,71 @@
+|LF_STANDARD|
+|LF_POP|
+|?TREE=&raquo; <a class="tree" href="/CMD_SHOW_DOMAIN?domain=`DOMAIN`">`DOMAIN`</a> &raquo; <a class="tree" href="/CMD_EMAIL_POP?DOMAIN=`DOMAIN`">`LANG_POP_ACCOUNTS`</a> &raquo; <a class="tree" href="/HTM_EMAIL_POP_MODIFY?DOMAIN=`DOMAIN`&USER=`USER`">`LANG_MODIFY` `USER`</a>|
+|?HELP_SECTION=`USER_HELPER`/email.html#pop3|
+|HTM_USER_TOP|
+
+|?CHECK_PASS=|
+|?RANDOM_PASS=randomPass()|
+|*if AJAX="1"|
+	|?CHECK_PASS=onChange="ajax_checkPass()"|
+	|?RANDOM_PASS=ajax_randomPass('')|
+	<script type="text/javascript" src="JS_CREATION_CHECK"></script>
+|*endif|
+
+    <div id="current_model" class="CMD_EMAIL_POP"></div>
+
+<script type="text/javascript">
+<!--
+
+|HTM_JAVASCRIPT|
+
+// -->
+</script>
+
+<div class="info_table forms">
+	<form name="reseller" action="CMD_EMAIL_POP" method="post">
+		<input type="hidden" name="action" value="modify" />
+		<input type="hidden" name="domain" value="|DOMAIN|" />
+		<input type="hidden" name="user" value="|USER|" />
+
+        <span class="title">|LANG_POP_MODIFY|</span>
+
+        <div class="even">
+            <span class="td_label"><span class="i">|LANG_POP_USERNAME|:</span></span>
+            <span class="td"><span class="i"><input type="text" name="newuser" value="|USER|" size="16" />@|DOMAIN|</span></span>
+        </div>
+                
+        <div class="odd">
+            <span class="td_label"><span class="i">|LANG_NEW_PASS|:</span></span>
+            <span class="td"><span class="i"><input type="password" name="passwd" size="16" /> |LANG_LEAVE_BLANK|</span></span>
+        </div>
+        
+        <div class="even">
+            <span class="td_label"><span class="i">|LANG_RE-ENTER_PASS|:</span></span>
+            <span class="td"><span class="i"><input type="password" name="passwd2" size="16" /> 
+            <div class="input_submit grey">
+            <input type="button" value="|LANG_RANDOM|" onclick="randomPass()" />
+            </div></span></span>
+        </div>
+                
+        <div class="odd">
+            <span class="td_label"><span class="i">|LANG_EMAIL_QUOTA|:</span></span>
+            <span class="td"><span class="i"><input type="text" name="quota" size="16" value="|QUOTA|"> |LANG_ZERO_UNLIMITED|</span></span>
+        </div>
+
+	|?SEND_LIMIT_VALUE=|
+        |*if SEND_LIMIT!="no"||?SEND_LIMIT_VALUE=`SEND_LIMIT`||*endif|
+        |*if USER_CAN_SET_SEND_LIMIT="yes"|
+        <div class="even">
+            <span class="td_label"><span class="i">|LANG_SEND_LIMIT|:</span></span>
+            <span class="td"><span class="i"><input type="text" name="limit" size="16" value="|SEND_LIMIT_VALUE|"> |LANG_SEND_LIMIT_DESC| |GLOBAL_PER_EMAIL_LIMIT|</span></span>
+        </div>
+        |*endif|		
+
+		<span class="save_menu">
+         <span><input type="submit" name="update" value="|LANG_MODIFY|"></span>
+         </span>
+	</form>
+</div>
+
+|HTM_USER_FOOTER|

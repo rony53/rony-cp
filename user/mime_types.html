@@ -1,0 +1,50 @@
+|LF_STANDARD|
+|?TREE=&raquo; `ALL_DOMAINS_SELECT` &raquo; <a class=tree href="/CMD_MIME_TYPES?DOMAIN=`DOMAIN`">`LANG_MIME_TYPES`</a>|
+|?HELP_SECTION=`USER_HELPER`/misc.html#mime|
+|HTM_USER_TOP|
+
+	<div id="current_model" class="CMD_MIME_TYPES"></div>
+
+	<div class="info_table forms">
+		<form action="/CMD_MIME_TYPES" method="post">
+			<input type="hidden" name="domain" value="|DOMAIN|" />
+			<input type="hidden" name="action" value="add" />	
+			
+		<span class="title">|LANG_ADD_MIME_TYPE|</span>
+	
+		<div class="even">
+			<span class="td_label"><span class="i">|LANG_MIME_TYPE|:</span></span>
+			<span class="td"><span class="i"><input type="text" name="name" /></span></span>
+		</div>
+					
+		<div class="odd">
+			<span class="td_label"><span class="i">|LANG_EXTENSION|:</span></span>
+			<span class="td"><span class="i"><input type="text" name="extension" size="5" /></span></span>
+		</div>
+		
+		<span class="save_menu">
+			<span><input type="submit" value="|LANG_ADD|" /></span>
+		</span>
+		
+	</form>
+
+</div>
+
+
+	<div class="info_table forms">
+		<span class="title">|LANG_USER_MIME_TYPES|</span>
+	</div>
+	
+	|MIMETYPES|
+	
+	<div class="info_table forms">
+		<div class="even">
+			<span class="td_url"><span class="i_center">
+				<a href="/CMD_MIME_TYPES?action=system&domain=|DOMAIN|">|LANG_LIST_SYSTEM_MIMES|</a>
+			</span></span>
+		</div>
+	</div>
+
+
+
+|HTM_USER_FOOTER|

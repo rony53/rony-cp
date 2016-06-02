@@ -1,0 +1,46 @@
+|LF_STANDARD|
+
+|$/usr/local/bin/php
+<?php
+$data0 = <<<END
+|PLUGIN_0_TXT|
+END;
+$data1 = <<<END
+|PLUGIN_1_TXT|
+END;
+$data2 = <<<END
+|PLUGIN_2_TXT|
+END;
+$data3 = <<<END
+|PLUGIN_3_TXT|
+END;
+$data4 = <<<END
+|PLUGIN_4_TXT|
+END;
+$data5 = <<<END
+|PLUGIN_5_TXT|
+END;
+
+$data = $data0.$data1.$data2.$data3.$data4.$data5;
+	
+	if(strlen($data) > 1) {
+		
+		echo '
+		<li>
+		<a href="javascript: void(0);" onclick="$().slide_menu(\'plugins_menu\')">
+		<img src="/IMG_PLGS" width="29" height="32" alt="" />Plugins</a>
+		<ul id="plugins_menu">';
+		if($data0) echo '<li>'.$data0.'</li>';
+		if($data1) echo '<li>'.$data1.'</li>';
+		if($data2) echo '<li>'.$data2.'</li>';
+		if($data3) echo '<li>'.$data3.'</li>';
+		if($data4) echo '<li>'.$data4.'</li>';
+		if($data5) echo '<li>'.$data5.'</li>';
+			
+        echo '</ul></li>';
+		
+	}
+
+?>
+DONE|
+

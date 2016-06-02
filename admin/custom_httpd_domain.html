@@ -1,0 +1,266 @@
+|LF_STANDARD|
+|?TREE=&raquo; <a class="tree" href="/CMD_CUSTOM_HTTPD">`LANG_CUST_HTTPD_CONF`</a> &raquo; <a class="tree" href="/CMD_CUSTOM_HTTPD?domain=`domain`">`domain`</a>|
+|?HELP_SECTION=`ADMIN_HELPER`|
+|HTM_ADMIN_TOP|
+
+<div id="current_model" class="CMD_CUSTOM_HTTPD"></div>
+
+|*if CONFIG_ERROR="1"|
+        <div class="flash_holder">
+      <div class="rounder_t"></div>
+      <div class="roundee">
+        <div class="flash" id="notice"><img src="/IMG_NOTICE" alt="" />
+                <b>|LANG_CONFIG_ERROR|</b>
+        </div>
+      </div>
+      <div class="rounder_b"></div>
+    </div>
+|*endif|
+
+<div class="info_table forms">
+	<form action="/CMD_CUSTOM_HTTPD" method="post">
+	<input type="hidden" name="domain" value="|domain|" />
+	<input type="hidden" name="proxy" value="|proxy|" />
+
+	<span class="title">|*if HAVE_NGINX="yes"||LANG_NGINX_CUST_FOR||*else||LANG_CUST_FOR||*endif| <b>|domain|</b></span>
+	
+	<div class="even">
+		<span class="td_url"><span class="i_center">|*if HAVE_NGINX="yes"||LANG_NGINX_WARNING||*else||LANG_WARNING||*endif|</span></span>
+		</div>
+	
+	|*if CUSTOM_PRE|
+		<div><textarea class="code_edit" cols="87" rows=2 wrap=off readonly>|CUSTOM_PRE|</textarea></div>
+	|*endif|
+
+	<div class="textarea">
+		<textarea cols="87" rows="10" style="white-space: nowrap;" name="config">|CONFIG|</textarea>
+	</div>		
+
+	|*if CUSTOM_POST|
+		<div><textarea class="code_edit" cols="87" rows=2 wrap=off readonly>|CUSTOM_POST|</textarea></div>
+	|*endif|
+
+<script type="text/javascript" src="JS_VISIBILITY"></script>
+<script language="Javascript">
+<!--
+function show_additional_custom_tokens()
+{
+	document.getElementById('addition_custom_tokens').style.display = 'none';
+	for (i=1; i<=4; i++)
+	{
+		document.getElementById('custom'+i+'_toggle_tr').style.display = '';
+	}
+
+}
+function toggle_custom(x)
+{
+	show_additional_custom_tokens();
+
+	var toggle_name="custom"+x+"_toggle";
+	var tr_name="custom"+x+"_tr";
+
+	toggle_expand(toggle_name, tr_name);
+}
+function trigger_toggle()
+{
+|*if CUSTOM1!=""|
+	toggle_custom(1);
+|*endif|
+|*if CUSTOM2!=""|
+	toggle_custom(2);
+|*endif|
+|*if CUSTOM3!=""|
+	toggle_custom(3);
+|*endif|
+|*if CUSTOM4!=""|
+	toggle_custom(4);
+|*endif|
+}
+//-->
+</script>
+
+<div class="even" id="addition_custom_tokens">
+	<span class="list2"><span class="expand_toggle_plus" onclick="show_additional_custom_tokens();">+</span> |LANG_ADDITIONAL_CUSTOM_TOKENS|</span>
+</div>
+
+<div id="custom1_toggle_tr" style="display: none;">
+	<span class="list2"><span class="expand_toggle_plus" id="custom1_toggle" onclick="toggle_custom(1);">+</span> CUSTOM1</span>
+</div>
+
+<div id="custom1_tr" style="display: none;">
+	<span class="list" align=center>
+		|LANG_TOP_OF_TEMPLATE|<br>
+		|*if CUSTOM1_PRE|
+			<div><textarea class="code_edit" cols=120 rows=2 wrap=off readonly>|CUSTOM1_PRE|</textarea></div>
+		|*endif|
+		<textarea class="code_edit" cols=120 rows=4 wrap=off name=custom1>|CUSTOM1|</textarea>
+		|*if CUSTOM1_POST|
+			<div><textarea class="code_edit" cols=120 rows=2 wrap=off readonly>|CUSTOM1_POST|</textarea></div>
+		|*endif|
+	</span>
+</div>
+
+<div id="custom2_toggle_tr" style="display: none;">
+	<span class="list2"><span class="expand_toggle_plus" id="custom2_toggle" onclick="toggle_custom(2);">+</span> CUSTOM2</span>
+</div>
+
+<div id="custom2_tr" style="display: none;">
+	<span class="list" align=center>
+		|*if HAVE_NGINX="yes"||LANG_ALL_LOCATIONS||*else||LANG_BEFORE_DIRECTORY||*endif|<br>
+	        |*if CUSTOM2_PRE|
+        	        <div><textarea class="code_edit" cols=120 rows=2 wrap=off readonly>|CUSTOM2_PRE|</textarea></div>
+	        |*endif|
+		<textarea class="code_edit" cols=120 rows=4 wrap=off name=custom2>|CUSTOM2|</textarea>
+		|*if CUSTOM2_POST|
+			<div><textarea class="code_edit" cols=120 rows=2 wrap=off readonly>|CUSTOM2_POST|</textarea></div>
+		|*endif|
+	</span>
+</div>
+
+<div id="custom3_toggle_tr" style="display: none;">
+	<span class="list2"><span class="expand_toggle_plus" id="custom3_toggle" onclick="toggle_custom(3);">+</span> CUSTOM3</span>
+</div>
+
+<div id="custom3_tr" style="display: none;">
+	<span class="list" align=center>
+		|*if HAVE_NGINX="yes"||LANG_ALL_LOCATIONS||*else||LANG_BEFORE_DIRECTORY||*endif|<br>
+	        |*if CUSTOM3_PRE|
+	                <div><textarea class="code_edit" cols=120 rows=2 wrap=off readonly>|CUSTOM3_PRE|</textarea></div>
+	        |*endif|
+		<textarea class="code_edit" cols=120 rows=4 wrap=off name=custom3>|CUSTOM3|</textarea>
+		|*if CUSTOM3_POST|
+			<div><textarea class="code_edit" cols=120 rows=2 wrap=off readonly>|CUSTOM3_POST|</textarea></div>
+		|*endif|
+	</span>
+</div>
+
+<div id="custom4_toggle_tr" style="display: none;">
+	<span class="list2"><span class="expand_toggle_plus" id="custom4_toggle" onclick="toggle_custom(4);">+</span> CUSTOM4</span>
+</div>
+
+<div id="custom4_tr" style="display: none;">
+	<span class="list" align=center>
+		|LANG_LAST_ENTRY|<br>
+	        |*if CUSTOM4_PRE|
+	                <div><textarea class="code_edit" cols=120 rows=2 wrap=off readonly>|CUSTOM4_PRE|</textarea></div>
+	        |*endif|
+		<textarea class="code_edit" cols=120 rows=4 wrap=off name=custom2>|CUSTOM4|</textarea>
+		|*if CUSTOM4_POST|
+			<div><textarea class="code_edit" cols=120 rows=2 wrap=off readonly>|CUSTOM4_POST|</textarea></div>
+		|*endif|
+	</span>
+</div>
+
+<script language="Javascript">
+<!--
+trigger_toggle();
+//-->
+</script>
+
+<div class="even">
+<span class=list colspan=2><span class="expand_toggle_plus" id=tokens_toggle onclick="toggle_expand('tokens_toggle', 'tokens_visibility');">+</span> |LANG_AVAIL_TOKENS|</span>
+		<span id="tokens_visibility" style="display: none;">
+			<textarea class="code_edit" cols=120 rows=40 wrap=off readonly>|AVAILABLE_TOKENS|</textarea>
+		</span>
+	</span>
+</div>
+
+<div class="even"><span class="list2" colspan=2><span class="expand_toggle_plus" id="templates_toggle" onclick="toggle_expand('templates_toggle', 'templates_visibility');">+</span> |LANG_TEMPLATES|</span></div>
+<div id="templates_visibility" style="display: none;">
+	<span class="list">
+
+|?VH_COLS=118|
+		<table style='padding-left: 10px;' width=100%>
+			<tr><td class=list colspan=2><span class=expand_toggle_plus id=vh1_toggle onclick="toggle_expand('vh1_toggle', 'vh1_visibility');">+</span> |VH1_NAME| |*if VH1_CUSTOM="1"|<a href="CMD_TEMPLATE_DIFF?name=|VH1_NAME_SHORT|">|LANG_CUSTOM_TEMPLATE|</a>|*endif|</td></tr>
+			<tr id=vh1_visibility style="display: none;">
+				<td>
+					<textarea class="code_edit" cols=|VH_COLS| rows=40 wrap=off readonly>|VH1|</textarea>
+				</td>
+			</tr>
+
+			<tr><td class=list2 colspan=2><span class=expand_toggle_plus id=vh2_toggle onclick="toggle_expand('vh2_toggle', 'vh2_visibility');">+</span> |VH2_NAME| |*if VH2_CUSTOM="1"|<a href="CMD_TEMPLATE_DIFF?name=|VH2_NAME_SHORT|">|LANG_CUSTOM_TEMPLATE|</a>|*endif|</td></tr>
+			<tr id=vh2_visibility style="display: none;">
+				<td class=list2>
+					<textarea class="code_edit" cols=|VH_COLS| rows=40 wrap=off readonly>|VH2|</textarea>
+				</td>
+			</tr>
+
+			<tr><td class=list colspan=2><span class=expand_toggle_plus id=vh3_toggle onclick="toggle_expand('vh3_toggle', 'vh3_visibility');">+</span> |VH3_NAME| |*if VH3_CUSTOM="1"|<a href="CMD_TEMPLATE_DIFF?name=|VH3_NAME_SHORT|">|LANG_CUSTOM_TEMPLATE|</a>|*endif|</td></tr>
+			<tr id=vh3_visibility style="display: none;">
+				<td class=list>
+					<textarea class="code_edit" cols=|VH_COLS| rows=40 wrap=off readonly>|VH3|</textarea>
+				</td>
+			</tr>
+
+			<tr><td class=list2 colspan=2><span class=expand_toggle_plus id=vh4_toggle onclick="toggle_expand('vh4_toggle', 'vh4_visibility');">+</span> |VH4_NAME| |*if VH4_CUSTOM="1"|<a href="CMD_TEMPLATE_DIFF?name=|VH4_NAME_SHORT|">|LANG_CUSTOM_TEMPLATE|</a>|*endif|</td></tr>
+			<tr id=vh4_visibility style="display: none;">
+				<td class=list2>
+					<textarea class="code_edit" cols=|VH_COLS| rows=40 wrap=off readonly>|VH4|</textarea>
+				</td>
+			</tr>
+
+			<tr |*if VH5_NAME=""|style="display: none;"|*endif|><td class=list colspan=2><span class=expand_toggle_plus id=vh5_toggle onclick="toggle_expand('vh5_toggle', 'vh5_visibility');">+</span> |VH5_NAME| |*if VH5_CUSTOM="1"|<a href="CMD_TEMPLATE_DIFF?name=|VH2_NAME_SHORT|">|LANG_CUSTOM_TEMPLATE|</a>|*endif|</td></tr>
+			<tr id=vh5_visibility style="display: none;">
+				<td class=list>
+					<textarea class="code_edit" cols=|VH_COLS| rows=40 wrap=off readonly>|VH5|</textarea>
+				</td>
+			</tr>
+
+			<tr |*if VH6_NAME=""|style="display: none;"|*endif|><td class=list2 colspan=2><span class=expand_toggle_plus id=vh6_toggle onclick="toggle_expand('vh6_toggle', 'vh6_visibility');">+</span> |VH6_NAME| |*if VH6_CUSTOM="1"|<a href="CMD_TEMPLATE_DIFF?name=|VH2_NAME_SHORT|">|LANG_CUSTOM_TEMPLATE|</a>|*endif|</td></tr>
+			<tr id=vh6_visibility style="display: none;">
+				<td class=list2>
+					<textarea class="code_edit" cols=|VH_COLS| rows=40 wrap=off readonly>|VH6|</textarea>
+				</td>
+			</tr>
+
+			<script language="Javascript">
+				<!--
+					|?SHOW_TEMPLATES=0|
+					|*if VH1_CUSTOM="1"||?SHOW_TEMPLATES=1||*endif|
+					|*if VH2_CUSTOM="1"||?SHOW_TEMPLATES=1||*endif|
+					|*if VH3_CUSTOM="1"||?SHOW_TEMPLATES=1||*endif|
+					|*if VH4_CUSTOM="1"||?SHOW_TEMPLATES=1||*endif|
+					|*if VH5_CUSTOM="1"||?SHOW_TEMPLATES=1||*endif|
+					|*if VH6_CUSTOM="1"||?SHOW_TEMPLATES=1||*endif|
+					|*if SHOW_TEMPLATES="1"|
+						toggle_expand('templates_toggle', 'templates_visibility');
+					|*endif|
+				//-->
+			</script>
+		</table>
+
+	</span>
+</div>
+
+	<span class="save_menu">
+		<span>
+			<input type="submit" value="|LANG_SAVE|" />
+		</span>
+	</span>
+	
+	</form>
+		
+</div>
+
+<div class="info_table forms">
+	<span class="title">
+		|LANG_HTTPD_CONTENTS_FOR| |domain|
+	</span>
+
+	<div class="textarea">
+		<textarea cols="87" rows="20" style="white-space: pre;" readonly="readonly">|HTTPD|</textarea>
+	</div>
+
+</div>
+
+<div class="info_table forms">
+        <span class="title">
+        |LANG_CONFIG_CHECK|
+        </span>
+        <div class="textarea">
+                <textarea cols="87" rows="5" wrap="off" readonly>|CONFIG_TEST|</textarea>
+        </div>
+</div>
+
+|HTM_ADMIN_BOTTOM|
+

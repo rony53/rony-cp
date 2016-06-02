@@ -1,0 +1,94 @@
+|LF_STANDARD|
+|?TREE=&raquo; <a class="tree" href="/CMD_CUSTOM_HTTPD">`LANG_CUST_HTTPD_CONF`</a> &raquo; <a class=tree href="/CMD_CUSTOM_HTTPD?user=`user`&php-fpm=`php-fpm`">php-fpm `php-fpm`</a>|
+|?HELP_SECTION=`ADMIN_HELPER`|
+|HTM_ADMIN_TOP|
+
+<div id="current_model" class="CMD_CUSTOM_HTTPD"></div>
+
+|*if CONFIG_ERROR="1"|
+        <div class="flash_holder">
+      <div class="rounder_t"></div>
+      <div class="roundee">
+        <div class="flash" id="notice"><img src="/IMG_NOTICE" alt="" />
+                <b>|LANG_CONFIG_ERROR|</b>
+        </div>
+      </div>
+      <div class="rounder_b"></div>
+    </div>
+|*endif|
+
+<div class="info_table forms">
+	<form action="/CMD_CUSTOM_HTTPD" method="post">
+	<input type="hidden" name=user value="|user|">
+	<input type="hidden" name="php-fpm" value="|php-fpm|" />
+
+	<span class="title">|LANG_CUST_FOR| |user| <b>php-fpm |php-fpm|</b></span>
+	
+	<div class="even">
+		<span class="td_url"><span class="i_center">|LANG_INSTRUCTIONS|</span></span>
+		</div>
+
+	<div class="odd">
+                <span class="td_url"><span class="i_center"><b>&#124;CUSTOM1&#124;</b></span></span>
+                </div>
+
+	<div class="textarea">
+		<textarea cols="87" rows="10" style="white-space: nowrap;" name="custom1">|CUSTOM1|</textarea>
+	</div>		
+
+	<div class="odd">
+                <span class="td_url"><span class="i_center"><b>&#124;CUSTOM2&#124;</b></span></span>
+                </div>
+
+	<div class="textarea">
+		<textarea cols="87" rows="10" style="white-space: nowrap;" name="custom2">|CUSTOM2|</textarea>
+	</div>		
+		
+	<script type="text/javascript" src="JS_VISIBILITY"></script>
+	<div class="even">
+	<span class="list" colspan="2"><span class="expand_toggle_plus" id="tokens_toggle" onclick="toggle_expand('tokens_toggle', 'tokens_visibility');">+</span> |LANG_AVAIL_TOKENS|</span>
+		<span id="tokens_visibility" style="display: none;">
+			<textarea class="code_edit" cols=120 rows=30 wrap=off readonly>|AVAILABLE_TOKENS|</textarea>
+		</span>
+	</span>
+	</div>
+	<div class="even">
+	<span class="list" colspan="2"><span class="expand_toggle_plus" id="templates_toggle" onclick="toggle_expand('templates_toggle', 'templates_visibility');">+</span> |PHP_FPM_TEMPLATE_NAME| |*if PHP_FPM_IS_CUSTOM_TEMPLATE="1"|<a href="CMD_TEMPLATE_DIFF?name=|PHP_FPM_TEMPLATE_NAME_SHORT|">|LANG_CUSTOM_TEMPLATE|</a>|*endif|</span>
+		<span id="templates_visibility" style="display: none;">
+			<textarea class="code_edit" cols=120 rows=35 wrap=off readonly>|PHP_FPM_TEMPLATE|</textarea>
+		</span>
+	</span>
+	</div>
+
+	<span class="save_menu">
+		<span>
+			<input type="submit" value="|LANG_SAVE|" />
+		</span>
+	</span>
+	
+	</form>
+		
+</div>
+
+<div class="info_table forms">
+	<span class="title">
+		|FPM_CONFIG_FILE|
+	</span>
+
+	<div class="textarea">
+		<textarea cols="87" rows="20" style="white-space: pre;" readonly="readonly">|FPM_CONFIG|</textarea>
+	</div>
+
+</div>
+
+<div class="info_table forms">
+        <span class="title">
+        |LANG_PHP_FPM_CONFIG_CHECK|
+        </span>
+        <div class="textarea">
+                <textarea cols="87" rows="5" wrap="off" readonly>|CONFIG_TEST|</textarea>
+        </div>
+</div>
+
+|HTM_ADMIN_BOTTOM|
+

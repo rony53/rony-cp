@@ -1,0 +1,46 @@
+|LF_STANDARD|
+|?TREE=&raquo; `ALL_DOMAINS_SELECT` &raquo; <a class=tree href="/CMD_HANDLERS?DOMAIN=`DOMAIN`">`LANG_APCHE_HANDLERS`</a>|
+|?HELP_SECTION=`USER_HELPER`/misc.html#handlers|
+|HTM_USER_TOP|
+
+	<div id="current_model" class="CMD_HANDLERS"></div>
+
+	<div class="info_table forms">
+		<form action="/CMD_HANDLERS" method="post">
+		<input type="hidden" name="domain" value="|DOMAIN|" />
+		<input type="hidden" name="action" value="add" />
+		<span class="title">|LANG_ADD_HANDLER|</span>
+
+		<div class="even">
+			<span class="td_label"><span class="i">|LANG_HANDLER|:</span></span>
+			<span class="td"><span class="i"><input type="text" name="name" /></span></span>
+		</div>
+					
+		<div class="odd">
+			<span class="td_label"><span class="i">|LANG_EXTENSION|:</span></span>
+			<span class="td"><span class="i"><input type="text" name="extension" size="5" /></span></span>
+		</div>
+		
+		<span class="save_menu">
+			<span><input type="submit" value="|LANG_ADD|" /></span>
+		</span>
+	    </form>
+	</div>
+
+<br>
+	
+	<div class="info_table forms">
+		<span class="title"><b>|LANG_USER_HANDLERS|</b></span>
+	</div>
+	
+	|HANDLERS|
+	
+	<div class="info_table forms">
+		<div class="even">
+			<span class="td_url"><span class="i_center">
+				<a href="/CMD_HANDLERS?action=system&domain=|DOMAIN|">|LANG_LIST_OF_SYSTEM_HANDLERS|</a>
+			</span></span>
+		</div>
+	</div>
+
+|HTM_USER_FOOTER|

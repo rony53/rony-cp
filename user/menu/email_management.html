@@ -1,0 +1,34 @@
+|LF_STANDARD|
+<li>
+<a href="javascript: void(0);" onclick="$().slide_menu('email_menu')"><img src="/IMG_EMAIL_MNG" width="29" height="32" alt="" />|LANG_EMAIL_MANAGEMENT|</a>
+<ul id="email_menu">
+|*if USEREMAILMAX!="0"|
+<li id="CMD_EMAIL_POP"><a href="/CMD_EMAIL_POP?domain=|SESSION_SELECTED_DOMAIN|">|LANG_POP_EMAIL_ACCOUNTS|</a></li>
+|*endif|
+|*if USERCATCHALL="ON"|
+<li id="CMD_EMAIL_CATCH_ALL"><a href="/CMD_EMAIL_CATCH_ALL?domain=|SESSION_SELECTED_DOMAIN|">|LANG_CATCH_ALL_EMAIL|</a></li>
+|*endif|
+|*if USERFORWARDERMAX!="0"|
+<li id="CMD_EMAIL_FORWARDER"><a href="/CMD_EMAIL_FORWARDER?domain=|SESSION_SELECTED_DOMAIN|">|LANG_FORWARDERS|</a></li>
+|*endif|
+|*if USERRESPONDERMAX!="0"|
+<li id="CMD_EMAIL_AUTORESPONDER"><a href="/CMD_EMAIL_AUTORESPONDER?domain=|SESSION_SELECTED_DOMAIN|">|LANG_AUTORESPONDERS|</a></li>
+|*endif|
+|*if USEREMAILMAX!="0"|
+<li id="CMD_EMAIL_VACATION"><a href="/CMD_EMAIL_VACATION?domain=|SESSION_SELECTED_DOMAIN|">|LANG_VAC_MESSAGES|</a></li>
+|*endif|
+|*if USERSPAM="ON"|
+<li id="CMD_SPAMASSASSIN"><a href="/CMD_SPAMASSASSIN?domain=|SESSION_SELECTED_DOMAIN|">|LANG_SPAMASSASSIN|</a></li>
+|*endif|
+|*if USEREMAILMAX!="0"|
+<li id="CMD_EMAIL_FILTER"><a href="/CMD_EMAIL_FILTER?domain=|SESSION_SELECTED_DOMAIN|">|LANG_SPAM_FILTERS|</a></li>
+|*endif|
+|*if USERMLISTMAX!="0"|
+<li id="CMD_EMAIL_LIST"><a href="/CMD_EMAIL_LIST?domain=|SESSION_SELECTED_DOMAIN|">|LANG_MAILING_LISTS|</a></li>
+|*endif|
+|*if USERDNSCONTROL="ON"|
+<li id="CMD_DNS_MX"><a href="/CMD_DNS_MX?domain=|SESSION_SELECTED_DOMAIN|">|LANG_MX_RECORDS|</a></li>
+|*endif|
+<li id="HTM_EMAILS"><a href="/HTM_EMAILS">|LANG_WEBMAIL|</a></li>
+</ul>
+</li>

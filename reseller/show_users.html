@@ -1,0 +1,93 @@
+|?TREE=&raquo; <a class="tree" href="/CMD_USER_SHOW">`LANG_SHOW_USERS`</a>|
+|?HELP_SECTION=`RESELLER_HELPER`/modify.html|
+|HTM_RESELLER_TOP|
+
+<div id="current_model" class="CMD_USER_SHOW"></div>
+
+<div class="link_list right_list">
+	<ul class="inner">
+		<li><a href="/HTM_ACCOUNT_USER_CREATE">|LANG_CREATE_USER|</a></li>
+		<li><a href="/HTM_ACCOUNT_USER_DELETE">|LANG_DELETE_USER|</a></li>
+		<li><a href="/HTM_USER_PASSWD">|LANG_CHANGE_A_PASS|</a></li>
+		<li><a href="/CMD_MODIFY_USER?user=|USERNAME|">|LANG_MODIFY_OWN_DATA|</a></li>
+	</ul>
+</div>
+
+<br/>
+
+<script type="text/javascript">
+<!--
+
+function trimit(strobj)
+{
+	var str = strobj.value
+	while (str.substring(0,1) == ' ')
+	{
+		str = str.substring(1, str.length);
+	}
+	while (str.substring(str.length-1, str.length) == ' ')
+	{
+		str = str.substring(0,str.length-1);
+	}
+
+	strobj.value = str;
+
+	return true;
+}
+
+	$(document).ready(function() {
+		
+	$("table.list").addClass('file_manager');
+	
+	});
+
+// -->
+</script>
+
+
+<div class="info_table forms">
+	<form action="" method="get" name="searchform" onSubmit="trimit(value7);">
+		<span class="title">|LANG_DOMAIN_FILTER|</span>
+		
+		<div class="even">
+			<span class="td_label"><span class="i">|LANG_SHOW_DOMAINS_THAT_CONTAIN|</span></span>
+			<span class="td">
+				<span class="i">
+					 <input type="text" size="12" class="inputclass" name="value7"
+					|*if value7|
+					value='|value7|'
+					|*endif|
+					 />
+				</span>
+			</span>
+		</div>
+	
+				<input type="hidden" name="comparison7" value="contains" />
+				<input type="hidden" name="sort1" value="8" />
+				<input type="hidden" name="sort1dir" value="1" />
+				<input type="hidden" name="sort2dir" value="1" />
+				<input type="hidden" name="ipp" value="50" />
+	
+	<span class="save_menu">
+		<span><input type="submit" value="|LANG_SEARCH|" /></span>
+		<span><input type="button" class="input_submit" value="|LANG_CLEAR_SEARCH|" onclick="document.searchform.value7.value=''; document.searchform.submit();" /></span>
+	</span>
+	</form>
+	
+</div>
+
+<script type="text/javascript">
+document.searchform.value7.focus();
+document.searchform.value7.select();
+</script>
+
+	|TABLE|
+
+	<div class="info_table forms">
+		<div class="even">
+			<span class="td_url"><span class="i_center">|LANG_CLICK_USERNAME|</span></span>
+		</div>
+	</div>
+	
+|HTM_RESELLER_FOOTER|
+

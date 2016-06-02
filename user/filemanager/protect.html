@@ -1,0 +1,84 @@
+|LF_STANDARD|
+|?TREE=&raquo; <a class=tree href="/CMD_FILE_MANAGER">`LANG_FILEMANAGER`</a> &raquo; <a class=tree href="/CMD_FILE_MANAGER`path`">`path`</a>|
+|?HELP_SECTION=`USER_HELPER`/misc.html#password|
+|HTM_USER_TOP|
+
+	<div id="current_model" class="CMD_FILE_MANAGER"></div>
+
+	 <div class="flash_holder">
+      <div class="rounder_t"></div>
+      <div class="roundee">
+
+        <div class="flash" id="notice"><img src="/IMG_NOTICE" alt="" /> |LANG_PROTECT_NOT_REQUIRED_DESC|</div>
+
+      <div class="rounder_b"></div>
+    </div>
+
+	<div class="info_table forms">
+	<form name="info" action='/CMD_FILE_MANAGER' method='post'>
+|HTM_PREVENT_AUTOFILL|
+	<input type="hidden" name="action" value="protect" />
+	<input type="hidden" name="path" value="|path|" />
+	
+		<span class="title">|LANG_PROTECTION_ON| |path|</span>
+		
+		<div class="even">
+			<span class="td_label"><span class="i">
+				|LANG_PROMPT|
+			</span></span>
+			<span class="td"><span class="i">
+				<input type="text" name="name" value="|NAME|" /> |LANG_EG|
+			</span></span>
+		</div>
+					
+		<div class="odd">
+			<span class="td_label"><span class="i">
+				|LANG_SET_USER|
+			</span></span>
+			<span class="td"><span class="i">
+				<input type="text" name="user" /> |LANG_NOT_REQUIRED|
+			</span></span>
+		</div>
+		
+		<div class="even">
+			<span class="td_label"><span class="i">
+				|LANG_AND_PASS|
+			</span></span>
+			<span class="td"><span class="i">
+				<input type="password" name="passwd" />
+			</span></span>
+		</div>
+					
+		<div class="odd">
+			<span class="td_label"><span class="i">
+				|LANG_RE-ENTER_PASS|
+			</span></span>
+			<span class="td"><span class="i">
+				<input type="password" name="passwd2" />
+			</span></span>
+		</div>
+		
+		<span class="save_menu">
+			 <span>
+			 	|LANG_PROTECTION_ENABLED|: <input type="checkbox" name="enabled" value="yes" |ENABLED| /> 
+			 	<input type="submit" value="|LANG_SAVE|" />
+			 </span>
+		</span>
+		
+		</div>
+
+	</div>
+	</form>
+	
+	|USERS|
+	
+	<div class="info_table forms">
+		<div class="even">
+			<span class="td_url"><span class="i_center">
+				<a href="/CMD_PROTECTED_DIRECTORIES?domain=|domain|">|LANG_GO_BACK|</a>
+			</span></span>
+		</div>
+	</div>
+	
+
+|HTM_USER_FOOTER|

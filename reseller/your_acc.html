@@ -1,0 +1,171 @@
+|LF_STANDARD|
+
+<div class="side_win">
+    	<div class="cont">
+
+    	<h2><img src="/IMG_SKIN_YOUR_ACC" alt="" />Your Account</h2>
+        <div class="clear"></div>
+
+|$/usr/local/bin/php
+<?php
+
+show_bar("<b>|LANG_DISK_SPACE|</b><br/>", "|RESELLERQUOTA|", "|RESELLERQUOTAMAX|", "quota_bar");
+show_bar("<b>|LANG_BANDWIDTH|</b><br/>", "|RESELLERBANDWIDTH|", "|RESELLERBANDWIDTHMAX|", "bandwidth_bar");
+
+
+
+
+function show_bar($text, $used, $limit, $id)
+{
+		
+		
+		//if($limit==0 || $limit == 'unlimited') return;
+
+		if($id == "bandwidth_bar") $img = "IMG_USER_BOX_B"; else $img = "IMG_USER_BOX_S";
+
+		if ($used > $limit) $used=$limit;
+
+		@$left=round(($used/$limit)*100);
+		$right=100-$left;
+
+		switch(TRUE)
+		{
+			case ($left > 90)	: $color = "RED";		break;
+			case ($left > 70)	: $color = "ORANGE";	break;
+			case ($left > 50)	: $color = "YELLOW";	break;
+			default				: $color = "GREEN";		break;
+		}
+
+		$bg="/IMG_SKIN_BAR_BG_".$color;
+		$leftImg="/IMG_SKIN_BAR_LEFT_".$color;
+		$rightImg="/IMG_SKIN_BAR_RIGHT_".$color;
+
+		if($left >= 100)
+		{
+		   $overBg="/IMG_SKIN_BAR_BG_".$color;
+		} else {
+		   $overBg="/IMG_SKIN_BAR_BG_BLUE";
+		}
+
+		$overBg="/IMG_SKIN_BAR_BG_BLUE";
+
+		?>
+			
+					        <div class="bar_label"><img src="/<?php echo $img; ?>" alt="" /></div>
+					        <div class="bar_holder"><div class="c">
+					          <div class="bar" style="width:<?php echo $left; ?>%">
+					            <div class="b">
+					            </div>
+					          </div>
+					        </div></div>
+								
+
+<?php
+}
+
+
+?>
+
+DONE|
+
+  		
+        <table class="side_table" cellspacing="0" cellpadding="0">
+        	<tr class="odd">
+	          	<td>&nbsp;</td>
+	            <th>|LANG_USED|</th>
+	            <th>|LANG_MAX|</th>
+          	</tr>
+          
+          	<tr class="even">
+	          	<td>|LANG_DISK_SPACE| |LANG_MB|</td>
+	            <th>|RESELLERQUOTA|</th>
+	            <th>	|$/usr/local/bin/php
+<?php
+$data = <<<END
+|RESELLERQUOTAMAX|
+END;
+$data = str_replace("unlimited", "&infin;", $data);
+echo $data;
+?>
+DONE|</th>
+          	</tr>
+          
+          	<tr class="odd">
+	          	<td>|LANG_BANDWIDTH| |LANG_GB|</td>
+	            <th>|RESELLERBANDWIDTHGIG|</th>
+	            <th>	|$/usr/local/bin/php
+<?php
+$data = <<<END
+|RESELLERBANDWIDTHMAXGIG|
+END;
+$data = str_replace("unlimited", "&infin;", $data);
+echo $data;
+?>
+DONE|</th>
+          	</tr>
+          <tr class="even">
+          	<td>|LANG_EMAILS|</td>
+            <th>|RESELLEREMAIL|</th>
+            <th>	|$/usr/local/bin/php
+<?php
+$data = <<<END
+|RESELLEREMAILMAX|
+END;
+$data = str_replace("unlimited", "&infin;", $data);
+echo $data;
+?>
+DONE|</th>
+          </tr>
+          <tr class="odd">
+          	<td>|LANG_FTP_ACCOUNTS|</td>
+            <th>|RESELLERFTP|</th>
+            <th>	|$/usr/local/bin/php
+<?php
+$data = <<<END
+|RESELLERFTPMAX|
+END;
+$data = str_replace("unlimited", "&infin;", $data);
+echo $data;
+?>
+DONE|</th>
+          </tr>
+        <tr class="even">
+          	<td>|LANG_DATABASES|</td>
+            <th>|RESELLERDATABASE|</th>
+            <th>	|$/usr/local/bin/php
+<?php
+$data = <<<END
+|RESELLERDATABASEMAX|
+END;
+$data = str_replace("unlimited", "&infin;", $data);
+echo $data;
+?>
+DONE|</th>
+          </tr>
+          <tr class="odd">
+          	<td>|LANG_DOMAINS|</td>
+            <th>|RESELLERDOMAINS|</th>
+            <th>	|$/usr/local/bin/php
+<?php
+$data = <<<END
+|RESELLERDOMAINSMAX|
+END;
+$data = str_replace("unlimited", "&infin;", $data);
+echo $data;
+?>
+DONE|</th>
+          </tr>
+        <tr class="even">
+          	<td>|LANG_USERS|</td>
+            <th>|RESELLERUSERS|</th>
+            <th></th>
+          </tr>
+        </table>
+      </div>      
+    </div>
+    <div class="clear">&nbsp;</div>
+     <div class="footer_box">
+	   <a class="white" href="https://www.ronbd.com/" target="_blank">RonBD</a> |LANG_WEB_CP|<br /> &copy; 2007-2016 RONBD Software <br />
+           
+	</div>
+

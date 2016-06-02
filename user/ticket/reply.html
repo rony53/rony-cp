@@ -1,0 +1,48 @@
+|LF_STANDARD|
+|LF_TICKET|
+|?TREE=&raquo; <a class=tree href="/CMD_TICKET">`LANG_MESS_SYS`</a> &raquo; <a class=tree href="/CMD_TICKET?action=view&number=`number`&type=ticket">`LANG_VIEW` `type` `number`</a> &raquo; <a class=tree href="/HTM_TICKET_REPLY?number=`number`&action=`action`&subject=`subject`&user=`user`&priority=`priority`">`LANG_REPLY_TO`</a>|
+|?HELP_SECTION=`USER_HELPER`/gettingstarted.html#ticket|
+|HTM_USER_TOP|
+        <div id="current_model" class="CMD_TICKET"></div>
+
+	<div class="content">
+			
+    <div id="current_model" class="CMD_TICKET"></div>
+
+    <div class="info_table forms">
+    <span class="title">|LANG_ADD_REPLY|</span>
+
+
+	<form name="info" action="CMD_TICKET" method="post">
+		<input type="hidden" name="action" value="|action|" />
+		<input type="hidden" name="type" value="reply" />
+		<input type="hidden" name="number" value="|number|" />
+		<input type="hidden" name="user" value="|user|" />
+		<input type="hidden" name="subject" value="|subject|" />
+		<input type="hidden" name="priority" value="|priority|" />
+
+    <div class="even">
+    <span class="td_label"><span class="i">|LANG_SUBJECT|</span></span>
+    <span class="td"><span class="i">|subject|</span></span>
+    </div>
+            
+            <div class="odd">
+                <span class="td_url"><span class="i_center">|LANG_MESSAGE|</span></span>
+                <span class="td"><span class="i"></span></span>
+            </div>
+            
+            <div class="textarea">
+                <textarea name="message" rows="16" cols="65"></textarea>
+            </div>
+            
+	<span class="save_menu">
+        <span><input type="submit" name="submit" value="|LANG_SAVE|"></span>
+    </span>
+		
+	</form>
+
+</div>
+
+</div>
+	</div>
+|HTM_USER_FOOTER|

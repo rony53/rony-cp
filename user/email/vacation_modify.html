@@ -1,0 +1,50 @@
+|LF_STANDARD|
+|LF_VACATION|
+|?TREE=&raquo; <a class="tree" href="/CMD_SHOW_DOMAIN?domain=`DOMAIN`">`DOMAIN`</a> &raquo; <a class="tree" href="/CMD_EMAIL_VACATION?DOMAIN=`DOMAIN`">`LANG_VAC_MESS`</a> &raquo; <a class="tree" href="/CMD_EMAIL_VACATION_MODIFY?DOMAIN=`DOMAIN`&user=`user`">`LANG_MODIFY` `user`</a>|
+|?HELP_SECTION=`USER_HELPER`/email.html#vacation|
+|HTM_USER_TOP|
+
+<div id="current_model" class="CMD_EMAIL_VACATION"></div>
+
+<div class="info_table forms">
+	<form name="info" action="CMD_EMAIL_VACATION" method="post">
+		<input type="hidden" name="action" value="modify">
+		<input type="hidden" name="domain" value="|DOMAIN|">
+		<input type="hidden" name="user" value="|USER|">
+
+		<span class="title">|LANG_SET_VAC|</span>
+
+        <div class="even">
+            <span class="td_label"><span class="i">|LANG_VAC_ACCOUNT|</span></span>
+            <span class="td"><span class="i">|USER|@|DOMAIN|</span></span>
+        </div>
+                
+        <div class="odd">
+            <span class="td_url"><span class="i_center">|LANG_VAC_MESSAGE|</span></span>
+        </div>
+        
+        <div class="textarea"><textarea rows="15" cols="87" name="text">|TEXT|</textarea></div>
+                
+        <div class="even">
+            <span class="td_label"><span class="i">|LANG_VAC_START|</span></span>
+            <span class="td"><span class="i">|STARTTIME| |LANG_OF| |STARTMONTH||STARTDAY||STARTYEAR|</span></span>
+        </div>
+                
+        <div class="odd">
+            <span class="td_label"><span class="i">|LANG_VAC_END|</span></span>
+            <span class="td"><span class="i">|ENDTIME| |LANG_OF| |ENDMONTH||ENDDAY||ENDYEAR|</span></span>
+        </div>
+        
+        <div class="even">
+            <span class="td_label"><span class="i">|LANG_CURRENT|</span></span>
+            <span class="td"><span class="i">|SERVERTIME|</span></span>
+        </div>
+          
+        <span class="save_menu">
+            <span><input type="submit" name="create" value="|LANG_MODIFY|"> </span>
+        </span>
+   
+	</form>
+</div>
+
+|HTM_USER_FOOTER|

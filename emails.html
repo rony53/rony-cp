@@ -1,0 +1,52 @@
+|LF_STANDARD|
+|LF_SHOW_DOMAIN|
+|?TREE=&raquo; <a class=tree href="/HTM_EMAILS">`LANG_WEBMAIL`</a>|
+|?HELP_SECTION=`USER_HELPER`/gettingstarted.html|
+|HTM_USER_TOP|
+<div id="current_model" class="HTM_EMAILS"></div>
+	<div class="content">
+
+|*if SHOW_LINKS="no"|
+        |?HAVE_SQUIRRELMAIL=no|
+        |?HAVE_WEBMAIL=no|
+        |?HAVE_ROUNDCUBE=no|
+        |?HAVE_ATMAIL=no|
+|*endif|
+		
+<div class="content">
+
+        <div class="link_list">
+          <ul class="with_icons">
+                |*if HAVE_ROUNDCUBE="yes"|
+                <li>
+              <a href="http://|HOSTNAME|/roundcube" target="_blank">
+              <span class="img_for_menu"><img src="/IMG_RCUBE" alt="|LANG_WEBMAIL_ROUNDCUBE|"></span>
+              |LANG_WEBMAIL_ROUNDCUBE|</a>
+            </li>
+                |*endif|
+	     	|*if HAVE_SQUIRRELMAIL="yes"|
+                <li>
+              <a href="http://|HOSTNAME|/squirrelmail" target="_blank">
+              <span class="img_for_menu"><img src="/IMG_SMAIL" alt="|LANG_WEBMAIL_SM|"></span>
+              |LANG_WEBMAIL_SM|</a>
+            </li>
+                |*endif|
+                |*if HAVE_ATMAIL="yes"|
+                <li>
+              <a href="http://|HOSTNAME|/atmail" target="_blank">
+              <span class="img_for_menu"><img src="/IMG_ATMAIL" alt="|LANG_WEBMAIL_ATMAIL|"></span>
+              |LANG_WEBMAIL_ATMAIL|</a>
+            </li>
+                |*endif|
+                |*if HAVE_WEBMAIL="yes"|
+                <li>
+              <a href="http://|HOSTNAME|/webmail" target="_blank">
+              <span class="img_for_menu"><img src="/IMG_UEBI" alt="|LANG_WEBMAIL_UEBI|"></span>
+              |LANG_WEBMAIL_UEBI|</a>
+            </li>
+                |*endif|
+          </ul>
+        </div>
+    
+    </div> 
+|HTM_USER_FOOTER|

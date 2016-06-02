@@ -1,0 +1,67 @@
+|LF_STANDARD|
+|?TREE=&raquo; <a class="tree" href="/CMD_RESELLER_SHOW">`LANG_SHOW_RESELLERS`</a> &raquo; <a class="tree" href="/CMD_SHOW_RESELLER?user=`user`">`LANG_RESELLER` `user`</a>|
+|?HELP_SECTION=`ADMIN_HELPER`/listr.html|
+|HTM_ADMIN_TOP|
+
+	<div id="current_model" class="CMD_RESELLER_SHOW"></div>
+
+	<div class="info_table forms">
+		
+		<span class="title"><b>|LANG_DETAILS_FOR| |user|</b></span>
+
+		<span class="save_menu">
+			<center>
+			<span>
+				<form action="CMD_LOGIN" method="post">
+					<input type="hidden" name="username" value="|USERNAME|\||user|" />
+					<input type="submit" value="|LANG_LOGIN_AS| |user|" />
+				</form>
+			</span>
+	
+			<span>
+				<form>
+					<input type="button" value="|LANG_MODIFY_RES| |user|" onclick="location.href='CMD_MODIFY_RESELLER?user=|user|'" />
+				</form>
+			</span>
+			
+			<span>
+				<form name="tableform" action='CMD_SELECT_USERS' method='get'>
+					<input type="hidden" name="select0" value="|user|" />
+					<input type="submit" value='|LANG_DELETE_RES| |user|' name="delete" />
+				</form>
+			</span>
+			
+			<span>
+				<form>
+					<input type="button" value="|user||LANG_HIS_DATA|" onclick="location.href='CMD_SHOW_USER?user=|user|'" />
+				</form>
+			</span>
+
+		</center>
+		</span>
+	</div>
+
+	|USERS|
+
+	|STATS|
+
+	<div class="info_table forms">
+		<span class="title">|LANG_USER_COMMENT_BOX|</span>
+		
+		<form action="CMD_COMMENTS" method="post">
+			
+			<input type="hidden" name="user" value="|user|" />
+			<input type="hidden" name="location" value="CMD_SHOW_RESELLER" />
+			<div class="textarea">
+				<textarea rows="15" cols="87" name="comments">|COMMENTS|</textarea>
+			</div>
+			
+			<span class="save_menu">
+				<span><input type="submit" value="|LANG_SAVE_COMMENTS|" /></span>
+			</span>
+		
+		</form>
+	
+	</div>
+
+|HTM_ADMIN_BOTTOM|

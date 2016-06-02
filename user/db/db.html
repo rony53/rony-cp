@@ -1,0 +1,75 @@
+|?TREE=&raquo; <a class="tree" href="/CMD_SHOW_DOMAIN?domain=`DOMAIN`">`DOMAIN`</a> &raquo; <a class="tree" href="/CMD_DB?DOMAIN=`DOMAIN`">`LANG_MYSQL_SETUP`</a>|
+|?HELP_SECTION=`USER_HELPER`/mysql.html|
+|HTM_USER_TOP|
+
+	<div id="current_model" class="CMD_DB"></div>
+	
+	<div class="link_list right_list">
+		|*if USERDATABASE="0"|
+			<br><b>|LANG_DB_BEFORE_PMA|</b><br>
+		|*endif|
+		<ul class="inner">
+			<li><a href="CMD_DB_CREATE?DOMAIN=|DOMAIN|">|LANG_CREATE_DB|</a></li>
+			<li><a target="_blank" href="|HTTP|://|HOSTNAME|/phpMyAdmin">|LANG_PMA|</a></li>
+		</ul>
+	</div>
+
+	|DATABASES|
+
+	<div class="info_table forms">
+	<form name="backupform" action="/CMD_DB" enctype="multipart/form-data" method="post">
+	<input type="hidden" name="action" value="restore" />
+	<input type="hidden" name="domain" value="|DOMAIN|" />
+		<span class="title">|LANG_UPLOAD_DB|</span>
+		<div class="even">
+			<span class="td_label"><span class="i">|LANG_SELECT_DB|</span></span>
+			<span class="td"><span class="i">|DATABASESELECT|</span></span>
+		</div>
+					
+		<div class="odd">
+			<span class="td_url"><span class="i_center"><input type="file" name="file1" size="40" /></span></span>
+		</div>
+
+
+<script type="text/javascript">
+function setuserpass(truefalse)
+{
+	if (document.backupform)
+		with (document.backupform)
+			for (var i=0; i < elements.length; i++)
+				if (elements[i].name == 'dbuser' || elements[i].name == 'dbpass')
+					elements[i].disabled=truefalse;
+}
+</script>
+	
+	<div class="even">
+		<span class="td_url"><span class="i_center">|LANG_SELECT_CONN_METH|:</span></span>
+	</div>
+				
+	<div class="odd">
+		<span class="td_label"><span class="i">
+			 |LANG_YOUR_ACC_LOGIN|
+		</span></span>
+		<span class="td"><span class="i">
+			<input type="radio" name="method" value="default" checked="checked" onclick="setuserpass(true);" />
+		</span></span>
+	</div>
+
+	<div class="even">
+		<span class="td_label"><span class="i">|LANG_A_SPECIFIED|</span></span>
+		<span class="td"><span class="i">
+			<input type="radio" name="method" value="custom" onclick="setuserpass(false);">
+			 <input type="text" size="6" name="dbuser" value="|LANG_A_SPECIEID_USER|" disabled="disabled" onclick="this.select()" /> 
+			 |LANG_AND_PASS| <input type="password" size="6" name="dbpass" value="" disabled="disabled"  />
+		</span></span>
+	</div>
+				
+	<span class="save_menu">
+		 <span><input type="submit" value="|LANG_UPLOAD|" /></span>
+	</span>
+
+</form>
+</div>
+
+
+|HTM_USER_FOOTER|

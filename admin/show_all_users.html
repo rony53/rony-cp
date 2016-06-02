@@ -1,0 +1,94 @@
+|?TREE=&raquo; <a class="tree" href="/CMD_ALL_USER_SHOW">`LANG_SHOW_ALL_USERS`</a>|
+|?HELP_SECTION=`ADMIN_HELPER`/showall.html|
+|HTM_ADMIN_TOP|
+<div id="current_model" class="CMD_ALL_USER_SHOW"></div>
+
+<div class="link_list right_list">
+      	<ul class="inner">
+        	<li><a href="/HTM_ADMIN_ACCOUNT_USER_DELETE">|LANG_DELETE_USER|</a></li>
+        </ul>
+</div>
+
+
+
+<script type="text/javascript">
+<!--
+
+function trimit(strobj)
+{
+	var str = strobj.value
+	while (str.substring(0,1) == ' ')
+	{
+		str = str.substring(1, str.length);
+	}
+	while (str.substring(str.length-1, str.length) == ' ')
+	{
+		str = str.substring(0,str.length-1);
+	}
+
+	strobj.value = str;
+
+	return true;
+}
+
+	
+	$(document).ready(function() {
+		
+	$("table.list").addClass('file_manager');
+	
+	});
+	
+
+// -->
+</script>
+
+<br>
+
+<div class="info_table forms">
+	<form action="" method="get" name="searchform" onsubmit="trimit(value8);">
+		<span class="title">|LANG_DOMAIN_FILTER|</span>
+		
+		<div class="even">
+			<span class="td_label"><span class="i">|LANG_SHOW_DOMAINS_THAT_CONTAIN|</span></span>
+			<span class="td">
+				<span class="i">
+					<input type="text" size="12" class="inputclass" name="value8"
+					|*if value8|
+					value="|value8|"
+					|*endif|
+					/>
+				</span>
+			</span>
+		</div>
+	
+				<input type="hidden" name="comparison8" value="contains" />
+				<input type="hidden" name="sort1" value="8" />
+				<input type="hidden" name="sort1dir" value="1" />
+				<input type="hidden" name="sort2dir" value="1" />
+				<input type="hidden" name="ipp" value="50" />
+	
+	<span class="save_menu">
+		<span><input type="submit" value="|LANG_SEARCH|" /></span>
+		<span><input type="button" class="input_submit" value="|LANG_CLEAR_SEARCH|" onclick="document.searchform.value8.value=''; document.searchform.submit();" /></span>
+	</span>
+	</form>
+	
+</div>
+
+
+|$/usr/local/bin/php
+<?php
+$data = <<<END
+|TABLE|
+END;
+$data = str_replace("unlimited", "&infin;", $data);
+$data = str_replace("# of Domains", "Domains", $data);
+$data = str_replace("Suspended", "Susp.", $data);
+$data = str_replace("Bandwidth", "Bandw.", $data);
+$data = str_replace("Sent E-mails", "Mails", $data);
+$data = str_replace("Select", "", $data);
+echo $data;
+?>
+DONE|
+
+|HTM_ADMIN_BOTTOM|

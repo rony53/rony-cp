@@ -1,0 +1,14 @@
+|LF_STANDARD|
+<li>
+<a href="javascript: void(0);" onclick="$().slide_menu('acc_management_menu')"><img src="/IMG_ACC_MNG" width="29" height="32" alt="" />|LANG_ACC_MANAGEMENT|</a>
+<ul id="acc_management_menu">
+<li id="CMD_ADDITIONAL_DOMAINS"><a href="/CMD_ADDITIONAL_DOMAINS?domain=|SESSION_SELECTED_DOMAIN|">|LANG_DOMAIN_SETUP|</a></li>
+|*if NUSERSUBDOMAINSMAX!="0"|
+<li id="CMD_SUBDOMAIN"><a href="/CMD_SUBDOMAIN?domain=|SESSION_SELECTED_DOMAIN|">|LANG_SUBDOMAIN_MANAGEMENT|</a></li>
+|*endif|
+<li id="CMD_LOGIN_HISTORY"><a href="/CMD_LOGIN_HISTORY?domain=|SESSION_SELECTED_DOMAIN|">|LANG_LOGIN_HISTORY|</a></li>
+<li id="HTM_PASSWD"><a href="/HTM_PASSWD?domain=|SESSION_SELECTED_DOMAIN|">|LANG_CHANGE_PASSWORD|</a></li>
+<li id="CMD_TICKET"><a href="/CMD_TICKET?domain=|SESSION_SELECTED_DOMAIN|">|LANG_SUPPORT_CENTER|</a></li>
+
+</ul>
+</li>

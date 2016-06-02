@@ -1,0 +1,258 @@
+|?TREE=&raquo; `ALL_DOMAINS_SELECT`|
+|?HELP_SECTION=`USER_HELPER`|
+|HTM_USER_TOP|
+
+
+<div class="content">	
+
+      	<div class="link_list">
+      		<h2 class="no_icons">|LANG_ACC_MANAGEMENT|</h2>
+          <ul class="with_icons">
+		|*if ALLOWED_CMD_DOMAIN!="no"|
+          	<li>
+              <a href="/CMD_ADDITIONAL_DOMAINS?domain=|domain|">
+              <span class="img_for_menu"><img src="/IMG_MAIN_AC1" alt="|LANG_DOMAIN_SETUP|"></span>
+              |LANG_DOMAIN_SETUP|</a>
+            </li>
+                |*endif|
+          	|*if NUSERSUBDOMAINSMAX!="0"|
+			      <li>
+              <a href="/CMD_SUBDOMAIN?domain=|domain|"><span class="img_for_menu"><img src="/IMG_MAIN_AC2" alt="|LANG_SUBDOMAIN_MANAGEMENT|"></span> 
+              |LANG_SUBDOMAIN_MANAGEMENT|</a>
+            </li>
+		|*endif|
+          	<li>
+              <a href="/CMD_LOGIN_HISTORY?domain=|domain|"><span class="img_for_menu"><img src="/IMG_MAIN_AC3" alt="|LANG_LOGIN_HISTORY|"></span> 
+              |LANG_LOGIN_HISTORY|</a>
+            </li>
+          	<li>
+              <a href="/HTM_PASSWD?domain=|domain|"><span class="img_for_menu"><img src="/IMG_MAIN_AC4" alt="|LANG_CHANGE_PASSWORD|"></span> 
+              |LANG_CHANGE_PASSWORD|</a>
+            </li>
+          	<li>
+              <a href="/CMD_TICKET?domain=|domain|&amp;sort1=-1"><span class="img_for_menu"><img src="/IMG_MAIN_AC5" alt="|LANG_SUPPORT_CENTER|"></span> 
+              |LANG_SUPPORT_CENTER|</a>
+            </li>
+          </ul>  
+        </div>
+
+
+		<div class="link_list">
+        	<h2 class="no_icons">|LANG_EMAIL_MANAGEMENT|</h2>
+          <ul class="with_icons">
+          	|*if USEREMAILMAX!="0"|
+			      <li>
+              <a href="/CMD_EMAIL_POP?domain=|domain|"><span class="img_for_menu"><img src="/IMG_MAIN_EM1" alt="|LANG_POP_EMAIL_ACCOUNTS|"></span>
+              |LANG_POP_EMAIL_ACCOUNTS|</a>
+            </li>
+			      |*endif|
+			      |*if USERCATCHALL="ON"|
+			      <li>
+              <a href="/CMD_EMAIL_CATCH_ALL?domain=|domain|"><span class="img_for_menu"><img src="/IMG_MAIN_EM2" alt="|LANG_CATCH_ALL_EMAIL|"></span>
+              |LANG_CATCH_ALL_EMAIL|</a>
+            </li>
+			      |*endif|
+                              |*if USERFORWARDERMAX!="0"|
+                              <li>
+              <a href="/CMD_EMAIL_FORWARDER?domain=|domain|"><span class="img_for_menu"><img src="/IMG_MAIN_EM3" alt="|LANG_CATCH_ALL_EMAIL|"></span>
+              |LANG_FORWARDERS|</a>
+            </li>
+                              |*endif|
+                              |*if USERRESPONDERMAX!="0"|
+                              <li>
+              <a href="/CMD_EMAIL_AUTORESPONDER?domain=|domain|"><span class="img_for_menu"><img src="/IMG_MAIN_EM4" alt="|LANG_CATCH_ALL_EMAIL|"></span>
+              |LANG_AUTORESPONDERS|</a>
+            </li>
+                              |*endif|
+
+			      |*if USEREMAILMAX!="0"|
+			      <li>
+              <a href="/CMD_EMAIL_VACATION?domain=|domain|"><span class="img_for_menu"><img src="/IMG_MAIN_EM5" alt="|LANG_VAC_MESSAGES|"></span>
+              |LANG_VAC_MESSAGES|</a>
+            </li>
+			      |*endif|
+			      |*if USERSPAM="ON"|
+			      <li>
+              <a href="/CMD_SPAMASSASSIN?domain=|domain|"><span class="img_for_menu"><img src="/IMG_MAIN_EM4" alt="|LANG_SPAMASSASSIN|"></span>
+              |LANG_SPAMASSASSIN|</a>
+            </li>
+			      |*endif|
+			      |*if USEREMAILMAX!="0"|
+			      <li>
+              <a href="/CMD_EMAIL_FILTER?domain=|domain|"><span class="img_for_menu"><img src="/IMG_MAIN_EM7" alt="|LANG_SPAM_FILTERS|"></span>
+              |LANG_SPAM_FILTERS|</a>
+            </li>
+			      |*endif|
+                              |*if USERMLISTMAX!="0"|
+                              <li>
+              <a href="/CMD_EMAIL_LIST?domain=|domain|"><span class="img_for_menu"><img src="/IMG_MAIN_EM6" alt="|LANG_MAILING_LISTS|"></span>
+              |LANG_MAILING_LISTS|</a>
+            </li>
+                              |*endif|
+            </ul>
+          <ul class="with_icons">
+                              |*if USERDNSCONTROL="ON"|
+                              <li>
+              <a href="/CMD_DNS_MX?domain=|domain|"><span class="img_for_menu"><img src="/IMG_MAIN_TS6" alt="|LANG_MX_RECORDS|"></span>
+              |LANG_MX_RECORDS|</a>
+            </li>
+                              |*endif|
+          </ul>  
+        	
+
+      </div>
+
+        
+
+      	<div class="link_list">
+      		<h2 class="no_icons">|LANG_SYS_MANAGEMENT|</h2>
+          <ul class="with_icons">
+			      <li>
+              <a href="/CMD_USER_STATS?domain=|domain|"><span class="img_for_menu"><img src="/IMG_MAIN_SYS1" alt="|LANG_SITE_SUM_STATS_LOGS|"></span>
+              |LANG_SITE_SUM_STATS_LOGS|</a></li>
+			      |*if USERFTPMAX!="0"|
+			      <li>
+              <a href="/CMD_FTP?domain=|domain|"><span class="img_for_menu"><img src="/IMG_MAIN_SYS2" alt="|LANG_FTP_MANAGEMENT|"></span>
+              |LANG_FTP_MANAGEMENT|</a>
+            </li>
+			      |*endif|
+			      |*if USERDATABASEMAX!="0"|
+			      <li>
+              <a href="/CMD_DB?domain=|domain|"><span class="img_for_menu"><img src="/IMG_MAIN_SYS3" alt="|LANG_MYSQL_MANAGEMENT|"></span>
+              |LANG_MYSQL_MANAGEMENT|</a>
+            </li>
+			      |*endif|
+			      <li>
+              <a href="/CMD_PERL_MODULES?domain=|domain|"><span class="img_for_menu"><img src="/IMG_MAIN_SYS4" alt="|LANG_INSTALLED_PERL_MODULES|"></span>
+              |LANG_INSTALLED_PERL_MODULES|</a>
+            </li>
+			      |*if USERSYSINFO="ON"|
+			      <li>
+              <a href="/CMD_SYSTEM_INFO?domain=|domain|"><span class="img_for_menu"><img src="/IMG_MAIN_SYS5" alt="|LANG_SERVER_INFO|"></span>
+              |LANG_SERVER_INFO|</a>
+            </li>
+			      |*endif|
+			      <li>
+              <a href="/HTM_ERROR_PAGES?domain=|domain|"><span class="img_for_menu"><img src="/IMG_MAIN_SYS6" alt="|LANG_CUSTOM_ERROR_PAGES|"></span>
+              |LANG_CUSTOM_ERROR_PAGES|</a>
+            </li>
+                              |*if USERPOINTERSMAX!="0"|
+                              <li>
+              <a href="/CMD_DOMAIN_POINTER?domain=|domain|"><span class="img_for_menu"><img src="/IMG_MAIN_SYS8" alt="|LANG_DOMAIN_POINTERS|"></span>
+              |LANG_DOMAIN_POINTERS|</a>
+            </li>
+                              |*endif|
+			      <li>
+              <a href="/CMD_REDIRECT?domain=|domain|"><span class="img_for_menu"><img src="/IMG_MAIN_SYS7" alt="|LANG_SITE_REDIRECTION|"></span>
+              |LANG_SITE_REDIRECTION|</a>
+            </li>
+           </ul>  
+        </div>
+
+        <div class="link_list">
+        	<h2 class="no_icons">|LANG_TOOLS|</h2>
+          <ul class="with_icons">
+			      <li>
+              <a href="/CMD_FILE_MANAGER?domain=|domain|"><span class="img_for_menu"><img src="/IMG_MAIN_TS1" alt="|LANG_FILE_MANAGER|"></span>
+              |LANG_FILE_MANAGER|</a>
+            </li>
+			      <li>
+              <a target="_blank" href="|WEBAPPS_SSL|://|HOSTNAME|/phpmyadmin"><span class="img_for_menu"><img src="/IMG_MAIN_TS2" alt="|LANG_PHPMYADMIN|"></span>
+              |LANG_PHPMYADMIN|</a>
+            </li>
+			      |*if USERCRON="ON"|
+			      <li>
+              <a href="/CMD_CRON_JOBS?domain=|domain|"><span class="img_for_menu"><img src="/IMG_MAIN_TS3" alt="|LANG_CRONJOBS|"></span>
+              |LANG_CRONJOBS|</a>
+            </li>
+			      |*endif|
+			      <li>
+              <a href="/CMD_MIME_TYPES?domain=|domain|"><span class="img_for_menu"><img src="/IMG_MAIN_TS4" alt="|LANG_MIMETYPES|"></span>
+              |LANG_MIMETYPES|</a>
+            </li>
+			      <li>
+              <a href="/CMD_HANDLERS?domain=|domain|"><span class="img_for_menu"><img src="/IMG_MAIN_TS5" alt="|LANG_APACHE_HANDLERS|"></span>
+              |LANG_APACHE_HANDLERS|</a>
+            </li>
+                              |*if USERDNSCONTROL="ON"|
+                              <li>
+              <a href="/CMD_DNS_CONTROL?domain=|domain|"><span class="img_for_menu"><img src="/IMG_MAIN_TS7" alt="|LANG_MX_RECORDS|"></span>
+              |LANG_DNS_MANAGEMENT|</a>
+             </li>
+                              |*endif|
+			      |*if USERSSL="ON"|
+			      <li>
+              <a href="/CMD_SSL?domain=|domain|"><span class="img_for_menu"><img src="/IMG_MAIN_TS8" alt="|LANG_SSL_CERTS|"></span>
+              |LANG_SSL_CERTS|</a>
+            </li>
+			      |*endif|
+			      <li>
+              <a href="/CMD_PROTECTED_DIRECTORIES?domain=|domain|"><span class="img_for_menu"><img src="/IMG_MAIN_TS9" alt="|LANG_PASS_PROC_DIRS|"></span>
+              |LANG_PASS_PROC_DIRS|</a>
+            </li>
+          </ul>  
+        </div>
+
+      
+
+      	<div class="link_list">
+      		<h2 class="no_icons">|LANG_BACKUP_MANAGER|</h2>
+          <ul class="with_icons">
+          	<li>
+              <a href="/CMD_SITE_BACKUP?domain=|domain|"><span class="img_for_menu"><img src="/IMG_MAIN_TS10" alt="|LANG_CREATE_RESTORE_BACKUPS|"></span>
+              |LANG_CREATE_RESTORE_BACKUPS|</a>
+            </li>
+          </ul>  
+        </div>
+
+        
+|$/usr/local/bin/php
+<?php
+$data0 = <<<END
+|PLUGIN_0_IMG|
+END;
+$data1 = <<<END
+|PLUGIN_1_IMG|
+END;
+$data2 = <<<END
+|PLUGIN_2_IMG|
+END;
+$data3 = <<<END
+|PLUGIN_3_IMG|
+END;
+$data4 = <<<END
+|PLUGIN_4_IMG|
+END;
+$data5 = <<<END
+|PLUGIN_5_IMG|
+END;
+
+$data = $data0.$data1.$data2.$data3.$data4.$data5;
+	
+	if(strlen($data) > 1) {
+		
+		echo '
+        <div class="link_list">
+        	<h2 class="no_icons">|LANG_PLUGINS|</h2>
+		    <ul class="with_icons">';
+		if($data0) echo '<li>'.$data0.'</li>';
+		if($data1) echo '<li>'.$data1.'</li>';
+		if($data2) echo '<li>'.$data2.'</li>';
+		if($data3) echo '<li>'.$data3.'</li>';
+		if($data4) echo '<li>'.$data4.'</li>';
+		if($data5) echo '<li>'.$data5.'</li>';
+			
+        echo '</ul></div>';
+		
+	}
+
+?>
+DONE|
+        
+      
+
+  </div>
+  	
+  	<br/>
+  
+	|HTM_USER_FOOTER|

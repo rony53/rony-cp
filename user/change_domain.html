@@ -1,0 +1,55 @@
+|LF_ADDITIONAL_DOMAINS|
+|?TREE=&raquo; <a class=tree href="/CMD_ADDITIONAL_DOMAINS">`LANG_ADDITIONAL_DOMAINS`</a> &raquo; <a class=tree href="/CMD_CHANGE_DOMAIN">`LANG_CHANGE_DOMAIN`</a> |
+|?HELP_SECTION=`USER_HELPER`/misc.html#domains|
+|HTM_USER_TOP|
+
+<script type="text/javascript">
+<!--
+
+|HTM_JAVASCRIPT|
+
+function showAdminMessage()
+{
+	var message = window.open("CMD_EDIT_ADMIN_MESSAGE","message","width=740,height=480,scrollbars=no,resizable=yes");
+}
+
+function formOK()
+{
+	with (document.reseller)
+	{
+		if (checkName() && checkPass() && checkEmail())
+			return true;
+	}
+	return false;
+}
+
+// -->
+</script>
+
+    <div class="content">
+
+	<div id="current_model" class="CMD_ADDITIONAL_DOMAINS"></div>
+
+	<div class="info_table forms">
+		<form action="/CMD_CHANGE_DOMAIN" method="post" target="_parent">
+			
+			<span class="title">|LANG_ENTER_NEW_VALUE|</span>
+			
+			<div class="even">
+				<span class="td_label_small"><span class="i">
+					|LANG_CHANGE_1| 
+				</span></span>
+				<span class="td"><span class="i">
+					|DOMAIN_SELECT|&nbsp;&nbsp;|LANG_CHANGE_2|&nbsp;
+					www.<input type="text" name="new_domain" />
+				</span></span>
+			</div>
+						
+			<span class="save_menu">
+				<span><input type="submit" class="input_submit" value="|LANG_CHANGE|" /></span>
+			</span>
+		
+		</form>
+	</div>
+</div>
+|HTM_USER_FOOTER|

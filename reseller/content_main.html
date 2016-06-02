@@ -1,0 +1,175 @@
+|LF_STANDARD|
+
+|*if AJAX="1"|
+	<script type="text/javascript" src="JS_CREATION_CHECK"></script>
+|*endif|
+
+<div class="content">	
+    	<div class="link_list">
+      		<h2 class="no_icons">|LANG_ACC_MANAGEMENT|</h2>
+          <ul class="with_icons">
+			<li>
+				<a href="/HTM_ACCOUNT_USER_CREATE">
+					<span class="img_for_menu"><img src="/IMG_INDEX_ADD_USER" alt="|LANG_ADD_NEW_USER|"></span>
+					|LANG_ADD_NEW_USER|
+				</a>
+			</li>
+			
+            <li>
+            	<a href="/CMD_USER_SHOW">
+            		<span class="img_for_menu"><img src="/IMG_INDEX_LIST_USERS" alt="|LANG_LIST_USERS|"></span>
+					|LANG_LIST_USERS|
+            	</a>
+            </li>
+            
+            <li>
+            	<a href="/CMD_SHOW_USER_PACKAGE">
+            		<span class="img_for_menu"><img src="/IMG_INDEX_ADD_PACK" alt="|LANG_ADD_PACKAGE|"></span>
+					|LANG_ADD_PACKAGE|
+            	</a>
+            </li>
+            
+            <li>
+            	<a href="/CMD_MANAGE_USER_PACKAGES">
+            		<span class="img_for_menu"><img src="/IMG_INDEX_MANAGE_USER_PACKS" alt="|LANG_LIST_PACKAGES|"></span>
+					|LANG_LIST_PACKAGES|
+            	</a>
+            </li>
+            
+            <li>
+            	<a href="/HTM_USER_PASSWD">
+            		<span class="img_for_menu"><img src="/IMG_INDEX_CHANGE_PASS" alt="|LANG_CHANGE_PASSWORDS|"></span>
+					|LANG_CHANGE_PASSWORDS|
+            	</a>
+            </li>
+            <li>
+                <a href="javascript:showUserMessage();">
+			<span class="img_for_menu"><img src="/IMG_MAIN_EM6" alt="|LANG_MESSSAGE_ALL_USERS|"></span>
+					|LANG_EDIT_USER_MESS|
+                            </a>
+            </li>
+
+            <li>
+            	<a href="/CMD_TICKET_CREATE?TYPE=Message&amp;who=all">
+            		<span class="img_for_menu"><img src="/IMG_INDEX_MSG_ALL_USERS" alt="|LANG_MESSSAGE_ALL_USERS|"></span>
+					|LANG_MESSSAGE_ALL_USERS|
+            	</a>
+            </li>
+            
+          </ul>  
+        </div>
+        
+        
+
+       <div class="link_list">
+      		<h2 class="no_icons">|LANG_SYS_MANAGEMENT|</h2>
+          <ul class="with_icons"> 
+			<li>
+				<a href="/CMD_SYSTEM_INFO">
+					<span class="img_for_menu"><img src="/IMG_INDEX_SYS_INFO" alt="|LANG_SYSTEM_INFO|"></span>
+					|LANG_SYSTEM_INFO|
+				</a>
+			</li>
+				
+			<li>
+				<a href="/CMD_RESELLER_STATS">
+					<span class="img_for_menu"><img src="/IMG_INDEX_RESELLER_STATS" alt="|LANG_RESELLER_STATS|"></span>
+					|LANG_RESELLER_STATS|
+				</a>
+			</li>
+			
+			<li>
+				<a href="/CMD_IP_CONFIG">
+					<span class="img_for_menu"><img src="/IMG_INDEX_IP_MANAGEMENT" alt="|LANG_IP_MANAGER|"></span>
+					|LANG_IP_MANAGER|
+				</a>
+			</li>
+			
+			<li>
+				<a href="/CMD_NAME_SERVER">
+					<span class="img_for_menu"><img src="/IMG_INDEX_NAMESERVERS" alt="|LANG_NAMESERVERS|"></span>
+					|LANG_NAMESERVERS|
+				</a>
+			</li>
+			
+			<li>
+				<a href="/CMD_SKINS">
+					<span class="img_for_menu"><img src="/IMG_INDEX_SKIN_MANAGER" alt="|LANG_SKIN_MANAGER|"></span>
+					|LANG_SKIN_MANAGER|
+				</a>
+			</li>
+			
+			<li>
+				<a href="/CMD_TICKET_CREATE?TYPE=Ticket">
+					<span class="img_for_menu"><img src="/IMG_INDEX_CONTACT_ADMIN" alt="|LANG_CONTACT_ADMIN|"></span>
+					|LANG_CONTACT_ADMIN|
+				</a>
+			</li>
+			
+          </ul>  
+        </div>
+
+       <div class="link_list">
+      		<h2 class="no_icons">|LANG_BACKUP_MANAGER|</h2>
+          <ul class="with_icons"> 
+            
+            <li>
+            	<a href="/CMD_USER_BACKUP">
+            		<span class="img_for_menu"><img src="/IMG_INDEX_MANAGE_USER_BACKUPS" alt="|LANG_USER_BACKUPS|"></span>
+					|LANG_USER_BACKUPS|
+            	</a>
+            </li>
+            
+          </ul>  
+        </div>
+
+|$/usr/local/bin/php
+<?php
+$data0 = <<<END
+|PLUGIN_0_RESELLER_IMG|
+END;
+$data1 = <<<END
+|PLUGIN_1_RESELLER_IMG|
+END;
+$data2 = <<<END
+|PLUGIN_2_RESELLER_IMG|
+END;
+$data3 = <<<END
+|PLUGIN_3_RESELLER_IMG|
+END;
+$data4 = <<<END
+|PLUGIN_4_RESELLER_IMG|
+END;
+$data5 = <<<END
+|PLUGIN_5_RESELLER_IMG|
+END;
+
+$data = $data0.$data1.$data2.$data3.$data4.$data5;
+	
+	if(strlen($data) > 1) {
+		
+		echo '
+        <div class="link_list">
+        	<h2 class="no_icons">|LANG_PLUGINS|</h2>
+		    <ul class="with_icons">';
+		if($data0) echo '<li>'.$data0.'</li>';
+		if($data1) echo '<li>'.$data1.'</li>';
+		if($data2) echo '<li>'.$data2.'</li>';
+		if($data3) echo '<li>'.$data3.'</li>';
+		if($data4) echo '<li>'.$data4.'</li>';
+		if($data5) echo '<li>'.$data5.'</li>';
+			
+        echo '</ul></div>';
+		
+	}
+
+?>
+DONE|
+
+        </div>
+
+|*if AJAX="1"|
+	<script type="text/javascript">
+                set_admin_level_updates();
+        </script>
+|*endif|

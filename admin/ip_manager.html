@@ -1,0 +1,41 @@
+|LF_STANDARD|
+|?TREE=&raquo; <a class="tree" href="/CMD_IP_MANAGER">`LANG_IP_MANAGER`</a>|
+|?HELP_SECTION=`ADMIN_HELPER`/ipman.html|
+|HTM_ADMIN_TOP|
+
+<div id="current_model" class="CMD_IP_MANAGER"></div>
+
+|TEXT|
+
+	<div class="info_table forms">
+	<form action="/CMD_IP_MANAGER" method="post">
+	<input type="hidden" name="action" value="add" />
+	<span class="title">|LANG_ADD_IP|</span>
+		
+		<div class="odd">
+			
+			<span class="td_label"><span class="i">|LANG_IP|</span></span>
+			<span class="td"><span class="i"><input type="text" name="ip" /></span></span>
+		
+		</div>
+		
+		<div class="even">
+			
+			<span class="td_label"><span class="i">|LANG_NETMASK|</span></span>
+			<span class="td"><span class="i"><input type="text" name="netmask" value="255.255.255.0" />|*if HAVE_IPV6="yes"| |LANG_IPV6_MASK||*endif|</span></span>
+		
+		</div>
+		
+
+			<span class="save_menu">
+				<span>
+					<input type="submit" value="|LANG_ADD_IP|" />
+				</span>
+			</span>
+
+	</form>
+	</div>
+	
+	|TABLE|
+
+|HTM_ADMIN_BOTTOM|

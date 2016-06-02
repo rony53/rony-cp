@@ -1,0 +1,19 @@
+.search.top { margin-left: 15px; }
+.forms .input_submit input, input.input_submit, .forms button.input_submit, .table_submit
+{ padding: 1px; }
+span.td { display: block; float: left; width: 450px; }
+span.td_label { display: block; width: 250px; float: left; }
+div.ajax div.even span.td, div.ajax div.odd span.td { width: 250px; }
+body { width: 997px; }
+.main_wrapper { width: 997px; }
+.footer_wrap { width: 997px; }
+.footer_box { width: 737px; }
+body.ajax { margin: 0; width: 520px; float: left }
+div.big div.even span.td, div.big div.odd span.td { width: 450px; }
+div.info_table span.save_menu center.bigger input { padding:0;  }
+div.info_table span.save_menu center.bigger { width: 710px; margin-left: -30px; }
+div.info_table span.save_menu center { width: 650px; padding-left: -100px; } 
+div.info_table span.save_menu center input { padding:0;  } 
+span.td_part { width: 230px; float: left; display: block; }
+span.ie_smaller { width: 400px; }
+td.save_menu input { padding: 0; }

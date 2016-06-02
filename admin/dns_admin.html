@@ -1,0 +1,135 @@
+|LF_STANDARD|
+|?TREE=&raquo; <a class="tree" href="/CMD_DNS_ADMIN">`LANG_DNS_ADMIN`</a>|
+|?HELP_SECTION=`ADMIN_HELPER`/dnsadmin.html|
+|HTM_ADMIN_TOP|
+
+<div id="current_model" class="CMD_DNS_ADMIN"></div>
+
+
+
+<div class="info_table forms">
+<form action="" method="get">
+	
+	<span class="title">|LANG_SELECT_DNS|</span>
+	
+<div class="even">
+	<span class="td_label">
+		<span class="i">
+		|LANG_SHOW_DOMAINS_THAT|
+		</span>
+	</span>
+	<span class="td">
+		<span class="i">
+		<select name="comparison1">
+		<option value="none">--</option >
+		<option value="equals">|LANG_EQUAL|</option >
+		<option value="contains">|LANG_CONTAIN|</option >
+		<option selected="selected" value="startswith">|LANG_START_WITH|</option>
+		</select>
+		<input type="text" size="12" name="value1" />
+		</span>
+	</span>
+</div>
+	<span class="save_menu">
+		<span>
+			<input type=hidden name=sort1 value="1" />
+			<input type=hidden name=sort1dir value="1" />
+			<input type=hidden name=ipp value="50" />
+			<input type=submit value="|LANG_SEARCH|" />
+		</span>
+	</span>
+</form>
+</div>
+
+|TABLE|
+
+<div class="info_table forms">
+<form action="/CMD_DNS_ADMIN" method="post">
+<input type="hidden" name="action" value="create" />
+<span class="title">|LANG_ADD_ZONE|</span>
+	<div class="even">
+		<span class="td_label">
+			<span class="i">
+				|LANG_DOMAIN_NAME|
+			</span>
+		</span>
+		
+		<span class="td">
+			<span class="i">
+			<input type="text" name="domain" />
+			</span>
+		</span>
+		
+	</div>
+	
+	<div class="odd">
+		<span class="td_label">
+			<span class="i">
+				|LANG_IP_ADDRESS|
+			</span>
+		</span>
+		
+		<span class="td">
+			<span class="i">
+			<input type="text" name="ip" />
+			</span>
+		</span>
+		
+	</div>
+	
+	<div class="even">
+		<span class="td_label">
+			<span class="i">
+				|LANG_NAME_SERVER_1|
+			</span>
+		</span>
+		
+		<span class="td">
+			<span class="i">
+			<input type="text" name="ns1" />
+			</span>
+		</span>
+		
+	</div>
+	
+	<div class="odd">
+		<span class="td_label">
+			<span class="i">
+				|LANG_NAME_SERVER_2|
+			</span>
+		</span>
+		
+		<span class="td">
+			<span class="i">
+			<input type="text" name="ns2" />
+			</span>
+		</span>
+		
+	</div>
+	
+	<div class="even">
+		<span class="td_label">
+			<span class="i">
+				|LANG_REVERSE| 
+			</span>
+		</span>
+		
+		<span class="td">
+			<span class="i">
+				<input type="checkbox" name="reverse" value="yes" />  
+			</span>
+		</span>
+		
+	</div>
+	
+	
+	<span class="save_menu">
+		<span><input type="submit" value="|LANG_ADD|" /></span>
+	</span>
+	
+</form>
+</div>
+
+
+
+|HTM_ADMIN_BOTTOM|

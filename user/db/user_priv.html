@@ -1,0 +1,121 @@
+|LF_STANDARD|
+|LF_DB|
+|?TREE=&raquo; <a class="tree" href="/CMD_SHOW_DOMAIN?domain=`DOMAIN`">`DOMAIN`</a> &raquo; <a class="tree" href="/CMD_DB?DOMAIN=`DOMAIN`">`LANG_MYSQL_SETUP`</a> &raquo; <a class="tree" href="/CMD_DB_VIEW?DOMAIN=`DOMAIN`&name=`name`">`LANG_VIEW` `name`</a> &raquo; <a class="tree" href="/CMD_DB_USER_PRIV?DOMAIN=`DOMAIN`&name=`name`&user=`user`">`LANG_USER_PRIVS`</a>|
+|?HELP_SECTION=`USER_HELPER`/mysql.html|
+|HTM_USER_TOP|
+		
+	<div id="current_model" class="CMD_DB"></div>
+
+	<div class="info_table forms">
+	<form name="info" action="CMD_DB_USER_PRIVS" method="post">
+		<input type="hidden" name="action" value="save" />
+		<input type="hidden" name="domain" value="|DOMAIN|" />
+		<input type="hidden" name="name" value="|name|" />
+		<input type="hidden" name="user" value="|user|" />
+
+		<span class="title">|LANG_PRIVS_1| |user| |LANG_PRIVS_2| |name|</span>
+	
+		<div class="even">
+			<span class="td_label"><span class="i">|LANG_SELECT|</span></span>
+			<span class="td"><span class="i">|SELECT|</span></span>
+		</div>
+					
+		<div class="odd">
+			<span class="td_label"><span class="i">|LANG_INSERT|</span></span>
+			<span class="td"><span class="i">|INSERT|</span></span>
+		</div>
+		
+		<div class="even">
+			<span class="td_label"><span class="i">|LANG_UPDATE|</span></span>
+			<span class="td"><span class="i">|UPDATE|</span></span>
+		</div>
+		
+		<div class="odd">
+			<span class="td_label"><span class="i">|LANG_DELETE|</span></span>
+			<span class="td"><span class="i">|DELETE|</span></span>
+		</div>
+		
+		<div class="even">
+			<span class="td_label"><span class="i">|LANG_CREATE|</span></span>
+			<span class="td"><span class="i">|CREATE|</span></span>
+		</div>
+		
+		<div class="odd">
+			<span class="td_label"><span class="i">|LANG_DROP|</span></span>
+			<span class="td"><span class="i">|DROP|</span></span>
+		</div>
+		
+		<div class="even">
+			<span class="td_label"><span class="i">|LANG_ALTER|</span></span>
+			<span class="td"><span class="i">|ALTER|</span></span>
+		</div>
+		
+		<div class="odd">
+			<span class="td_label"><span class="i">|LANG_INDEX|</span></span>
+			<span class="td"><span class="i">|INDEX|</span></span>
+		</div>
+		
+		<div class="even">
+			<span class="td_label"><span class="i">|LANG_GRANT|</span></span>
+			<span class="td"><span class="i">|GRANT|</span></span>
+		</div>
+		
+		<div class="odd">
+			<span class="td_label"><span class="i">|LANG_REFERENCE|</span></span>
+			<span class="td"><span class="i">|REFERENCE|</span></span>
+		</div>
+		
+		<div class="even">
+			<span class="td_label"><span class="i">|LANG_TMP_TABLE|</span></span>
+			<span class="td"><span class="i">|CREATE_TMP_TABLE|</span></span>
+		</div>
+		
+		<div class="odd">
+			<span class="td_label"><span class="i">|LANG_LOCK|</span></span>
+			<span class="td"><span class="i">|LOCK_TABLE|</span></span>
+		</div>
+		
+|*if DATABASE_EXTENDED_USER_PRIVILEGES>="1"|
+                <div class="even">
+                        <span class="td_label"><span class="i">|LANG_SHOW_VIEW|</span></span>
+                        <span class="td"><span class="i">|SHOW_VIEW_PRIV|</span></span>
+                </div>
+                
+                <div class="odd">
+                        <span class="td_label"><span class="i">|LANG_CREATE_ROUTINE|</span></span>
+                        <span class="td"><span class="i">|CREATE_ROUTINE_PRIV|</span></span>
+                </div>
+
+                <div class="even">
+                        <span class="td_label"><span class="i">|LANG_ALTER_ROUTINE|</span></span>
+                        <span class="td"><span class="i">|ALTER_ROUTINE_PRIV|</span></span>
+                </div>
+                
+                <div class="odd">
+                        <span class="td_label"><span class="i">|LANG_EXECUTE|</span></span>
+                        <span class="td"><span class="i">|EXECUTE_PRIV|</span></span>
+                </div>
+
+                <div class="even">
+                        <span class="td_label"><span class="i">|LANG_CREATE_VIEW|</span></span>
+                        <span class="td"><span class="i">|CREATE_VIEW_PRIV|</span></span>
+                </div>
+|*endif|
+|*if DATABASE_EXTENDED_USER_PRIVILEGES>="2"|
+                <div class="odd">
+                        <span class="td_label"><span class="i">|LANG_EVENT|</span></span>
+                        <span class="td"><span class="i">|EVENT_PRIV|</span></span>
+                </div>
+
+                <div class="even">
+                        <span class="td_label"><span class="i">|LANG_TRIGGER|</span></span>
+                        <span class="td"><span class="i">|TRIGGER_PRIV|</span></span>
+                </div>
+|*endif|
+		<span class="save_menu">
+			 <span><input type="submit" value="|LANG_SAVE|" /></span>
+		</span>
+	</form>
+</div>
+
+|HTM_USER_FOOTER|

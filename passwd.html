@@ -1,0 +1,96 @@
+|LF_STANDARD|
+|?TREE=&raquo; <a class=tree href="/HTM_PASSWD">`LANG_CHANGE_YOUR_PASS`</a>|
+|?HELP_SECTION=`USER_HELPER`/gettingstarted.html#password|
+|HTM_USER_TOP|
+<div id="current_model" class="HTM_PASSWD"></div>
+<script type="text/javascript">
+<!--
+
+|HTM_JAVASCRIPT|
+
+function showAdminMessage()
+{
+	var message = window.open("CMD_EDIT_ADMIN_MESSAGE","message","width=740,height=480,scrollbars=no,resizable=yes");
+}
+
+function formOK()
+{
+	with (document.reseller)
+	{
+		if (checkName() && checkPass() && checkEmail())
+			return true;
+	}
+	return false;
+}
+
+// -->
+</script>
+			<div class="info_table forms">
+				<span class="title">|LANG_CHANGE_YOUR_PASS|</span>
+      			<form action="CMD_PASSWD" method="post" target="_parent">
+      		
+      				<div class="even">
+      					<span class="td_label"><span class="i">|LANG_ENTER_OLD_PASS|:</span></span>
+      					<span class="td"><span class="i">
+      						<input type="password" name="oldpass" />
+      					</span></span>
+      				</div>
+      							
+      				<div class="odd">
+      					<span class="td_label"><span class="i">|LANG_ENTER_PASS|:</span></span>
+      					<span class="td"><span class="i">
+      						<input type="password" name="passwd" />
+      					</span></span>
+      				</div>
+      				
+      				<div class="even">
+      					<span class="td_label"><span class="i">|LANG_RE-ENTER_PASS|:</span></span>
+      					<span class="td"><span class="i">
+      						<input type="password" name="passwd2" />
+      					</span></span>
+      				</div>
+      				
+      				<input type="hidden" name="options" value="yes" />
+      				
+      				<div class="odd">
+      					<span class="td_label"><span class="i">
+      						|LANG_PASS_DA|
+      					</span></span>
+      					<span class="td"><span class="i">
+      						<input type="checkbox" name="system" value="yes" checked="checked">	
+      					</span></span>
+      				</div>
+      				
+      				<div class="even">
+      					<span class="td_label"><span class="i">
+      						|LANG_PASS_FTP|
+      					</span></span>
+      					<span class="td"><span class="i">
+      						<input type="checkbox" name="ftp" value="yes" checked="checked" />
+      					</span></span>
+      				</div>
+      				
+      				<div class="odd">
+      					<span class="td_label"><span class="i">
+      						|LANG_PASS_DB|
+      					</span></span>
+      					<span class="td"><span class="i">
+      						<input type="checkbox" name="database" value="yes" checked="checked" />
+      					</span></span>
+      				</div>
+      			
+      				<span class="save_menu">
+                		<span><input type="submit" class="input_submit" value="|LANG_SUBMIT|" /></span>
+                	</span>
+			
+            	</form>
+|*if HAVE_SECURITY_QUESTIONS="yes"|
+<br>
+<a href="CMD_SECURITY_QUESTIONS">|LANG_MANAGE_SECURITY_QUESTIONS|</a>
+|*endif|
+|*if HAVE_TWOSTEP_AUTH="yes"|
+<br>
+<a href="CMD_TWOSTEP_AUTH">|LANG_TWO_STEP_AUTH|</a>
+|*endif|
+			</div>
+|HTM_USER_FOOTER|

@@ -1,0 +1,42 @@
+|LF_TEMPLATE|
+|?TREE=&raquo; <a class="tree" href="`COMMAND`">`LANG_BACK`</a>|
+|HTM_RESELLER_TOP|
+
+        <div id="current_model" class="
+|$/usr/local/bin/php
+<?php
+    $var = str_replace("/", "", $_SERVER["REQUEST_URI"]);
+    echo $var;
+?>
+DONE|"></div>
+
+	<div class="flash_holder">
+      <div class="rounder_t"></div>
+      <div class="roundee">
+        <div class="flash" id="notice">
+        	<img src="/IMG_NOTICE" alt="" />|TEXT|
+        	<p align="center"><b>|LANG_DETAILS|</b></p>
+        	<p align="center">|RESULT|</p>
+    	</div>
+      </div>
+      <div class="rounder_b"></div>
+    </div>
+
+|HTM_RESELLER_BOTTOM|
+
+<script type="text/javascript">
+	if(window.top==window){
+	  // not in iframe/frame
+	} else {
+    	 
+       $(".side").css('display', 'none');
+       $(".top_nav").css('display', 'none');
+       $(".breadcrumbs").css('display', 'none');
+       $("h1").css('display', 'none');
+       $("div.footer").css('display', 'none');
+       $("div").removeClass('main_wrapper');
+       $("div").removeClass('main').addClass('content');
+       $("body").css('width', '400px');
+      
+}
+</script>

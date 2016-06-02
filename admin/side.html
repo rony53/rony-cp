@@ -1,0 +1,84 @@
+|LF_STANDARD|
+|LF_ACC_MANAGEMENT|
+
+<div id="level" class="admin"></div>
+
+<script type="text/javascript">
+
+function trimit(strobj)
+{
+	var str = strobj.value
+	while (str.substring(0,1) == ' ')
+	{
+		str = str.substring(1, str.length);
+	}
+	while (str.substring(str.length-1, str.length) == ' ')
+	{
+		str = str.substring(0,str.length-1);
+	}
+
+	strobj.value = str;
+
+	return true;
+}
+
+function doSearch(type)
+{
+	if (document.searchform2)
+		with (document.searchform2)
+		{
+			trimit(value);
+
+			if (type == 'user')
+			{
+				value1.value=value.value
+				value8.value='';
+			}
+			else
+			{
+				value8.value=value.value.toLowerCase();
+				value1.value='';
+			}
+
+			submit();
+		}
+}
+
+</script>
+
+<div class="left_side_menu">
+	<form action="/CMD_ALL_USER_SHOW" method="get" name="searchform2" onsubmit="doSearch('default');">
+		<input type="hidden" name="comparison1" value="contains" />
+		<input type="hidden" name="comparison8" value="contains" />
+		<input type="hidden" name="sort1" value="1">
+		<input type="hidden" name="value1" value="" />
+		<input type="hidden" name="value8" value="" />
+		
+		<span class="search top">
+		<input type="text" name="value" value="|LANG_SEARCH|" style="width: 100px;" onclick="this.select()" />
+		<input class="button input_submit input_srch" type="button" value="|LANG_DOMAIN|" onclick="doSearch('domain')" style="width: 50px;" />
+		<input class="button input_submit input_srch" type="button" value="|LANG_USER|" onclick="doSearch('user')" style="width: 40px; " />
+		</span>
+	</form>
+	</div>
+
+	<div class="menu">
+    	<ul class="menu_list">
+    		
+    		<li id="expand">
+    			<a href="javascript: void(0)">|LANG_EXPAND| 
+                <img src="/IMG_CONTRACT" width="16" height="16" alt="" id="con" style="visibility: hidden" />
+                <img src="/IMG_EXPAND" width="16" height="16" alt="" id="expand2" />
+                </a>
+			</li>
+		    |HTM_ACC_MAN_MENU|
+		    |HTM_SYS_MAN_MENU|
+		    |HTM_TOOLS_N_SETTINGS_MENU|
+		    |HTM_BACKUP_MANAGER_MENU|
+		    |HTM_UPDATE_MENU|
+		    |HTM_PLUGINS_MENU|
+		</ul>
+      
+     	<div class="clear"></div>
+     	
+	</div>

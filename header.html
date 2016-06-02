@@ -1,0 +1,61 @@
+|LF_STANDARD|
+|LF_IMAGES|
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="/CSS_STYLE?v=|VERSION|" />
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="/CSS_STYLE_IE?v=|VERSION|" />
+ <![endif]-->
+ <!--[if IE 8]>
+<style type="text/css">
+#expand a { margin-left: -140px; }
+#expand img  { position: absolute; margin-left: 0; margin-top: 0; }
+</style>
+ <![endif]-->
+<script src="https://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">
+    google.load("jquery", "1.4.2");
+</script>
+
+<script type="text/javascript">
+function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+    }
+    
+
+var css_trick = readCookie('expand');
+if(css_trick != null) document.write('<style>#acc_management_menu, #backup_menu, #tools_n_settings_menu, #sys_management_menu, #plugins_menu, #update_menu, #email_menu { display: block; }</style>');
+
+$(document).ready(function() {
+
+	$('.main_wrapper').css('min-height', $(window).height());
+});
+
+	<!--
+	//timer for auto-logout
+		function log_me_out()
+		{
+			location.href = '/CMD_LOGOUT';
+		}
+                var logout_timeout = setTimeout('log_me_out();', |SESSION_MINUTES|*60*1000)
+	// -->
+</script> 
+
+<script type="text/javascript" src="/IMG_FANCY"></script>  
+    <title>|HOSTNAME| - |DEAMONNAME| v|VERSION|</title>
+</head>
+
+<body |BODY| bgcolor="#FFFFFF">
+
+<div class="main_wrapper">
+<div class="side">
+	

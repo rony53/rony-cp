@@ -1,0 +1,61 @@
+|LF_STANDARD|
+|?TREE=&raquo; <a class="tree" href="/CMD_PLUGIN_MANAGER">`LANG_PLUGING_MANAGER`</a>|
+|?HELP_SECTION=`ADMIN_HELPER`|
+|HTM_ADMIN_TOP|
+<div id="current_model" class="CMD_PLUGIN_MANAGER"></div>
+
+|PLUGINS|
+
+<br/>
+
+	<div class="info_table forms">
+	<form action="/CMD_PLUGIN_MANAGER" enctype="multipart/form-data" method="post">
+	<input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
+	<input type="hidden" name="action" value="add" />
+	
+	<span class="title">
+		<b>|LANG_ADD_PLUGIN|</b> - |LANG_SELECT_UP_METH|
+	</span>
+	
+	<div class="even">
+		 <span class="td_checkbox"><span class="i"><input type="radio" name="type" value="url" checked="checked" /> |LANG_URL|</span>
+		 </span>
+		 <span class="td"><span class="i"><input type="text" name="url" size="32" value="http://" /> |LANG_ENTER_URL|</span></span>
+		 </div>
+		 		
+	<div class="odd">
+		 	<span class="td_checkbox">
+		 		<span class="i"><input type="radio" name="type" value="file" /> |LANG_FILE|</span>
+		 		</span>
+		 		
+		 	<span class="td">
+		 		<span class="i"><input type="file" name="file1" size="32" /> |LANG_UPLOAD_FROM_LOC|</span>
+		 	</span>
+		 </div>
+
+	<div class="even">
+		 <span class="td_checkbox"><span class="i">|LANG_PASSWORD|: </span>
+		 </span>
+		 <span class="td"><span class="i"><input type="password" name="passwd" size="10" /></span></span>
+		 </div>
+
+	<div class="odd">
+		 	<span class="td_checkbox">
+		 		<span class="i"><input type="checkbox" name="install" value="yes" checked="checked" /></span>
+		 		</span>
+		 		
+		 	<span class="td">
+		 		<span class="i">|LANG_INSTALL_AFTER_UP|</span>
+		 	</span>
+		 </div>
+	<span class="save_menu">
+		<span>
+ 			<input type="submit" value="|LANG_ADD_PLUGIN|" />
+ 		</span>
+ 	</span>
+	
+ </form>
+ 
+	</div>
+|HTM_ADMIN_BOTTOM|
+

@@ -1,0 +1,276 @@
+|LF_CREATE|
+|LF_STANDARD|
+|?TREE=&raquo; <a class="tree" href="/CMD_RESELLER_SHOW">`LANG_SHOW_RESELLER`</a> &raquo; <a class="tree" href="/HTM_ACCOUNT_RESELLER_CREATE">`LANG_CREATE_RES`</a> &raquo; `LANG_CUSTOMIZE` `NEWUSERNAME`|
+|?HELP_SECTION=`ADMIN_HELPER`/creater.html|
+|HTM_ADMIN_TOP|
+
+    <div id="current_model" class="HTM_ACCOUNT_RESELLER_CREATE"></div>
+
+<script type="text/javascript">
+<!--
+
+function setText(inputid,checkbx)
+{
+	var textfld = document.getElementById(inputid);
+	if (checkbx.checked)
+		textfld.disabled = true;
+	if (!checkbx.checked)
+		textfld.disabled = false;
+}
+
+function showResellerMessage()
+{
+	var message = window.open("CMD_EDIT_RESELLER_MESSAGE","message","width=740,height=480,scrollbars=no,resizable=yes");
+}
+
+// -->
+</script>
+
+	    <div class="info_table forms">
+		<form name=package action="CMD_ACCOUNT_RESELLER" method="post">
+		<input type="hidden" name="action" value="create" />
+
+		<span class="title">|LANG_CREATE_RES|</span>
+
+        <div class="even">
+            <span class="td_label"><span class="i">|LANG_USERNAME|:</span></span>
+            <span class="td"><span class="i"><input type="text" name="username" value="|NEWUSERNAME|" /></span></span>
+        </div>
+                
+        <div class="odd">
+            <span class="td_label"><span class="i">|LANG_EMAIL|:</span></span>
+            <span class="td"><span class="i"><input type="text" name="email" value="|EMAIL|" /></span></span>
+        </div>
+        
+        <div class="even">
+            <span class="td_label"><span class="i">|LANG_ENTER_PASS|:</span></span>
+            <span class="td"><span class="i"><input type="password" name="passwd" value="|PASSWD|" /></span></span>
+        </div>
+                
+        <div class="odd">
+            <span class="td_label"><span class="i">|LANG_RE-ENTER_PASS|:</span></span>
+            <span class="td"><span class="i"><input type="password" name="passwd2" value="|PASSWD2|" /></span></span>
+        </div>
+        
+        <div class="even">
+            <span class="td_label"><span class="i">|LANG_DOMAIN|:</span></span>
+            <span class="td"><span class="i"><input type="text" name="domain" value="|DOMAIN|" /></span></span>
+        </div>
+                
+        <div class="odd">
+            <span class="td_label"><span class="i">|LANG_BANDWIDTH|:</span></span>
+            <span class="td"><span class="i">
+            <input type="text" id="bandwidth" name="bandwidth" value="|BANDWIDTH|" /><input type="checkbox" name="ubandwidth" value="ON" onclick='setText("bandwidth",this)' |BANDWIDTHCHECKED| />|LANG_UNLIMITED|</span></span>
+        </div>
+
+        <div class="even">
+            <span class="td_label"><span class="i">|LANG_DISK_SPACE|</span></span>
+            <span class="td"><span class="i">
+            <input type="text" id="quota" name="quota" value="|QUOTA|" /> <input type="checkbox" name="uquota" value="ON" onclick='setText("quota",this)' |QUOTACHECKED| /> |LANG_UNLIMITED|</span></span>
+        </div>
+                
+        <div class="odd">
+            <span class="td_label"><span class="i">|LANG_DOMAINS|</span></span>
+            <span class="td"><span class="i">
+            <input type="text" id="vdomains" name="vdomains" value="|VDOMAINS|" /> <input type="checkbox" name="uvdomains" value="ON" onClick='setText("vdomains",this)' |VDOMAINSCHECKED| /> |LANG_UNLIMITED|</span></span>
+        </div>
+        
+|*if HAVE_INODE="yes"|
+        <div class="even">
+            <span class="td_label"><span class="i">|LANG_INODES|</span></span>
+            <span class="td"><span class="i">
+            <input type="inode" id="inode" name="inode" value="|INODE|" /> <input type="checkbox" name="uinode" value="ON" onClick='setText("inode",this)' |INODECHECKED| /> |LANG_UNLIMITED|</span></span>
+        </div>
+|*endif|
+        <div class="odd">
+            <span class="td_label"><span class="i">|LANG_SUBDOMAINS|</span></span>
+            <span class="td"><span class="i">
+            <input type=text id="nsubdomains" name=nsubdomains value="|NSUBDOMAINS|" />
+            <input type="checkbox" name="unsubdomains" value="ON" onclick='setText("nsubdomains",this)' |NSUBDOMAINSCHECKED| /> |LANG_UNLIMITED|</span></span>
+        </div>
+                
+        <div class="even">
+            <span class="td_label"><span class="i">|LANG_IPS|</span></span>
+            <span class="td"><span class="i"><input type=text name=ips value="|IPS|" /></span></span>
+        </div>
+        
+        <div class="odd">
+            <span class="td_label"><span class="i">|LANG_EMAIL_ACCOUNTS|</span></span>
+            <span class="td"><span class="i">
+            <input type=text id="nemails" name=nemails value="|NEMAILS|" /> <input type="checkbox" name="unemails" value="ON" onclick='setText("nemails",this)' |NEMAILSCHECKED| /> |LANG_UNLIMITED|</span></span>
+        </div>
+                
+        <div class="even">
+            <span class="td_label"><span class="i">|LANG_EMAIL_FORWARDERS|</span></span>
+            <span class="td"><span class="i">
+            <input type=text id="nemailf" name=nemailf value="|NEMAILF|" /> <input type="checkbox" name="unemailf" value="ON" onclick='setText("nemailf",this)' |NEMAILFCHECKED| /> |LANG_UNLIMITED| </span></span>
+        </div>
+        
+        <div class="odd">
+            <span class="td_label"><span class="i">|LANG_MAILING_LISTS|</span></span>
+            <span class="td"><span class="i">
+            <input type=text id="nemailml" name=nemailml value="|NEMAILML|" /> <input type="checkbox" name="unemailml" value="ON" onclick='setText("nemailml",this)' |NEMAILMLCHECKED| /> |LANG_UNLIMITED|</span></span>
+        </div>
+                
+        <div class="even">
+            <span class="td_label"><span class="i">|LANG_AUTO_RESPONDERS|</span></span>
+            <span class="td"><span class="i">
+            <input type=text id="nemailr" name=nemailr value="|NEMAILR|" /><input type="checkbox" name="unemailr" value="ON" onclick='setText("nemailr",this)' |NEMAILRCHECKED| /> |LANG_UNLIMITED|</span></span>
+        </div>
+        
+        <div class="odd">
+            <span class="td_label"><span class="i">|LANG_MYSQL_DBS|</span></span>
+            <span class="td"><span class="i">
+            <input type=text id="mysql" name=mysql value="|MYSQL|" /> <input type="checkbox" name="umysql" value="ON" onclick='setText("mysql",this)' |MYSQLCHECKED| /> |LANG_UNLIMITED| </span></span>
+        </div>
+                
+        <div class="even">
+            <span class="td_label"><span class="i">|LANG_DOMAIN_PTRS|</span></span>
+            <span class="td"><span class="i">
+            <input type=text id="domainptr" name=domainptr value="|DOMAINPTR|" /> <input type="checkbox" name="udomainptr" value="ON" onclick='setText("domainptr",this)' |DOMAINPTRCHECKED| /> |LANG_UNLIMITED|</span></span>
+        </div>
+        
+        <div class="odd">
+            <span class="td_label"><span class="i">|LANG_FTP_ACCOUNTS|</span></span>
+            <span class="td"><span class="i">
+            <input type=text id="ftp" name=ftp value="|FTP|" /> <input type="checkbox" name="uftp" value="ON" onclick='setText("ftp",this)' |FTPCHECKED| /> |LANG_UNLIMITED|</span></span>
+        </div>
+                
+        <div class="even">
+            <span class="td_label"><span class="i">|LANG_ANON_FTP_ACCOUNTS|</span></span>
+            <span class="td"><span class="i"><input type="checkbox" name="aftp" value="ON" |AFTPCHECKED| /></span></span>
+        </div>
+        
+        <div class="odd">
+            <span class="td_label"><span class="i">|LANG_CGI| |LANG_ACCESS|</span></span>
+            <span class="td"><span class="i"><input type="checkbox" name="cgi" value="ON" |CGICHECKED| /></span></span>
+        </div>
+                
+        <div class="even">
+            <span class="td_label"><span class="i">|LANG_PHP| |LANG_ACCESS|</span></span>
+            <span class="td"><span class="i"><input type="checkbox" name="php" value="ON" |PHPCHECKED| /></span></span>
+        </div>
+        
+        <div class="odd">
+            <span class="td_label"><span class="i">|LANG_SPAM|</span></span>
+            <span class="td"><span class="i"><input type="checkbox" name="spam" value="ON" |SPAMCHECKED| /></span></span>
+        </div>
+                
+        <div class="even">
+            <span class="td_label"><span class="i">|LANG_CATCHALL|</span></span>
+            <span class="td"><span class="i"><input type="checkbox" name="catchall" value="ON" |CATCHALLCHECKED| /></span></span>
+        </div>
+        
+        <div class="odd">
+            <span class="td_label"><span class="i">|LANG_SSL| |LANG_ACCESS|</span></span>
+            <span class="td"><span class="i"><input type="checkbox" name="ssl" value="ON" |SSLCHECKED| /></span></span>
+        </div>
+                
+        <div class="even">
+            <span class="td_label"><span class="i">|LANG_SSH| |LANG_ACCESS|</span></span>
+            <span class="td"><span class="i"><input type="checkbox" name="ssh" value="ON" |SSHCHECKED| /></span></span>
+        </div>
+        
+        <div class="odd">
+            <span class="td_label"><span class="i">|LANG_SSH_FOR_USERS|</span></span>
+            <span class="td"><span class="i"><input type="checkbox" name="userssh" value="ON" |USERSSHCHECKED| /></span></span>
+        </div>
+                
+        <div class="even">
+            <span class="td_label"><span class="i">|LANG_ALLOW_OVERSELLING|</span></span>
+            <span class="td"><span class="i"><input type="checkbox" name="oversell" value="ON" |OVERSELLCHECKED| /></span></span>
+        </div>
+        
+        <div class="odd">
+            <span class="td_label"><span class="i">|LANG_CRON_JOBS|</span></span>
+            <span class="td"><span class="i"><input type="checkbox" name="cron" value="ON" |CRONCHECKED| /></span></span>
+        </div>
+                
+        <div class="even">
+            <span class="td_label"><span class="i">|LANG_SYSTEM_INFO|</span></span>
+            <span class="td"><span class="i"><input type="checkbox" name="sysinfo" value="ON" |SYSINFOCHECKED| /></span></span>
+        </div>
+        
+        <div class="odd">
+            <span class="td_label"><span class="i">|LANG_DNS_CONTROL|</span></span>
+            <span class="td"><span class="i"><input type="checkbox" name="dnscontrol" value="ON" |DNSCONTROLCHECKED| /></span></span>
+        </div>
+                
+        <div class="even">
+            <span class="td_label"><span class="i">|LANG_PERSONAL_DNS|</span></span>
+            <span class="td"><span class="i"><input type="radio" name="dns" value="OFF" |DNSCHECKED| /> |LANG_NONE|</span></span>
+        </div>
+        
+        <div class="odd">
+            <span class="td_label"><span class="i">|LANG_TWO_IPS|</span></span>
+            <span class="td"><span class="i"><input type="radio" name="dns" value="TWO" |DNS2CHECKED| /></span></span>
+        </div>
+                
+        <div class="even">
+            <span class="td_label"><span class="i">|LANG_THREE_IPS|</span></span>
+            <span class="td"><span class="i"><input type="radio" name="dns" value="THREE" |DNS3CHECKED| /></span></span>
+        </div>
+        
+         <div class="odd">
+            <span class="td_label"><span class="i">|LANG_SERVER_IP|</span></span>
+            <span class="td"><span class="i"><input type="checkbox" name="serverip" value="ON" |SERVERIP| /></span></span>
+        </div>
+                
+        <div class="even">
+            <span class="td_label"><span class="i">|LANG_DOMAIN| |LANG_IP|:</span></span>
+            <span class="td"><span class="i">
+            <select class="selectclass" name="ip">
+                <option value="shared" |SELECTSHARE|>|LANG_SHARED_SERVER|</option>
+                <option value="sharedreseller" |SHAREDRESELLER|>|LANG_SHARED_RES|</option>
+                <option value="assign" |SELECTASSIGNED|>|LANG_ASSIGNED|</option>
+            </select>
+            </span></span>
+        </div>
+        
+        <div class="odd">
+            <span class="td_label"><span class="i">|LANG_EMAIL_NOTIFY|</span></span>
+            <span class="td"><span class="i">
+            <input type="checkbox" name="notify" value="yes" |NOTIFY|> <a href="javascript:showResellerMessage();">|LANG_EDIT_RES_MESS|</a>
+            </span></span>
+        </div>
+         
+         |*if CUSTOM_ITEM_1|      
+        <div class="even">
+            <span class="td_label"><span class="i">|CUSTOM_ITEM_1_STR|</span></span>
+            <span class="td"><span class="i">|CUSTOM_ITEM_1| |CUSTOM_ITEM_1_DESC|</span></span>
+        </div>
+        |*endif|
+         |*if CUSTOM_ITEM_2|      
+        <div class="odd">
+            <span class="td_label"><span class="i">|CUSTOM_ITEM_2_STR|</span></span>
+            <span class="td"><span class="i">|CUSTOM_ITEM_2| |CUSTOM_ITEM_2_DESC|</span></span>
+        </div>
+        |*endif|
+         |*if CUSTOM_ITEM_3|      
+        <div class="even">
+            <span class="td_label"><span class="i">|CUSTOM_ITEM_3_STR|</span></span>
+            <span class="td"><span class="i">|CUSTOM_ITEM_3| |CUSTOM_ITEM_3_DESC|</span></span>
+        </div>
+        |*endif|
+         |*if CUSTOM_ITEM_4|      
+        <div class="odd">
+            <span class="td_label"><span class="i">|CUSTOM_ITEM_4_STR|</span></span>
+            <span class="td"><span class="i">|CUSTOM_ITEM_4| |CUSTOM_ITEM_4_DESC|</span></span>
+        </div>
+        |*endif|
+         |*if CUSTOM_ITEM_5|      
+        <div class="even">
+            <span class="td_label"><span class="i">|CUSTOM_ITEM_5_STR|</span></span>
+            <span class="td"><span class="i">|CUSTOM_ITEM_5| |CUSTOM_ITEM_5_DESC|</span></span>
+        </div>
+        |*endif|
+
+
+    <span class="save_menu">
+        <span><input type="submit" name="add" value="|LANG_SUBMIT|"></span>
+    </span>
+
+		</form>
+	</div>
+
+|HTM_ADMIN_BOTTOM|

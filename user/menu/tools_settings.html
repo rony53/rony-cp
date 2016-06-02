@@ -1,0 +1,19 @@
+<li>
+<a href="javascript: void(0);" onclick="$().slide_menu('tools_n_settings_menu')"><img src="/IMG_TOOLS_STTS" width="29" height="32" alt="" />|LANG_TOOLS|</a>
+<ul id="tools_n_settings_menu">
+<li id="CMD_FILE_MANAGER"><a href="/CMD_FILE_MANAGER?domain=|SESSION_SELECTED_DOMAIN|">|LANG_FILE_MANAGER|</a></li>
+<li><a target="_blank" href="http://|HOSTNAME|/phpmyadmin">|LANG_PHPMYADMIN|</a></li>
+|*if USERCRON="ON"|
+<li id="CMD_CRON_JOBS"><a href="/CMD_CRON_JOBS?domain=|SESSION_SELECTED_DOMAIN|">|LANG_CRONJOBS|</a></li>
+|*endif|
+<li id="CMD_MIME_TYPES"><a href="/CMD_MIME_TYPES?domain=|SESSION_SELECTED_DOMAIN|">|LANG_MIMETYPES|</a></li>
+<li id="CMD_HANDLERS"><a href="/CMD_HANDLERS?domain=|SESSION_SELECTED_DOMAIN|">|LANG_APACHE_HANDLERS|</a></li>
+|*if USERDNSCONTROL="ON"|
+<li id="CMD_DNS_CONTROL"><a href="/CMD_DNS_CONTROL?domain=|SESSION_SELECTED_DOMAIN|">|LANG_DNS_MANAGEMENT|</a></li>
+|*endif|
+|*if USERSSL="ON"|
+<li id="CMD_SSL"><a href="/CMD_SSL?domain=|SESSION_SELECTED_DOMAIN|">|LANG_SSL_CERTS|</a></li>
+|*endif|
+<li id="CMD_PROTECTED_DIRECTORIES"><a href="/CMD_PROTECTED_DIRECTORIES?domain=|SESSION_SELECTED_DOMAIN|">|LANG_PASS_PROC_DIRS|</a></li>
+</ul>
+</li>

@@ -1,0 +1,83 @@
+|LF_STANDARD|
+|?TREE=&raquo; <a class=tree href="/CMD_CUSTOM_HTTPD">`LANG_CUST_HTTPD_CONF`</a> &raquo; <a class=tree href="/CMD_CUSTOM_HTTPD?user=`user`&php-fpm=`php-fpm`">php-fpm `php-fpm`|
+|?HELP_SECTION=`ADMIN_HELPER`|
+
+|HTM_ADMIN_TOP|
+<div id="current_model" class="CMD_CUSTOM_HTTPD"></div>
+
+|*if CONFIG_ERROR="1"|
+<center>
+<br><br><b>|LANG_CONFIG_ERROR|</b><br><br><br>
+</center>
+|*endif|
+
+<table class=list>
+<form action="/CMD_CUSTOM_HTTPD" method="POST">
+<input type=hidden name=user value="|user|">
+<input type=hidden name=php-fpm value="|php-fpm|">
+<tr>
+	<td class=listtitle>|LANG_CUST_FOR| |user| <b>php-fpm |php-fpm|</b></td>
+</tr>
+<tr>
+	<td class=list align=center>|LANG_INSTRUCTIONS|<br>
+		<b>&#124;CUSTOM1&#124;</b><br>
+		<textarea cols=160 rows=4 wrap=off name=custom1>|CUSTOM1|</textarea>
+
+		<br><br>
+
+		<b>&#124;CUSTOM2&#124;</b><br>
+		<textarea cols=160 rows=4 wrap=off name=custom2>|CUSTOM2|</textarea>
+
+		<br><br>
+	</td>
+</tr>
+<tr>
+	<td class=list align=center>
+		|LANG_AVAIL_TOKENS|:<br>
+		&#124;USER&#124;,
+		&#124;CREATOR&#124;,
+		&#124;DOMAIN&#124;,
+		&#124;OPEN_BASEDIR&#124;,
+		&#124;OPEN_BASEDIR_PATH&#124;,
+		&#124;PHP_MAIL_LOG_ENABLED&#124;,
+		&#124;HOME&#124;,
+		&#124;SERVER_GROUP&#124;,
+		&#124;PHP_VER&#124;,
+		&#124;LIMIT_EXTENSIONS&#124;,<br>
+		&#124;CUSTOM1&#124;,
+		&#124;CUSTOM2&#124;
+	</td>
+</tr>
+<tr>
+	<td class=listtitle align=right><input type=submit value="|LANG_SAVE|"></td>
+</tr>
+<form>
+</table>
+
+<table class=list>
+<tr>
+	<td class=listtitle>
+		|FPM_CONFIG_FILE|
+	</td>
+</tr>
+<tr>
+	<td class=list align=center>
+		<textarea cols=160 rows=20 wrap=off readonly>|FPM_CONFIG|</textarea>
+	</td>
+</tr>
+</table>
+
+<table class=list>
+<tr>
+	<td class=listtitle>
+	|LANG_PHP_FPM_CONFIG_CHECK|
+	</td>
+</tr>
+<tr>
+	<td class=list align=center>
+		<textarea cols=160 rows=5 wrap=off readonly>|CONFIG_TEST|</textarea>
+	</td>
+</tr>
+</table>
+
+|HTM_ADMIN_BOTTOM|

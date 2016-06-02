@@ -1,0 +1,182 @@
+|LF_STANDARD|
+|?TREE=&raquo; <a class="tree" href="/CMD_ADDITIONAL_DOMAINS?domain=`domain`">`LANG_MODIFY` `domain`</a>|
+|?HELP_SECTION=`USER_HELPER`/misc.html#domains|
+|HTM_USER_TOP|
+
+	<div id="current_model" class="CMD_ADDITIONAL_DOMAINS"></div>
+
+<script type="text/javascript">
+<!--
+function setText( textfld, checkbx)
+{
+        if (checkbx.checked)
+                textfld.disabled = true;
+        if (!checkbx.checked)
+                textfld.disabled = false;
+}
+//-->
+</script>
+
+	<div class="info_table forms">
+		<span class="title">|LANG_MODIFY| |domain|</span>
+		<form name="info" action="/CMD_DOMAIN" method="post">
+		<input type="hidden" name="action" value="modify" />
+		<input type="hidden" name="domain" value="|domain|" />
+
+		<div class="even">
+			<span class="td_label"><span class="i">|LANG_BANDWIDTH| |LANG_MB|</span></span>
+			<span class="td"><span class="i">
+				<input type="text" name="bandwidth" value="|BANDWIDTH|" |BANDWIDTHDISABLED| />
+				<input type="checkbox" name="ubandwidth" value="unlimited" onclick='setText( document.info.bandwidth,this)' |BANDWIDTHCHECKED| /> |LANG_SAME_AS_MAIN|
+			</span></span>
+		</div>
+					
+		<div class="odd">
+			<span class="td_label"><span class="i">|LANG_DISK_SPACE| |LANG_MB|</span></span>
+			<span class="td"><span class="i">
+				<input type="text" name="quota" value="|QUOTA|" |QUOTADISABLED|> <input type="checkbox" name="uquota" value="unlimited" onclick='setText( document.info.quota,this)' |QUOTACHECKED| /> |LANG_SAME_AS_MAIN|
+			</span></span>
+		</div>
+		
+		|*if USERSSL="ON"|
+		<div class="even">
+			<span class="td_label"><span class="i">|LANG_SECURE_SSL|</span></span>
+			<span class="td"><span class="i"><input type="checkbox" name="ssl" value="ON" |SSLCHECKED| /></span></span>
+		</div>
+		|*endif|
+
+		|*if USERCGI="ON"|				
+		<div class="odd">
+			<span class="td_label"><span class="i">|LANG_CGI| |LANG_ACCESS|</span></span>
+			<span class="td"><span class="i"><input type="checkbox" name="cgi" value="ON" |CGICHECKED| /></span></span>
+		</div>
+		|*endif|
+
+		|*if USERPHP="ON"|		
+		<div class="even">
+			<span class="td_label"><span class="i">|LANG_PHP| |LANG_ACCESS|</span></span>
+			<span class="td"><span class="i"><input type="checkbox" name="php" value="ON" |PHPCHECKED| /></span></span>
+		</div>
+		|*endif|
+
+		<span class="save_menu">
+			 <span><input type="submit" name="modify" value="|LANG_SAVE|" /></span>
+			 </span>
+	</form>
+</div>
+<br/>
+
+<script language=javascript>
+<!--
+function confirmit()
+{
+	with (document.https)
+	{
+		var checkedval='';
+		for (var i=0; i < elements.length; i++)
+		if (elements[i].type == 'radio')
+		{
+			if ( elements[i].name == "val" && elements[i].checked )
+			{
+				checkedval=elements[i].value;
+			}
+		}
+
+	
+		if (checkedval=='symlink')
+		{
+			if (confirm('|LANG_CONFIRM_DIR|'))
+			{
+				submit();
+			}
+		}
+		else
+		{
+			submit();
+		}	
+	}
+}
+
+
+//-->
+</script>
+	<div class="info_table forms">
+	<form name=https action="/CMD_DOMAIN" method="post">
+		<input type="hidden" name="action" value="private_html" />
+		<input type="hidden" name="domain" value="|domain|" />
+
+		<span class="title">|LANG_SETUP_FOR| |domain| - |LANG_SSL_REQUIRED|</span>
+
+		|*if SSLCHECKED!="checked"|
+		|?SSLDISABLED=disabled|
+		|*else|
+		|?SSLDISABLED=|
+		|*endif|
+		<div class="even">
+			<span class="td_checkbox"><span class="i">
+				<input type="radio" name="val" value="directory" |SSLDISABLED| |DIRECTORY_CHECKED| />
+			</span></span>
+			<span class="td"><span class="i">
+				|LANG_USE_DIR|
+			</span></span>
+			</div>
+					
+		<div class="odd">
+			<span class="td_checkbox"><span class="i">
+				<input type="radio" name="val" value="symlink" |SSLDISABLED| |SYMLINK_CHECKED| />
+			</span></span>
+			<span class="td"><span class="i">
+				|LANG_USE_SYMLINK|
+			</span></span>
+		</div>
+		
+		<span class="save_menu">
+			 <span><input type="button" value='|LANG_SAVE|' |SSLDISABLED| onclick="confirmit();" /></span>
+		</span>
+	
+	</form>
+</div>
+
+|*if HAS_MULTIPLE_IPS="yes"|
+	<br>
+	|MULTI_IP_TABLE|
+	<br>
+
+        <div class="info_table forms">
+        <form name=addmulti action="/CMD_DOMAIN" method="post">
+                <input type="hidden" name="action" value="multi_ip" />
+                <input type="hidden" name="domain" value="|domain|" />
+
+                <span class="title">|LANG_ADD_ANOTHER_IP| |domain|</span>
+
+                <div class="even">
+                        <span class="td_label_small"><span class="i">
+                                |LANG_SELECT_IP_TO_ADD|
+                        </span></span>
+                        <span class="td"><span class="i">
+                                |MULTI_IP_SELECT|
+                        </span></span>
+                </div>
+
+                <div class="odd">
+                        <span class="td_label_small"><span class="i">
+                                |LANG_ADD_DNS_RECORDS|
+                        </span></span>
+                        <span class="td"><span class="i">
+                                <input type=checkbox name="dns" value="yes" checked>
+                        </span></span>
+                </div>
+                        <span class="save_menu">
+                                <span><input type="submit" value="|LANG_ADD_IP|" name="add" /></span>
+                        </span>
+	</form>
+</div>
+
+|*endif|
+
+|*if HAS_PHP_SELECTOR="yes"|
+<br>
+|PHP_SELECTOR_TABLE|
+|*endif|
+
+|HTM_USER_FOOTER|

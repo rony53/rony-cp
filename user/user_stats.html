@@ -1,0 +1,67 @@
+|?TREE=&raquo; `ALL_DOMAINS_SELECT` &raquo; <a class=tree href="/CMD_USER_STATS?domain=`domain`">`LANG_STATS_FOR` `USERNAME`</a>|
+|?HELP_SECTION=`USER_HELPER`/stats.html|
+
+	|HTM_USER_TOP|
+	
+	<div id="current_model" class="CMD_USER_STATS"></div>
+	
+	<div class="info_table forms">
+		<span class="title"><b>|LANG_DETAILS_FOR| |USERNAME|</b></span>
+	</div>
+	
+	<div class="link_list">
+		<ul class="inner">
+			<li><a href="/CMD_FILE_MANAGER/domains/|domain|/logs">|LANG_APACHE_LOGS|</a></li>
+			<li><a href="/CMD_USER_HISTORY?domain=|domain|">|LANG_USER_HISTORY|</a></li>
+		</ul>
+	</div>
+	
+
+	<div class="info_table forms">
+		<span class="title">|LANG_APACHE_USAGE|</span>
+		
+		<div class="even">
+			<span class="td_part"><span class="i">
+				<a href="/CMD_SHOW_LOG?domain=|domain|&type=log">|LANG_FULL_USAGE|</a></span></span>
+			<span class="td_part"><span class="i">
+				<a href="/CMD_SHOW_LOG?domain=|domain|&type=log&lines=10">|LANG_10_LINES|</a></span></span>
+			<span class="td_part"><span class="i">
+				<a href="/CMD_SHOW_LOG?domain=|domain|&type=log&lines=100">|LANG_100_LINES|</a></span></span>
+		</div>
+		
+	</div>
+	
+	<div class="info_table forms">
+		<span class="title">|LANG_APACHE_ERROR|</span>	
+				
+		<div class="odd">
+			<span class="td_part"><span class="i">
+				<a href="/CMD_SHOW_LOG?domain=|domain|&type=error">|LANG_FULL_ERROR|</a></span></span>
+			<span class="td_part"><span class="i">
+				<a href="/CMD_SHOW_LOG?domain=|domain|&type=error&lines=10">|LANG_10_LINES|</a></span></span>
+			<span class="td_part"><span class="i">
+				<a href="/CMD_SHOW_LOG?domain=|domain|&type=error&lines=100">|LANG_100_LINES|</a></span></span>
+		</div>
+
+	</div>
+
+|DOMAINS|
+	
+	<br/>
+
+	<div class="flash_holder">
+    	<div class="rounder_t"></div>
+    	<div class="roundee">
+			<div class="flash" id="notice"><img src="/IMG_NOTICE" alt="" /> 
+			<span style="COLOR: red;">|LANG_WEBALIZER|</span><br/>
+			|LANG_NOTE|
+			</div>
+		</div>
+		<div class="rounder_b"></div>
+	</div>
+
+	|STATS|
+	
+	<center><b>|RESULT|</b></center>
+
+|HTM_USER_FOOTER|

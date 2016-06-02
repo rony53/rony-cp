@@ -1,0 +1,37 @@
+|LF_STANDARD|
+|LF_FORWARDER|
+|?TREE=&raquo; <a class="tree" href="/CMD_SHOW_DOMAIN?domain=`DOMAIN`">`DOMAIN`</a> &raquo; <a class="tree" href="/HTM_EMAIL?DOMAIN=`DOMAIN`">`LANG_FEMAIL`</a> &raquo; <a class="tree" href="/CMD_EMAIL_FORWARDER?DOMAIN=`DOMAIN`">`LANG_FORWARDERS`</a> &raquo; <a class="tree" href="/HTM_EMAIL_FORWARDER_CREATE?DOMAIN=`DOMAIN`">`LANG_CREATE_FORWARD`</a>|
+|?HELP_SECTION=`USER_HELPER`/email.html#forwarders|
+|HTM_USER_TOP|
+
+<div id="current_model" class="CMD_EMAIL_FORWARDER"></div>
+
+<div class="info_table forms">
+	<form name="info" action="CMD_EMAIL_FORWARDER" method="post">
+		<input type="hidden" name="action" value="create" />
+		<input type="hidden" name="domain" value="|DOMAIN|" />
+
+        <span class="title">|LANG_CREATE_FORWARD|</span>
+
+        <div class="even">
+            <span class="td_label"><span class="i">|LANG_FORWARD_NAME|</span></span>
+            <span class="td"><span class="i"><input type="text" name="user" size="12" />@|DOMAIN|</span></span>
+        </div>
+                
+        <div class="odd">
+            <span class="td_label"><span class="i">|LANG_DEST|</span></span>
+            <span class="td"><span class="i"><input type="text" name="email" size="32" /> |LANG_WHERE_YOU_WANT|</span></span>
+        </div>
+
+        <div class="even">
+        <span class="td_url"><span class="i_center">|LANG_FWD_NOTE|</span></span>
+        </div>
+                
+        <span class="save_menu">
+            <span><input type="submit" name="create" value="|LANG_CREATE|" /></span>
+        </span>
+
+	</form>
+</div>
+
+|HTM_USER_FOOTER|

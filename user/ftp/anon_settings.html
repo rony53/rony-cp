@@ -1,0 +1,41 @@
+|LF_STANDARD|
+|LF_FTP|
+|?TREE=&raquo; <a class="tree" href="/CMD_SHOW_DOMAIN?domain=`DOMAIN`">`DOMAIN`</a> &raquo; <a class="tree" href="/CMD_FTP?DOMAIN=`DOMAIN`">`LANG_FTP_SETUP`</a> &raquo; <a class="tree" href="/CMD_FTP_SETTINGS?DOMAIN=`DOMAIN`">`LANG_ANON_FTP_SETTINGS`</a>|
+|?HELP_SECTION=`USER_HELPER`/ftp.html#anonftp|
+|HTM_USER_TOP|
+
+	<div id="current_model" class="CMD_FTP"></div>
+
+	<div class="info_table forms">
+	<form name="info" action="CMD_FTP_SETTINGS" method="post">
+		<input type="hidden" name="action" value="modify" />
+		<input type="hidden" name="domain" value="|DOMAIN|" />
+
+		<span class="title">|LANG_ANON_FTP_SETTINGS|</span>
+		
+		<div class="even">
+			<span class="td_label"><span class="i">|LANG_ALLOW_ANON|</span></span>
+			<span class="td"><span class="i"><input type="checkbox" name="anon" value="yes" |ANONCHECKED| /></span></span>
+		</div>
+					
+		<div class="odd">
+			<span class="td_label"><span class="i">|LANG_ALLOW_ANON_UP|</span></span>
+			<span class="td"><span class="i"><input type="checkbox" name="anonup" value="yes" |ANONUPCHECKED| /></span></span>
+		</div>
+
+		<div class="even">
+			<span class="td_url"><span class="i_center">|LANG_WELCOME_MESS|</span></span>
+		</div>
+		
+		<div class="textarea">
+			<textarea rows="10" cols="87" name="message">|MESSAGETEXT|</textarea>
+		</div>
+
+		<span class="save_menu">
+			<span><input type="submit" name="create" value="|LANG_SAVE|" /></span>
+			<span><input type="reset" class="input_submit" value="|LANG_RESET|" /></span>
+		</span>
+	</form>
+</div>
+
+|HTM_USER_FOOTER|

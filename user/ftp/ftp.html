@@ -1,0 +1,19 @@
+|?TREE=&raquo; `ALL_DOMAINS_SELECT` &raquo; <a class=tree href="/CMD_FTP?DOMAIN=`DOMAIN`">`LANG_FTP_SETUP`</a>|
+|?HELP_SECTION=`USER_HELPER`/ftp.html|
+|HTM_USER_TOP|
+
+	<div id="current_model" class="CMD_FTP"></div>
+
+	<div class="link_list right_list">
+		<ul class="inner">
+			<li><a href="HTM_FTP_CREATE?DOMAIN=|DOMAIN|&owned=|OWNEDIP|">|LANG_CREATE_FTP|</a></li>
+			|*if USERAFTP="ON"|
+			<li><a href="CMD_FTP_SETTINGS?DOMAIN=|DOMAIN|">|LANG_ANON_FTP_SETTINGS|</a> &nbsp;&nbsp;&nbsp;&nbsp;|LANG_FLOGIN|: |ANONLOGIN|</li>
+			|*endif|
+		</ul>
+	</div>
+
+
+|FTPACCOUNTS|
+
+|HTM_USER_FOOTER|

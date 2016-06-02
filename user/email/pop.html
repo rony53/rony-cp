@@ -1,0 +1,18 @@
+|?TREE=&raquo; `ALL_DOMAINS_SELECT` &raquo; <a class=tree href="/CMD_EMAIL_POP?DOMAIN=`DOMAIN`">`LANG_POP_ACCOUNTS`</a>|
+|?HELP_SECTION=`USER_HELPER`/email.html#pop3|
+|HTM_USER_TOP|
+
+	<div id="current_model" class="CMD_EMAIL_POP"></div>
+
+	|*if EMAIL_MESSAGE!=""|
+	<b>|EMAIL_MESSAGE|</b><br><br>
+	|*endif|
+
+	<div class="link_list right_list">
+		<ul class="inner"><a href="HTM_EMAIL_POP_CREATE?DOMAIN=|DOMAIN|&DEFAULT_POP_QUOTA=|DEFAULT_POP_QUOTA|&USER_CAN_SET_SEND_LIMIT=|USER_CAN_SET_SEND_LIMIT|&GLOBAL_PER_EMAIL_LIMIT=|GLOBAL_PER_EMAIL_LIMIT|">|LANG_POP_CREATE|</a> <a href="CMD_EMAIL_USAGE?domain=|DOMAIN|">|LANG_EMAIL_USAGE|</a></ul><br>
+	</div>
+
+
+|POPACCOUNTS|
+
+|HTM_USER_FOOTER|

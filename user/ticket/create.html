@@ -1,0 +1,61 @@
+|LF_STANDARD|
+|LF_TICKET|
+|?TREE=&raquo; <a class=tree href="/CMD_TICKET">`LANG_MESS_SYS`</a>|
+|?HELP_SECTION=`USER_HELPER`/gettingstarted.html#ticket|
+|HTM_USER_TOP|
+	<div id="current_model" class="CMD_TICKET"></div>
+
+	<div class="content">
+			
+			<div class="info_table forms">
+
+	<div class="info_table forms">
+		<span class="title">|LANG_CREATE| |TYPE|</span>
+
+	<form name="info" action="CMD_TICKET_CREATE" method="post">
+		<input type="hidden" name="action" value="create" />
+		<input type="hidden" name="type" value="|TCKTTYPE|" />
+
+	<div class="even">
+		<span class="td_label"><span class="i">|LANG_TO| |TCKTTO|</span></span>
+		<span class="td"><span class="i">
+			|LANG_PRIORITY|
+			<select name="priority">
+				<option value="10">|LANG_LOW|</option>
+				<option value="20">|LANG_MED|</option>
+				<option value="30">|LANG_HIGH|</option>
+			</select>
+		</span></span>
+	</div>
+				
+	<div class="odd">
+		<span class="td_label_small"><span class="i">|LANG_SUBJECT|</span></span>
+		<span class="td_url"><span class="i"><input type="text" name="subject" size="58" /></span></span>
+	</div>
+	
+	<div class="even">
+		<span class="td_url"><span class="i_center">|LANG_MESSAGE|</span></span>
+	</div>
+	
+	<div class="textarea">
+		<textarea name="message" rows="10" cols="63"></textarea>
+	</div>
+
+	<span class="save_menu">
+		<span>
+			<input type="submit" name="submit" value="|LANG_SAVE|" />
+		</span>
+		|*if SHOW_EML_ONLY="yes"|
+		<span>
+  			<input type="checkbox" name="email_only" value="yes" |EML_ONLY_CHEKCED| /> |LANG_EMAIL_ONLY|
+  		</span>
+		|*endif|
+	</span>
+
+	</form>
+
+</div>
+
+</div>
+	</div>
+|HTM_USER_FOOTER|

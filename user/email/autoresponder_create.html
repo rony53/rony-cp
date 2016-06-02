@@ -1,0 +1,40 @@
+|LF_STANDARD|
+|LF_AUTO_RESPONDER|
+|?TREE=&raquo; <a class="tree" href="/CMD_SHOW_DOMAIN?domain=`DOMAIN`">`DOMAIN`</a> &raquo; <a class="tree" href="/CMD_EMAIL_AUTORESPONDER?DOMAIN=`DOMAIN`">`LANG_AUTO_RESPONDERS`</a> &raquo; <a class="tree" href="/HTM_EMAIL_AUTORESPONDER_CREATE?DOMAIN=`DOMAIN`">`LANG_CREATE_AUTO`</a>|
+|?HELP_SECTION=`USER_HELPER`/email.html#auto|
+|HTM_USER_TOP|
+
+    <div id="current_model" class="CMD_EMAIL_AUTORESPONDER"></div>
+
+    <div class="info_table forms">
+	<form name=info action="CMD_EMAIL_AUTORESPONDER" method="post">
+		<input type="hidden" name="action" value="create" />
+		<input type="hidden" name="domain" value="|DOMAIN|" />
+
+		<span class="title">|LANG_CREATE_AUTO_MESS|</span>
+
+        <div class="even">
+            <span class="td_label"><span class="i">|LANG_RESP_ADDR|</span></span>
+            <span class="td"><span class="i"><input type="text" name="user" /> @|DOMAIN|</span></span>
+        </div>
+                
+        <div class="odd">
+            <span class="td_url"><span class="i_center">|LANG_RESP_MESS|</span></span>
+        </div>
+
+		<div class="textarea">
+            <textarea rows="15" cols="60" name="text"></textarea>
+        </div>
+
+        <div class="even">
+        <span class="td_label"><span class="i"><input type="checkbox" name="cc" value="ON" /> |LANG_RESP_CC_TO|</span></span>
+        <span class="td"><span class="i"><input type="text" name="email" /></span></span>
+        </div>
+        
+		<span class="save_menu">
+            <span><input type="submit" name="create" value="|LANG_CREATE|" /></span>
+        </span>
+        
+	</form>
+     </div>  
+|HTM_USER_FOOTER|

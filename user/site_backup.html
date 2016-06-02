@@ -1,0 +1,171 @@
+|LF_STANDARD|
+|?TREE=&raquo; <a class="tree" href="/CMD_SHOW_DOMAIN?domain=`domain`">`domain`</a> &raquo; <a class="tree" href="/CMD_SITE_BACKUP?domain=`domain`">`LANG_SITE_BACKUP`</a>|
+|?HELP_SECTION=`USER_HELPER`/backup.html|
+|HTM_USER_TOP|
+	
+	<div id="current_model" class="CMD_SITE_BACKUP"></div>
+
+	<div class="info_table forms">
+		<span class="title"><b>|LANG_BACKUP_ALL_DOMAINS|</b></span>
+	</div>
+
+	<div class="info_table forms">
+		<form action="/CMD_SITE_BACKUP" method="post">
+		<input type="hidden" name="form_version" value="3" />
+		<input type="hidden" name="domain" value="|domain|" />
+		<input type="hidden" name="action" value="backup" />
+		
+		<span class="title">|LANG_SELECT_ITEMS|</span>
+		
+		<div class="even">
+			<span class="td_url"><span class="i_center"><b>|LANG_WEB_DATA|</b></span></span>
+		</div>
+					
+		<div class="odd">
+			<span class="td_checkbox"><span class="i"><input type="checkbox" name="select0" value="domain" checked="checked" /></span></span>
+			<span class="td"><span class="i">|LANG_DOMAINS_DIR|</span></span>
+		</div>
+		
+		<div class="even">
+			<span class="td_checkbox"><span class="i"><input type="checkbox" name="select1" value="subdomain" checked="checked" /></span></span>
+			<span class="td"><span class="i">|LANG_SUBDOMAIN_LIST|</span></span>
+		</div>
+		
+		<div class="odd">
+			<span class="td_url"><span class="i_center"><b>|LANG_EMAIL|</b></span></span>
+		</div>
+		
+		<div class="even">
+			<span class="td_checkbox"><span class="i"><input type="checkbox" name="select2" value="email" checked="checked" onClick='document.tableform1.select12.checked = this.checked;' /></span></span>
+			<span class="td"><span class="i">|LANG_POP_ACCOUNTS|</span></span>
+		</div>
+		
+		<div class="odd">
+                        <span class="td_checkbox"><span class="i">
+                                <input type="checkbox" name="select12" value="email_data" checked onClick='if (this.checked == true) { document.tableform1.select2.checked = true; }' />
+                        </span></span>
+
+                        <span class="td"><span class="i">|LANG_EMAIL_DATA|</span></span>
+                </div>
+
+                <div class="even">
+                        <span class="td_checkbox"><span class="i">
+                                <input type="checkbox" name="select7" value="emailsettings" checked="checked" />
+                        </span></span>
+
+                        <span class="td"><span class="i">|LANG_EMAIL_SETTINGS|</span></span>
+                </div>
+
+		<div class="odd">
+			<span class="td_checkbox"><span class="i">
+				<input type="checkbox" name="select3" value="forwarder" checked="checked" />
+			</span></span>
+			
+			<span class="td"><span class="i">|LANG_FOWARDERS|</span></span>
+		</div>
+		
+		<div class="even">
+			<span class="td_checkbox"><span class="i">
+				<input type="checkbox" name="select4" value="autoresponder" checked="checked" />
+			</span></span>
+			
+			<span class="td"><span class="i">|LANG_AUTORESPONDERS|</span></span>
+		</div>
+		
+		<div class="odd">
+			<span class="td_checkbox"><span class="i">
+				<input type="checkbox" name="select5" value="vacation" checked="checked" />
+			</span></span>
+			
+			<span class="td"><span class="i">|LANG_VAC_MESSAGES|</span></span>
+		</div>
+		
+		<div class="even">
+			<span class="td_checkbox"><span class="i">
+				<input type="checkbox" name="select6" value="list" checked="checked" />
+			</span></span>
+			
+			<span class="td"><span class="i">|LANG_MAILING_LISTS_INCLUDE|</span></span>
+		</div>
+		
+		<div class="odd">
+			<span class="td_url"><span class="i_center"><b>|LANG_FTP|</b>
+			</span></span>
+		</div>
+
+		<div class="even">
+			<span class="td_checkbox"><span class="i">
+				<input type="checkbox" name="select8" value="ftp" checked="checked" />
+			</span></span>
+			
+			<span class="td"><span class="i">|LANG_FTP_ACCOUNTS|</span></span>
+		</div>
+		
+		<div class="odd">
+			<span class="td_checkbox"><span class="i">
+				<input type="checkbox" name="select9" value="ftpsettings" checked="checked" />	
+			</span></span>
+			
+			<span class="td"><span class="i">|LANG_FTP_SETTINGS|</span></span>
+		</div>
+		
+		<div class="even">
+			<span class="td_url"><span class="i_center">
+				<b>|LANG_DATABASES|</b>
+			</span></span>
+		</div>
+		
+		<div class="odd">
+			<span class="td_checkbox"><span class="i">
+				<input type=checkbox name="select10" value="database" checked onClick='document.tableform1.select11.checked = this.checked;' />
+			</span></span>
+			
+			<span class="td"><span class="i">|LANG_DBS_INCLUDE|</span></span>
+		</div>
+
+                <div class="even">
+                        <span class="td_checkbox"><span class="i">
+                                <input type=checkbox name="select11" value="database_data" checked onClick='if (this.checked == true) { document.tableform1.select10.checked = true; }' />
+                        </span></span>
+
+                        <span class="td"><span class="i">|LANG_DB_DATA|</span></span>
+                </div>
+		
+		<span class="save_menu">
+			<span><input type="submit" value="|LANG_CREATE_BACKUP|" /></span>
+		</span>				
+		
+		</form>
+		
+	</div>
+	
+	<div class="info_table forms">
+		<div class="even">
+			<span class="td_url"><span class="i_center">
+				<a href="/CMD_FILE_MANAGER/backups">|LANG_CLICK_FOR_BACKUPS|</a><br/>
+				<b>|RESULT|</b>
+			</span></span>
+		</div>
+	</div>
+
+	<div class="info_table forms">
+		<form action="/CMD_SITE_BACKUP" method="post">
+			<input type="hidden" name="domain" value="|domain|" />
+			<input type="hidden" name="action" value="view" />
+			
+			<span class="title">|LANG_SELECT_FILE|</span>
+			
+			<div class="even">
+				<span class="td_url"><span class="i">|FILES|</span></span>
+			</div>
+						
+			<span class="save_menu">
+				<span><input type="submit" value="|LANG_SELECT_RESTORE_OPS|" /></span>
+			</span>
+			
+		</form>
+	</div>
+	
+	<br/>
+
+|HTM_USER_FOOTER|

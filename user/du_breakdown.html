@@ -1,0 +1,35 @@
+|LF_STANDARD|
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="/CSS_STYLE" />
+<style type="text/css"> body { width: 700px; } table { width: 700px; } </style>
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<title>|LANG_DU_D|
+|*if user|
+|user|
+|*else|
+|USERNAME|
+|*endif|
+</title>
+<style type="text/css">
+|CSS_STYLE|
+</style>
+</head>
+<body>
+<form action=? method=GET>
+<input type=checkbox name="hidezero" value="1" |*if hidezero="1"|checked|*endif|>|LANG_HIDE_ZERO|<br>
+<input type=checkbox name="hide_duplicate_count" value="1" |*if hide_duplicate_count="1"|checked|*endif|>|LANG_HIDE_NOT_COUNTED| <a href="javascript:alert('|LANG_EXPLANATION|');">(?)</a><br>
+<input type=hidden name="sort1" value="|sort1|">
+<input type=hidden name="ipp" value="|ipp|">
+<input type=submit value="|LANG_UPDATE|">
+|*if user|<input type=hidden name="user" value="|user|">|*endif|
+<center>
+|TABLE|
+<br>
+<a href="javascript:self.close();">|LANG_CLOSE|</a>
+</center>
+</form>
+</body>
+</html>

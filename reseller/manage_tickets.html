@@ -1,0 +1,57 @@
+|LF_STANDARD|
+|?TREE=&raquo; <a class="tree" href="/CMD_TICKET_MANAGE">`LANG_MANAGE_TICKETS`</a>|
+|?HELP_SECTION=`RESELLER_HELPER`/messagesystem.html|
+|HTM_RESELLER_TOP|
+
+	<div id="current_model" class="CMD_TICKET"></div>
+
+	<div class="link_list right_list">
+		<ul class="inner">
+			<li><a href="CMD_TICKET_CREATE?TYPE=Message">|LANG_SEND_MESS|</a></li>
+			<li><a href="CMD_TICKET_MANAGE?action=closed">|LANG_VIEW_CLOSED||NEWCLOSED|</a></li>
+		</ul>
+	</div>
+
+
+	|TICKETS|
+	
+	<br/>
+	
+	<div class="info_table forms">
+		<span class="title">|LANG_TICK_OPTIONS|</span>
+		
+		<form action="CMD_TICKET_MANAGE" method="post">
+			<input type="hidden" name="action" value="active">
+			
+			<div class="even">
+				<span class="td_checkbox"><span class="i">
+					<input type="checkbox" name="active" value="yes" |ACTIVECHECKED| />
+				</span></span>
+				<span class="td"><span class="i">
+					|LANG_TICK_ENABLED| <input type="text" size="30" name="html" value="|HTML|" />
+				</span></span>
+				<span class="td_date"><span class="i">
+					<input type="submit" name="save" value="|LANG_SAVE|" />
+				</span></span>
+				</div>
+			</form>
+			
+			<form action="CMD_TICKET_MANAGE" method="post">
+				<input type="hidden" name="action" value="email">
+			
+			<div class="odd">
+				<span class="td_checkbox"><span class="i">
+					<input type="checkbox" name="ON" value="yes" |EMAILCHECKED| />
+				</span></span>
+				<span class="td"><span class="i">
+					|LANG_EMAIL_TO| <input type="text" name="email" value="|EMAIL|" />
+				</span></span>
+				<span class="td_date"><span class="i">
+					<input type="submit" name="save" value="|LANG_SAVE|" />
+				</span></span>
+			</div>
+			
+		</form>
+	</div>
+
+|HTM_RESELLER_BOTTOM|

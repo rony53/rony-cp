@@ -1,0 +1,77 @@
+|LF_STANDARD|
+|LF_TICKETS|
+|?TREE=&raquo; <a class="tree" href="/CMD_TICKET_MANAGE">`LANG_MANAGE_TICKETS`</a> &raquo; `LANG_VIEW` `type` `number`</a>|
+|?HELP_SECTION=`RESELLER_HELPER`/messagesystem.html|
+|HTM_RESELLER_TOP|
+
+<script type="text/javascript">
+<!--
+
+function setOther(slct)
+{
+	var value = slct.value;
+	document.info.status.value = value;
+	document.stat.status.value = value;
+}
+
+// -->
+</script>
+
+
+	<div class="info_table forms">
+		
+		<form name="stat" action="CMD_TICKET_MANAGE" method="post">
+			<input type="hidden" name="action" value="status" />
+			<input type="hidden" name="number" value="|number|" />
+			
+			<div class="even"><span class="td_url"><span class="i_center">
+				|LANG_SET_MESS_1| |STATUS| |LANG_SET_MESS_2|
+				<input type="submit" value="|LANG_SAVE|" />
+			</span></span></div>
+			
+		</form>
+
+	</div>
+
+	|TICKETMESSAGES|
+	
+	<div class="info_table forms">
+		<span class="title">|LANG_REPLY_TO_TICK|</span>
+	
+		<form name=info action="CMD_TICKET_MANAGE" method="post">
+			<input type="hidden" name="action" value="reply" />
+			<input type="hidden" name="type" value="reply" />
+			<input type="hidden" name="number" value="|number|" />
+			<input type="hidden" name="user" value="|user|" />
+			<input type="hidden" name="subject" value="Re: |subject|" />
+			<input type="hidden" name="priority" value="|priority|" />
+	
+		<div class="even">
+			<span class="td_label"><span class="i">
+				|LANG_STATUS|:
+			</span></span>
+			<span class="td"><span class="i">
+				|STATUS|
+			</span></span>
+		</div>
+					
+		<div class="odd">
+			<span class="td_url"><span class="i_center">|LANG_MESSAGE|:</span></span>
+		</div>
+		
+		<div class="textarea">
+			<textarea name="message" rows="10" cols="87"></textarea>
+		</div>
+	
+		<span class="save_menu">
+			<span>
+				<input type=submit name=submit value="|LANG_SAVE|" />
+			</span>
+		</span>
+		
+		
+		</form>
+	
+	</div>
+
+|HTM_RESELLER_BOTTOM|

@@ -1,0 +1,78 @@
+|LF_STANDARD|
+|LF_FTP|
+|?TREE=&raquo; <a class="tree" href="/CMD_SHOW_DOMAIN?domain=`DOMAIN`">`DOMAIN`</a> &raquo; <a class="tree" href="/CMD_FTP?DOMAIN=`DOMAIN`">`LANG_FTP_SETUP`</a> &raquo; <a class="tree" href="/CMD_FTP_SHOW?DOMAIN=`DOMAIN`&user=`user`">`LANG_MODIFY` `user`</a>|
+|?HELP_SECTION=`USER_HELPER`/ftp.html#mod|
+|HTM_USER_TOP|
+
+|?CHECK_PASS=|
+|?RANDOM_PASS=randomPass(); reseller.random.value=reseller.passwd.value|
+|*if AJAX="1"|
+	|?CHECK_PASS=onChange="ajax_checkPass()"|
+	|?RANDOM_PASS=ajax_randomPass('random')|
+	<script type="text/javascript" src="JS_CREATION_CHECK"></script>
+|*endif|
+
+    <div id="current_model" class="CMD_FTP"></div>
+
+<script type="text/javascript">
+<!--
+
+|HTM_JAVASCRIPT|
+
+// -->
+</script>
+
+<div class="info_table forms">
+	<form name="reseller" action="CMD_FTP" method="post">
+		<input type="hidden" name="action" value=modify>
+		<input type="hidden" name="domain" value="|DOMAIN|">
+		<input type="hidden" name="user" value="|USER|">
+		|SYSTEMUSERHIDDEN|
+
+        <span class="title">|LANG_MODIFY_FTP|</span>
+        
+        <div class="even">
+            <span class="td_label"><span class="i">|LANG_FTP_USERNAME|</span></span>
+            <span class="td"><span class="i">|FULLUSER|</span></span>
+        </div>
+                
+        <div class="odd">
+            <span class="td_label"><span class="i">|LANG_ENTER_PASS|:</span></span>
+            <span class="td"><span class="i">
+            <input type="password" name="passwd" size="16"> <div class="input_submit grey"><input type="button" value="|LANG_RANDOM|" onclick="randomPass(); reseller.random.value=reseller.passwd.value" /> </div>
+            <input type="text" readonly="readonly" name="random" id="rand_field" value="|LANG_FTP_SAVE_PASSWORD|" size="16" /></span></span>
+        </div>
+
+        <div class="even">
+            <span class="td_label"><span class="i">|LANG_RE-ENTER_PASS|:</span></span>
+            <span class="td"><span class="i"><input type="password" name="passwd2" size="16" /></span></span>
+        </div>
+                
+        <div class="odd">
+            <span class="td_label"><span class="i">|LANG_DOMAIN|:</span></span>
+            <span class="td"><span class="i"><input type="radio" name="type" value="domain" |DOMAINCHECKED| /> |LANG_DOMAIN_USER|</span></span>
+        </div>
+
+        <div class="even">
+            <span class="td_label"><span class="i">|LANG_FTP|:</span></span>
+            <span class="td"><span class="i"><input type="radio" name="type" value="ftp" |FTPCHECKED| /> |LANG_FTP_USER|</span></span>
+        </div>
+                
+        <div class="odd">
+            <span class="td_label"><span class="i">|LANG_USER|:</span></span>
+            <span class="td"><span class="i"><input type="radio" name="type" value="user" |USERCHECKED| /> |LANG_USER_USER|</span></span>
+        </div>
+        
+        <div class="even">
+            <span class="td_label"><span class="i">|LANG_CUSTOM|:</span></span>
+            <span class="td"><span class="i"><input type="radio" name="type" value="custom" |CUSTOMCHECKED| /> <input type="text" size="66" name="custom_val" value="|CUSTOM_PATH|" /></span></span>
+        </div>
+		
+        <span class="save_menu">
+         <span><input type="submit" name="create" value="|LANG_MODIFY|"></span>
+         <span><input type="reset" class="input_submit" value="|LANG_RESET|"></span>
+         </span>
+	</form>
+</div>
+
+|HTM_USER_FOOTER|

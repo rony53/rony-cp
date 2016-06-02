@@ -1,0 +1,167 @@
+|?TREE=&raquo; <a class="tree" href="/CMD_LICENSE">`LANG_LICE_UP`</a>|
+|?HELP_SECTION=`ADMIN_HELPER`/license.html|
+|HTM_ADMIN_TOP|
+<div id="current_model" class="CMD_LICENSE"></div>
+
+<div class="info_table forms">
+	
+		<span class="title">|LANG_LICE_VALS|</span>
+		
+		<div class="even">
+			
+			<span class="td_label"><span class="i">|LANG_LICE_IP|</span></span>
+			<span class="td"><span class="i">|ip|</span></span>
+		
+		</div>
+		
+		<div class="odd">
+			
+			<span class="td_label"><span class="i">|LANG_LICE_NAME|</span></span>
+			<span class="td"><span class="i">|name|</span></span>
+		
+		</div>
+		
+		<div class="even">
+			
+			<span class="td_label"><span class="i">|LANG_LID|</span></span>
+			<span class="td"><span class="i">|lid|</span></span>
+		
+		</div>
+		
+		<div class="odd">
+			
+			<span class="td_label"><span class="i">|LANG_CID|</span></span>
+			<span class="td"><span class="i">|uid|</span></span>
+		
+		</div>
+		
+
+		|*if internal="Y"|
+		
+		<div class="even">
+			
+			<span class="td_label"><span class="i">|LANG_LTYPE|</span></span>
+			<span class="td"><span class="i">|LANG_INTERNAL|</span></span>
+		
+		</div>
+		
+		|*endif|
+		
+		|*if internal="N"|
+		
+		<div class="even">
+			
+			<span class="td_label"><span class="i">|LANG_LTYPE|</span></span>
+			<span class="td"><span class="i">|LANG_EXTERNAL|</span></span>
+		
+		</div>
+		|*endif|
+		
+		<div class="odd">
+			
+			<span class="td_label"><span class="i">|LANG_VALID_AFTER|</span></span>
+			<span class="td"><span class="i">|start_string|</span></span>
+		
+		</div>
+		
+		<div class="even">
+			
+			<span class="td_label"><span class="i">|LANG_VALID_UNTIL|</span></span>
+			<span class="td"><span class="i">|expiry_string|</span></span>
+		
+		</div>
+
+		<div class="odd">
+			
+			<span class="td_label"><span class="i">|LANG_CURRENT_TIME|</span></span>
+			<span class="td"><span class="i">|TIME|</span></span>
+		
+		</div>
+		
+		<div class="even">
+			
+			<span class="td_label"><span class="i">|LANG_TIME_REM|</span></span>
+			<span class="td"><span class="i">|remaining|</span></span>
+		
+		</div>
+		
+		<div class="odd">
+			
+			<span class="td_label"><span class="i">|LANG_LAST_UP|</span></span>
+			<span class="td"><span class="i">|license_change|</span></span>
+		
+		</div>
+
+                |*if portioned="Y"|
+                <div class="even">
+
+                        <span class="td_label"><span class="i">|LANG_PORTIONED_LICENSE|</span></span>
+                        <span class="td"><span class="i">|LANG_PORTIONED_EXPLANATION| |true_expiry_string|</span></span>
+
+                </div>
+                |*endif|
+		
+		<span class="save_menu">
+		 		<span><a href="/CMD_LICENSE?update=license"><button type="button" class="input_submit">|LANG_UP_LICE|</button></a></span></span>
+		
+	</div>
+	
+	<div class="info_table forms">	
+			
+		<span class="title">
+			 |LANG_DA_VALS|
+		 </span>
+			 		
+			 <div class="even">
+			 	<span class="td_label">
+			 		<span class="i">|LANG_COMPILED_FOR|</span>
+			 		</span>
+			 		
+			 		<span class="td">
+			 			<span class="i">|OS_NAME|</span>
+			 			</span>
+			 			</div>
+                         <div class="odd">
+                                <span class="td_label">
+                                        <span class="i">|LANG_COMPILE_DATE|</span>
+                                        </span>
+
+                                        <span class="td">
+                                                <span class="i">|compile_time|</span>
+                                                </span>
+                         </div>
+	<div class="even">
+		 <span class="td_label"><span class="i">|LANG_SERVER_VER|</span>
+		 </span>
+		 <span class="td"><span class="i">|version|</span></span>
+		 </div>
+		 		
+		 <div class="odd">
+		 	<span class="td_label">
+		 		<span class="i">|LANG_CURRENT_VER|</span>
+		 		</span>
+		 		
+		 		<span class="td">
+		 			<span class="i">|currentversion|</span>
+		 			</span>
+		 			</div>
+		 			
+	<div class="even">
+		 <span class="td_label"><span class="i">|LANG_LAST_UP|</span>
+		 </span>
+		 <span class="td"><span class="i">|software_change|</span></span>
+	</div>
+
+        <div class="odd">
+                 <span class="td_label"><span class="i">|LANG_LAST_RESTART|</span>
+                 </span>
+                 <span class="td"><span class="i">|startup_time|</span></span>
+        </div>
+		 		
+		 <span class="save_menu">
+		 		<span><button type="button" class="input_submit" onclick="location.href='/CMD_LICENSE?update=program'">|LANG_UPDATE_DA|</button></span>
+         </span>
+
+</div>
+
+|HTM_ADMIN_BOTTOM|

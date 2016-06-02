@@ -1,0 +1,130 @@
+|LF_STANDARD|
+|?TREE=&raquo; <a class="tree" href="/CMD_MULTI_SERVER">`LANG_MULTI_SERVER`</a>|
+|?HELP_SECTION=`ADMIN_HELPER`|
+|HTM_ADMIN_TOP|
+
+<div id="current_model" class="CMD_MULTI_SERVER"></div>
+
+<form action="/CMD_MULTI_SERVER" method="post">
+<input type="hidden" name="action" value="onoff" />
+
+	<div class="info_table forms">
+		<span class="title">
+		<span class="float: left">
+		|*if CLUSTER_ON="yes"|
+		|LANG_MULTI_IS_ON|
+		</span>
+			<span style="float:right"><input type="submit" name="off" value="|LANG_TURN_OFF|" /></span>
+		</span>
+		
+		|*else|
+		|LANG_MULTI_IS_OFF|
+		</span>
+			<span style="float:right"><input type="submit" name="on" value="|LANG_TURN_ON|" /></span>
+		</span>
+		|*endif|
+	</div>
+
+</form>
+	
+	<div class="info_table forms">
+	<span class="title"><b>|LANG_LIST_OF_SERVERS|</b></span>
+	</div>
+	
+	|TABLE|
+
+<br/>
+
+<div class="info_table forms">
+	
+	<form action="/CMD_MULTI_SERVER" method="post">
+		
+		<input type="hidden" name="action" value="add" />
+		
+		<span class="title">|LANG_ADD_REMOTE_SERVER|</span>
+
+		<div class="even">
+			
+			<span class="td_label">
+				<span class="i">|LANG_IP|:</span>
+			</span>
+			
+			<span class="td">
+				<span class="i"><input type="text" name="ip" size="15" /></span>
+			</span>
+			
+		</div>
+		
+		
+		<div class="odd">
+			
+			<span class="td_label">
+				<span class="i">|LANG_PORT|:</span>
+			</span>
+			
+			<span class="td">
+				<span class="i"><input type="text" name="port" size="4" value="2222" /></span>
+			</span>
+			
+		</div>
+		
+		
+		<div class="even">
+			
+			<span class="td_label">
+				<span class="i">|LANG_SSL|:</span>
+			</span>
+			
+			<span class="td">
+				<span class="i"><input type="checkbox" name="ssl" value="yes" size="4" /></span>
+			</span>
+			
+		</div>
+		
+	
+		<div class="odd">
+			
+			<span class="td_label">
+				<span class="i">
+				|LANG_USERNAME|:
+				</span>
+			</span>
+			
+			<span class="td">
+				<span class="i">
+					<input type="text" name="user" size="8" />
+				</span>
+			</span>
+			
+		</div>
+		
+	
+		<div class="even">
+		
+			<span class="td_label">
+				<span class="i">|LANG_PASSWORD|:</span>
+			</span>
+			
+			<span class="td">
+				<span class="i"><input type="password" name="passwd" size="8" /></span>
+			</span>
+		
+		</div>
+	
+		
+		<span class="save_menu">
+			<span><input type="submit" value="|LANG_ADD|" /></span>
+		</span>
+	
+	</form>
+
+</div>
+
+	<table cellpadding="1" class="list" cellspacing="1">
+		|LANG_SSL_DESCRIPTION|
+		|LANG_ZONE_TRANSFER_DESCRIPTION|
+		|LANG_DOMAIN_CHECK_DESCRIPTION|
+	</table>
+
+|HTM_ADMIN_BOTTOM|
+

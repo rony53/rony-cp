@@ -1,0 +1,98 @@
+|LF_STANDARD|
+|?TREE=&raquo; <a class=tree href="/CMD_ADMIN_SHOW">`LANG_SHOW_ADMINS`</a> &raquo; <a class=tree href="/HTM_ACCOUNT_ADMIN_CREATE">`LANG_CREATE_ADMIN`</a>|
+|?HELP_SECTION=`ADMIN_HELPER`/createa.html|
+|HTM_ADMIN_TOP|
+
+|?CHECK_PASS=|
+|?RANDOM_PASS=randomPass()|
+|*if AJAX="1"|
+	|?CHECK_PASS=onChange="ajax_checkPass()"|
+	|?RANDOM_PASS=ajax_randomPass('')|
+	<script type="text/javascript" src="JS_CREATION_CHECK"></script>
+|*endif|
+
+        <div id="current_model" class="HTM_ACCOUNT_ADMIN_CREATE"></div>
+
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">
+    google.load("jquery", "1.3.2");
+</script>
+<script type="text/javascript" src="/IMG_FANCY"></script>
+
+<script type="text/javascript">
+
+|HTM_JAVASCRIPT|
+
+function showAdminMessage()
+{
+	var message = window.open("CMD_EDIT_ADMIN_MESSAGE","message","width=740,height=480,scrollbars=no,resizable=yes");
+}
+
+function formOK()
+{
+	with (document.reseller)
+	{
+		if (checkName() && checkPass() && checkEmail())
+			return true;
+	}
+	return false;
+}
+
+</script>
+
+	<div class="content">
+      <form name="reseller" action="CMD_ACCOUNT_ADMIN" method="post" target="_parent" onsubmit="return formOK()">
+|HTM_PREVENT_AUTOFILL|
+      	<input type="hidden" name="action" value="create" />
+       	<div class="info_table forms">
+        
+       	<span class="title"><strong>|LANG_CREATE_ADMIN_ACCOUNT|</strong></span>
+       		
+       	<div class="even">
+         	<span class="td_label"><span class="i">|LANG_USERNAME|:</span></span>
+         	<span class="td"><span class="i">
+         		<input type="text" onchange="checkName()" maxlength="10" name="username" />
+         	</span></span>
+         </div>
+         			
+         <div class="odd">
+         	<span class="td_label"><span class="i">|LANG_EMAIL|:</span></span>
+         	<span class="td"><span class="i">
+         		<input type="text" onchange="checkEmail()" name="email" />
+         	</span></span>
+         </div>
+         
+         <div class="even">
+         	<span class="td_label"><span class="i">|LANG_ENTER_PASS|:</span></span>
+         	<span class="td"><span class="i">
+         		<input type="password" name="passwd" />
+         		<div class="input_submit grey"><input type="button" onclick="randomPass()" value="Random" /></div>
+         	</span></span>
+         </div>
+         			
+         <div class="odd">
+         	<span class="td_label"><span class="i">|LANG_RE-ENTER_PASS|:</span></span>
+         	<span class="td"><span class="i">
+         		<input type="password" onchange="checkPass()" name="passwd2" />
+         	</span></span>
+         </div>
+         
+         <div class="even">
+         	<span class="td_label"><span class="i">|LANG_EMAIL_NOTIFICATION|:</span></span>
+         	<span class="td"><span class="i">
+         		<input type="checkbox" checked="checked" name="notify" value="yes" /> 
+                <div class="input_submit grey">
+                <input type="button" value="|LANG_EDIT_ADMIN_MESSAGE|" class="input_submit" onclick="showAdminMessage();" />
+                </div>
+         	</span></span>
+         </div>
+         
+         <span class="save_menu">
+         	<span><input value="|LANG_SUBMIT|" class="input_submit" type="submit" /></span>
+         </span>
+         
+         </div>
+      </form>
+    </div>
+    
+|HTM_ADMIN_BOTTOM|
